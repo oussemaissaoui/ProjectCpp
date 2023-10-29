@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>26760.jpg</file>
+        <file>alleco.png</file>
+        <file>crud.png</file>
+        <file>image/divider.png</file>
+        <file>image/signup1.png</file>
+        <file>image/signup.png</file>
+        <file>image/step1.png</file>
+        <file>image/step2.png</file>
+        <file>image/step3.png</file>
+    </qresource>
+</RCC>
