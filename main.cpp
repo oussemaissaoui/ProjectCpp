@@ -10,10 +10,12 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w_login;
     Connection c;
-
     bool test=c.createconnect();
+    
+
+
+    MainWindow w_login;
     if(test)
     {w_login.show();
 
@@ -35,8 +37,6 @@ int main(int argc, char *argv[])
     {
     rh w_rh;
     w_rh.show();
-    a.exec();
-    w_login.show();
     a.exec();
     }
 

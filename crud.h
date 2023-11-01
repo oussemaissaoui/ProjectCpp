@@ -1,7 +1,11 @@
 #ifndef CRUD_H
 #define CRUD_H
+#include <QSqlQuery>
+#include <QSqlQueryModel>
 
 #include <QDialog>
+#include "employe.h"
+#include <QDate>
 #include <iostream>
 using namespace std;
 
@@ -24,6 +28,7 @@ private slots:
 
 private:
     Ui::CRUD *ui;
+    employe e;
 };
 
 #endif // CRUD_H

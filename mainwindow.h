@@ -39,5 +39,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     bool login_status;
+    bool isSignupOpen  ;
 };
 #endif // MAINWINDOW_H

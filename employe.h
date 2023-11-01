@@ -1,6 +1,8 @@
 #ifndef EMPLOYE_H
 #define EMPLOYE_H
 
+#include <QSqlQuery>
+#include <QSqlQueryModel>
 #include "user.h"
 #include <QString>
 #include <QDate>
@@ -19,6 +21,8 @@ QString get_prenom(){return prenom;}
 QString get_status(){return status;}
 QString get_telephone(){return telephone;}
 int get_id(){return id;}
+bool ajouter();
+QSqlQueryModel* afficher();
 
 
 

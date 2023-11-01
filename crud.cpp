@@ -7,6 +7,10 @@ CRUD::CRUD(QWidget *parent) :
     ui(new Ui::CRUD)
 {
     ui->setupUi(this);
+
+    ui->table_employe->setModel(e.afficher());
+
+
 }
 
 CRUD::~CRUD()
@@ -17,12 +21,21 @@ CRUD::~CRUD()
 
 void CRUD::on_ajouter_emp_clicked()
 {
-    /*QString nom=ui->lineEdit_nom->text();
+    QString nom=ui->lineEdit_nom->text();
     QString prenom=ui->lineEdit_prenom->text();
     QString cin=ui->lineEdit_cin->text();
-    QString email=ui->lineEdit_email->text();
     QString tel=ui->lineEdit_tel->text();
-    Employe e(nom,prenom,cin,email,tel);
+
+
+    QDate date=ui->datenaiss_Edit->date();
+    QString username=ui->lineEdit_username->text();
+    QString email=ui->lineEdit_email->text();
+    QString password=ui->lineEdit_pass->text();
+    QString role=ui->comboBox_role->currentText();
+
+
+
+    employe e(username,password,email,role,date,nom,prenom,cin,"liber","9826",1);
 
     cout<<"emplye data :  nom  : "<<e.get_nom().toStdString()<<" prenom : "<<e.get_prenom().toStdString() << " cin :" <<e.get_cin().toStdString()<<endl;
 
@@ -37,6 +50,6 @@ void CRUD::on_ajouter_emp_clicked()
             {
                 QMessageBox::critical(nullptr, QObject::tr("NOT OK"),
                                        QObject::tr("Ajout non effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
-            }*/
+            }
 
 }

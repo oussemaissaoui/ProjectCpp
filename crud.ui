@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>359</height>
+    <width>666</width>
+    <height>498</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="ajouter">
       <attribute name="title">
@@ -28,8 +28,8 @@
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>491</width>
-         <height>301</height>
+         <width>621</width>
+         <height>421</height>
         </rect>
        </property>
        <property name="title">
@@ -107,8 +107,8 @@
        <widget class="QLabel" name="label_email">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>180</y>
+          <x>320</x>
+          <y>100</y>
           <width>47</width>
           <height>14</height>
          </rect>
@@ -120,8 +120,8 @@
        <widget class="QLineEdit" name="lineEdit_email">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>180</y>
+          <x>380</x>
+          <y>100</y>
           <width>201</width>
           <height>21</height>
          </rect>
@@ -130,8 +130,8 @@
        <widget class="QPushButton" name="ajouter_emp">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>140</y>
+          <x>290</x>
+          <y>350</y>
           <width>80</width>
           <height>22</height>
          </rect>
@@ -144,7 +144,7 @@
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>220</y>
+          <y>180</y>
           <width>201</width>
           <height>21</height>
          </rect>
@@ -154,7 +154,7 @@
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>220</y>
+          <y>180</y>
           <width>47</width>
           <height>14</height>
          </rect>
@@ -163,12 +163,106 @@
          <string>NUM tel</string>
         </property>
        </widget>
+       <widget class="QDateEdit" name="datenaiss_Edit">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>280</y>
+          <width>110</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_2">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>60</y>
+          <width>48</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>username</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_username">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>60</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_4">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>140</y>
+          <width>48</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>password</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_pass">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>140</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_role">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>200</y>
+          <width>151</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Employer</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_nom_5">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>200</y>
+          <width>48</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Role</string>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="affichier">
       <attribute name="title">
        <string>Affichier</string>
       </attribute>
+      <widget class="QTableView" name="table_employe">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>611</width>
+         <height>421</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="supprimer">
       <attribute name="title">

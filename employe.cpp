@@ -1,5 +1,7 @@
 #include "employe.h"
-
+#include <QObject>
+#include <QDebug>
+#include <QSqlError>
 //constractor
 employe::employe()
 {
@@ -53,4 +55,33 @@ void employe::set_id(int id)
 this->id = id ;
 }
 
+bool employe::ajouter()
+{
+    QSqlQuery query;
+      query.prepare("INSERT INTO users (email, password, username) "
+                    "VALUES (:email, :password, :username)");
+      query.bindValue(":email", get_email());
+      query.bindValue(":password", get_password());
+      query.bindValue(":username", get_username());
+      return query.exec();
+}
+
+QSqlQueryModel* employe::afficher()
+{
+
+    
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM users");
+
+    if (model->lastError().isValid()) {
+        QSqlError lastError = model->lastError();
+        qDebug() << "Query execution failed: " << lastError.text();
+    }
+
+
+
+      return model;
+
+
+}
 

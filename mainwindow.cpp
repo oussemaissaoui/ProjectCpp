@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     login_status=false;
+    isSignupOpen=false;
     ui->setupUi(this);
     ui->pushButton_login->hide();
 
@@ -72,9 +73,13 @@ void MainWindow::Show_Button_Login()
 
 void MainWindow::click_signup()
 {
+    if (!isSignupOpen){
+        isSignupOpen = true;
     Signup w;
     w.show();
     w.exec();
+    isSignupOpen = false;
+    }
 }
 
 
