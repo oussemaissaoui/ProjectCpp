@@ -7,6 +7,7 @@
 #include "employe.h"
 #include <QDate>
 #include <iostream>
+#include <QString>
 using namespace std;
 
 namespace Ui {
@@ -20,11 +21,17 @@ class CRUD : public QDialog
 public:
     explicit CRUD(QWidget *parent = nullptr);
     ~CRUD();
-
+    void SetLineEdit_value();
 private slots:
 
 
     void on_ajouter_emp_clicked();
+
+    void on_pushButton_supp_clicked();
+
+
+
+    void on_pushButton_modifier_clicked();
 
 private:
     Ui::CRUD *ui;

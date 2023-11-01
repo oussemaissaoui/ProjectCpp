@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="ajouter">
       <attribute name="title">
@@ -35,103 +35,11 @@
        <property name="title">
         <string>Add Employer</string>
        </property>
-       <widget class="QLineEdit" name="lineEdit_nom">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>60</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_nom">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>60</y>
-          <width>47</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Nom</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_prenom">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>100</y>
-          <width>47</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Prenom</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_prenom">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>100</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_cin">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>140</y>
-          <width>47</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>CIN</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_cin">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>140</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_email">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>100</y>
-          <width>47</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Email</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_email">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>100</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QPushButton" name="ajouter_emp">
         <property name="geometry">
          <rect>
-          <x>290</x>
-          <y>350</y>
+          <x>270</x>
+          <y>370</y>
           <width>80</width>
           <height>22</height>
          </rect>
@@ -140,112 +48,301 @@
          <string>ajouter</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_tel">
+       <widget class="QGroupBox" name="Userside">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>180</y>
-          <width>201</width>
-          <height>21</height>
+          <x>310</x>
+          <y>40</y>
+          <width>291</width>
+          <height>301</height>
          </rect>
         </property>
+        <property name="title">
+         <string>User</string>
+        </property>
+        <widget class="QLabel" name="label_nom_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>160</y>
+           <width>48</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Role</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_nom_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>48</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>password</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_nom_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>48</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>username</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_email">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>80</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_role">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>160</y>
+           <width>151</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Employer</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_pass">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>120</y>
+           <width>191</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_email">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>80</y>
+           <width>191</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_username">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>40</y>
+           <width>191</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
-       <widget class="QLabel" name="label_email_2">
+       <widget class="QGroupBox" name="EmployerSide">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>180</y>
-          <width>47</width>
-          <height>14</height>
+          <y>40</y>
+          <width>281</width>
+          <height>301</height>
          </rect>
         </property>
-        <property name="text">
-         <string>NUM tel</string>
+        <property name="title">
+         <string>Employer</string>
         </property>
-       </widget>
-       <widget class="QDateEdit" name="datenaiss_Edit">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>280</y>
-          <width>110</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_nom_2">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>60</y>
-          <width>48</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>username</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_username">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>60</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_nom_4">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>140</y>
-          <width>48</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>password</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_pass">
-        <property name="geometry">
-         <rect>
-          <x>380</x>
-          <y>140</y>
-          <width>201</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_role">
-        <property name="geometry">
-         <rect>
-          <x>410</x>
-          <y>200</y>
-          <width>151</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <item>
-         <property name="text">
-          <string>Employer</string>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>240</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
          </property>
-        </item>
-       </widget>
-       <widget class="QLabel" name="label_nom_5">
-        <property name="geometry">
-         <rect>
-          <x>340</x>
-          <y>200</y>
-          <width>48</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Role</string>
-        </property>
+         <property name="text">
+          <string>sexe</string>
+         </property>
+        </widget>
+        <widget class="QDateEdit" name="datenaiss_Edit">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>270</y>
+           <width>110</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_status">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>190</y>
+           <width>151</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Celibataire</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Marie</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Divorce</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_nom">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>30</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_cin">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>110</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_prenom">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>70</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_prenom">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Prenom</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_cin">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>CIN/Id</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_tel">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>150</y>
+           <width>201</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_status">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>190</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_tel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>NUM tel</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_sexe">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>240</y>
+           <width>151</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>homme</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>femme</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_nom">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>47</width>
+           <height>14</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Nom</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -268,6 +365,356 @@
       <attribute name="title">
        <string>Supprimer</string>
       </attribute>
+      <widget class="QLabel" name="label_supp_id">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>90</y>
+         <width>71</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ID_Pour_Supp</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_idsupp">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>90</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_supp">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>201</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Modifier">
+      <attribute name="title">
+       <string>Modifier</string>
+      </attribute>
+      <widget class="QGroupBox" name="EmployerSide_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>281</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Employer</string>
+       </property>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>180</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>sexe</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="datenaiss_Edit_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>220</y>
+          <width>110</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_status_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>150</y>
+          <width>151</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Celibataire</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Marie</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Divorce</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_nom_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>30</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_prenom_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>70</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_prenom_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Prenom</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_tel_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>110</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_status_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Status</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_tel_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>NUM tel</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_sexe_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>180</y>
+          <width>151</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>homme</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>femme</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_nom_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="Userside_2">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>20</y>
+         <width>281</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>User</string>
+       </property>
+       <widget class="QLabel" name="label_nom_6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>48</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Role</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_7">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>48</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>password</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_8">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>48</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>username</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_email_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>47</width>
+          <height>14</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Email</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_role_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>160</y>
+          <width>151</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Employer</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_pass_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>120</y>
+          <width>191</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_email_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>80</y>
+          <width>191</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_username_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>40</y>
+          <width>191</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_cin_2">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>330</y>
+         <width>201</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_cin_2">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>330</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>ID/CIN</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_modifier">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>330</y>
+         <width>80</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>
