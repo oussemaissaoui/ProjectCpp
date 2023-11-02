@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "reservation.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -18,7 +18,10 @@ public:
 private slots:
     void on_ajouter_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Reservation Etmp;
 };
 #endif // MAINWINDOW_H
