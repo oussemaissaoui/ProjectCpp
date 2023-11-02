@@ -71,7 +71,7 @@ bool Signup::isEmailValid(QString email) {
 bool Signup::isPasswordConditionValid(QString pass)
 {
     QRegularExpression passwordPattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,}$");
-
+    QString p=pass;
     if(passwordPattern.match(findChild<QLineEdit*>("lineEdit_password")->text()).hasMatch())
     {
         cout<<"pass match"<<endl;

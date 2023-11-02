@@ -7,7 +7,9 @@ CRUD::CRUD(QWidget *parent) :
     ui(new Ui::CRUD)
 {
     ui->setupUi(this);
-    //connect(ui->lineEdit_password, &QLineEdit::textChanged, this, &MainWindow::Show_Button_Login);
+    ui->EmployerSide_2->setVisible(false);
+    ui->Userside_2->setVisible(false);
+    connect(ui->lineEdit_cin_2, &QLineEdit::textChanged, this, &CRUD::SetLineEdit_value);
     ui->table_employe->setModel(e.afficher());
 
 
@@ -22,6 +24,7 @@ CRUD::~CRUD()
 void CRUD::on_ajouter_emp_clicked()
 {
     //Employe
+    ui->table_employe->setModel(e.afficher());
     QString nom=ui->lineEdit_nom->text();
     QString prenom=ui->lineEdit_prenom->text();
     QString cin=ui->lineEdit_cin->text();
@@ -65,6 +68,7 @@ void CRUD::on_ajouter_emp_clicked()
 void CRUD::on_pushButton_supp_clicked()
 {
     employe e;
+    ui->table_employe->setModel(e.afficher());
     e.set_cin(ui->lineEdit_idsupp->text());
 
     bool test = e.supprimer(e.get_cin());
@@ -85,6 +89,60 @@ void CRUD::on_pushButton_supp_clicked()
 
 void CRUD::SetLineEdit_value()
 {
+    QString id= ui->lineEdit_cin_2->text();
+    QSqlQuery query;
+       query.prepare("SELECT * FROM employe WHERE cin = :id");
+       query.bindValue(":id", id);
+    if (query.exec() && query.next()) {
+        ui->EmployerSide_2->setVisible(true);
+
+        QString nom = query.value(1).toString();
+        QString prenom = query.value(2).toString();
+        QString tel = query.value(3).toString();
+        QString status = query.value(4).toString();
+        QString sexe = query.value(5).toString();
+        QDate date = query.value(5).toDate();
+
+
+
+        ui->lineEdit_nom_2->setText(nom);
+        ui->lineEdit_prenom_2->setText(prenom);
+        ui->lineEdit_tel_2->setText(tel);
+        ui->comboBox_status_2->setCurrentText(status);
+        ui->comboBox_sexe_2->setCurrentText(sexe);
+        ui->datenaiss_Edit_2->setDate(date);
+
+    }
+    else
+    {
+        ui->EmployerSide_2->setVisible(false);
+    }
+
+    QSqlQuery query2;
+       query2.prepare("SELECT * FROM users WHERE id_user = :id");
+       query2.bindValue(":id", id);
+       if (query2.exec() && query2.next()) {
+           ui->Userside_2->setVisible(true);
+
+           QString email = query2.value(0).toString();
+           QString password = query2.value(1).toString();
+           QString username = query2.value(3).toString();
+           QString role = query2.value(4).toString();
+
+
+
+           ui->lineEdit_username_2->setText(username);
+           ui->lineEdit_email_2->setText(email);
+           ui->lineEdit_pass_2->setText(password);
+           ui->comboBox_role_2->setCurrentText(role);
+
+
+       }
+       else
+       {
+           ui->Userside_2->setVisible(false);
+       }
+
 
 }
 
@@ -97,6 +155,8 @@ void CRUD::on_pushButton_modifier_clicked()
     if(!ui->lineEdit_cin_2->text().isEmpty())
     {
         employe e;
+        //partie employe
+        ui->table_employe->setModel(e.afficher());
         QString nom=ui->lineEdit_nom_2->text();
         QString prenom=ui->lineEdit_prenom_2->text();
         QString cin=ui->lineEdit_cin_2->text();
@@ -114,6 +174,18 @@ void CRUD::on_pushButton_modifier_clicked()
         e.set_status(status);
         e.set_sexe(sexe);
         e.set_date_naiss(date);
+        //partie user
+
+        QString username=ui->lineEdit_username_2->text();
+        QString email=ui->lineEdit_email_2->text();
+        QString password=ui->lineEdit_pass_2->text();
+        QString role=ui->comboBox_role_2->currentText();
+
+        e.set_username(username);
+        e.set_email(email);
+        e.set_password(password);
+        e.set_role(role);
+
 
 
         bool test = e.modifier(ui->lineEdit_cin_2->text());

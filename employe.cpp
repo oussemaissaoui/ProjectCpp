@@ -67,7 +67,7 @@ bool employe::ajouter()
       query.bindValue(":email", get_email());
       query.bindValue(":password", get_password());
       query.bindValue(":username", get_username());
-      query.bindValue(":id_user", get_id());
+      query.bindValue(":id_user", get_cin().toInt());
       query.bindValue(":role", get_role());
 
       QSqlQuery query2;
@@ -131,17 +131,35 @@ bool employe::supprimer(QString id)
 bool employe::modifier(QString id) {
 
     QSqlQuery query;
-      query.prepare("UPDATE employe SET nom = :nom, prenom = :prenom, tel = :tel, cin = :cin, status = :status, sexe = :sexe, date_naissance = :date_naissance WHERE cin = :id");
-      query.bindValue(":id", "123");
+      query.prepare("UPDATE employe SET nom = :nom, prenom = :prenom, tel = :tel, status = :status, sexe = :sexe, date_naissance = :date_naiss WHERE cin = :id ");
+
+      query.bindValue(":id", id);
       query.bindValue(":nom", get_nom());
       query.bindValue(":prenom", get_prenom());
       query.bindValue(":tel", get_telephone());
       
       query.bindValue(":status", get_status());
       query.bindValue(":sexe", get_sexe());
-      query.bindValue(":DATE_NAISSANCE", get_date_naiss());
+      query.bindValue(":date_naiss", get_date_naiss());
 
 
-    return query.exec();
+    
+
+    QSqlQuery query2;
+      query2.prepare("UPDATE users  SET email = :email, password =:password, username = :username  , role = :role WHERE id_user = :id ");
+
+      query2.bindValue(":id", id);
+      query2.bindValue(":email", get_email());
+      query2.bindValue(":username", get_username());
+      query2.bindValue(":password", get_password());
+      query2.bindValue(":role", get_role());
+
+    if(query.exec() && query2.exec())
+    {
+        return true;
+    }
+    else 
+        return false ;
+
 }
 
