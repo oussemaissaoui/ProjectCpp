@@ -32,8 +32,8 @@ public:
 
     bool ajouter();
     QSqlQueryModel * afficher();
-    int supprimer(int);
-    bool modifier(int, voiture);
+    bool supprimer(int);
+    bool modifier(int);
 };
 
 #endif // VOITURE_H

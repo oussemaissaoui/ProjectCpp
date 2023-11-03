@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2023-10-28T21:45:23
+# Project created by QtCreator 2018-10-26T21:45:23
 #
 #-------------------------------------------------
 
@@ -9,7 +9,7 @@ QT+= sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Atelier_CRUD
+TARGET = Atelier_Connexion
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,21 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        dialog.cpp \
         main.cpp \
-        connection.cpp \
         mainwindow.cpp \
-        voiture.cpp
+    connection.cpp \
+    voiture.cpp
 
 HEADERS += \
-        connection.h \
-        dialog.h \
         mainwindow.h \
-        voiture.h
+    connection.h \
+    voiture.h
 
 FORMS += \
-    dialog.ui \
-    mainwindow.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
