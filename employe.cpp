@@ -1,5 +1,10 @@
 #include "employe.h"
 #include <QObject>
+#include <qDebug>
+#include <QSqlError>
+#include <QDialog>
+#include <QMessageBox>
+
 //constractor
 employe::employe()
 {
@@ -57,6 +62,7 @@ void employe::set_sexe(QString sexe)
 {
     this->sexe = sexe;
 }
+
 
 bool employe::ajouter()
 {
@@ -117,11 +123,24 @@ bool employe::supprimer(QString id)
       query2.bindValue(":id_user" , id);
    
 
-      if(query.exec()&& query2.exec())
-      {
-          return true;
-      }
-      else return false;
+
+      if (query.exec()&& query2.exec()) {
+        int numRowsAffected = query.numRowsAffected();
+        int numRowsAffected2 = query2.numRowsAffected();
+        bool test=numRowsAffected > 0 && numRowsAffected2 > 0;
+        if(test==false)
+        {
+            QMessageBox::critical(nullptr, QObject::tr("OK"),
+                                         QObject::tr("cin does not exist.\nClick Cancel to exit."), QMessageBox::Cancel);
+        }
+
+        return test;  // Return true if at least one row was affected
+    } else {
+        // Handle the case where the query execution failed
+        qDebug() << "Error: " << query.lastError().text();
+    }
+
+    return false;
         
       
 
@@ -154,12 +173,24 @@ bool employe::modifier(QString id) {
       query2.bindValue(":password", get_password());
       query2.bindValue(":role", get_role());
 
-    if(query.exec() && query2.exec())
-    {
-        return true;
+
+      if (query.exec()&& query2.exec()) {
+        int numRowsAffected = query.numRowsAffected();
+        int numRowsAffected2 = query2.numRowsAffected();
+        bool test=numRowsAffected > 0 && numRowsAffected2 > 0;
+        if(test==false)
+        {
+            QMessageBox::critical(nullptr, QObject::tr("OK"),
+                                         QObject::tr("cin does not exist.\nClick Cancel to exit."), QMessageBox::Cancel);
+        }
+
+        return test;  // Return true if at least one row was affected
+    } else {
+        // Handle the case where the query execution failed
+        qDebug() << "Error: " << query.lastError().text();
     }
-    else 
-        return false ;
+
+    return false;
 
 }
 

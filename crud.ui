@@ -644,6 +644,11 @@
         </property>
         <item>
          <property name="text">
+          <string>User</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>Employer</string>
          </property>
         </item>

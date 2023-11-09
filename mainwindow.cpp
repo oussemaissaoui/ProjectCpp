@@ -44,7 +44,7 @@ void MainWindow::checkPassword()
 
     QSqlQuery query;
 
-    query.prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+    query.prepare("SELECT * FROM users WHERE (email= :email OR username = :email) AND password = :password");
     query.bindValue(":email",email);
     query.bindValue(":password",password);
 

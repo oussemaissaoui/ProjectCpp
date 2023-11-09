@@ -35,7 +35,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="signup1">
     <widget class="QLabel" name="bg">
@@ -320,6 +320,9 @@ p, li { white-space: pre-wrap; }
        <height>31</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
 color: rgb(204, 170, 103);
@@ -329,9 +332,7 @@ border-bottom-color: rgb(204, 170, 103);
 border-top-color: rgb(204, 170, 103);
 border-right-color: rgb(204, 170, 103);
 border-left-color: rgb(204, 170, 103);
-}
-
-QPushButton:hover{
+}QPushButton:hover{
 	color: rgb(255, 234, 183);
 	background-color: rgb(17, 17, 17);
 border: 1px solid black;
@@ -362,73 +363,6 @@ border-left-color: rgb(204, 170, 103);
      </property>
      <property name="scaledContents">
       <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_image_step2">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>360</y>
-       <width>441</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="image.qrc">:/img/image/step2.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="step1_2">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>400</y>
-       <width>41</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(161, 161, 161);</string>
-     </property>
-     <property name="text">
-      <string>STEP 1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="step2_2">
-     <property name="geometry">
-      <rect>
-       <x>430</x>
-       <y>400</y>
-       <width>41</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);</string>
-     </property>
-     <property name="text">
-      <string>STEP 2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="step3_2">
-     <property name="geometry">
-      <rect>
-       <x>602</x>
-       <y>400</y>
-       <width>41</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(161, 161, 161);</string>
-     </property>
-     <property name="text">
-      <string>STEP 3</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_username">
@@ -572,6 +506,163 @@ QLineEdit::placeholder {
       <string>CONFIRM PASSWORD</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_pass_err1">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>230</y>
+       <width>311</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Password must be at least 8 characters long.</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_pass_err2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>250</y>
+       <width>311</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Password must contain at least one letter and one non-letter character.</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_step123">
+     <property name="geometry">
+      <rect>
+       <x>179</x>
+       <y>330</y>
+       <width>540</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="step3_2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>70</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(161, 161, 161);</string>
+      </property>
+      <property name="text">
+       <string>STEP 3</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="step1_2">
+      <property name="geometry">
+       <rect>
+        <x>78</x>
+        <y>70</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(161, 161, 161);</string>
+      </property>
+      <property name="text">
+       <string>STEP 1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="step2_2">
+      <property name="geometry">
+       <rect>
+        <x>248</x>
+        <y>70</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>STEP 2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_image_step2">
+      <property name="geometry">
+       <rect>
+        <x>61</x>
+        <y>30</y>
+        <width>440</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="image.qrc">:/img/image/step2.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_pass_err3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>280</y>
+       <width>311</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Does not match password field.</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+    <zorder>bg2</zorder>
+    <zorder>title2</zorder>
+    <zorder>image_logo_</zorder>
+    <zorder>label_pass_err1</zorder>
+    <zorder>label_pass_err2</zorder>
+    <zorder>groupBox_step123</zorder>
+    <zorder>label_pass_err3</zorder>
+    <zorder>lineEdit_confirmpass</zorder>
+    <zorder>lineEdit_username</zorder>
+    <zorder>lineEdit_password</zorder>
+    <zorder>pushButton_next</zorder>
    </widget>
    <widget class="QWidget" name="signup3">
     <widget class="QLabel" name="bg3">
@@ -975,6 +1066,51 @@ QLineEdit::placeholder {
      <property name="placeholderText">
       <string>PHONE-NUMBER</string>
      </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_sexe">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>260</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Homme</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Femme</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comboBox_status">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>260</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Celibataire</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>marie</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>divorce</string>
+      </property>
+     </item>
     </widget>
    </widget>
   </widget>

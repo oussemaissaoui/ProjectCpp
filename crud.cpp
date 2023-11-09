@@ -1,7 +1,9 @@
 #include "crud.h"
 #include "ui_crud.h"
 #include <QMessageBox>
+#include <QIntValidator>
 #include <QObject>
+
 CRUD::CRUD(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CRUD)
@@ -11,6 +13,15 @@ CRUD::CRUD(QWidget *parent) :
     ui->Userside_2->setVisible(false);
     connect(ui->lineEdit_cin_2, &QLineEdit::textChanged, this, &CRUD::SetLineEdit_value);
     ui->table_employe->setModel(e.afficher());
+
+
+    //setValidator---part
+    QIntValidator *validator = new QIntValidator(this);
+    ui->lineEdit_cin->setValidator(validator);
+    ui->lineEdit_tel->setValidator(validator);
+    ui->lineEdit_idsupp->setValidator(validator);
+    ui->lineEdit_cin_2->setValidator(validator);
+    ui->lineEdit_tel_2->setValidator(validator);
 
 
 }
@@ -56,6 +67,7 @@ void CRUD::on_ajouter_emp_clicked()
             {
                 QMessageBox::information(nullptr, QObject::tr("OK"),
                                          QObject::tr("Ajout effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
+                  ui->table_employe->setModel(e.afficher());                        
             }
             else
             {
@@ -77,12 +89,14 @@ void CRUD::on_pushButton_supp_clicked()
             {
                 QMessageBox::information(nullptr, QObject::tr("OK"),
                                          QObject::tr("Suprresion effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
+                                         ui->table_employe->setModel(e.afficher());
+            
             }
-            else
+            /*else
             {
                 QMessageBox::critical(nullptr, QObject::tr("NOT OK"),
-                                       QObject::tr("Suprresion echoué.\nClick Cancel to exit."), QMessageBox::Cancel);
-            }
+                                       QObject::tr("Suprresion echoué .\nClick Cancel to exit."), QMessageBox::Cancel);
+            }*/
 
 }
 
@@ -195,6 +209,8 @@ void CRUD::on_pushButton_modifier_clicked()
             
             QMessageBox::information(nullptr, QObject::tr("OK"),
                                      QObject::tr("Modification effectuée.\nClick Cancel to exit."), QMessageBox::Cancel);
+                                     ui->table_employe->setModel(e.afficher());
+        
         }
         else
         {

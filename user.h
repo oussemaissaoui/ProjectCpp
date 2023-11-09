@@ -3,6 +3,8 @@
 
 #include <QString>
 #include <QDateTime>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
 
 class user
 {
@@ -18,6 +20,7 @@ public:
     QString get_role(){return role;}
     QDateTime get_last_login(){return LastLoginDate;}
     QDate get_date_naiss(){return date_naiss;}
+    QString get_id_user(){return id_user;}
 
 
     //setter
@@ -28,6 +31,11 @@ public:
     void set_role(QString);
     void set_last_login(QDateTime);
     void set_date_naiss(QDate);
+    void set_id_user(QString);
+
+
+
+    bool ajouter();
 
 
 
@@ -38,7 +46,7 @@ public:
 
 private:
 
-    QString username , password , email , role;
+    QString username , password , email , role , id_user;
 
     QDateTime LastLoginDate ;
     QDate date_naiss;
