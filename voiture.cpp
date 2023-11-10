@@ -60,7 +60,7 @@ bool voiture::supprimer(int mat)
     q.prepare("DELETE FROM VOITURES WHERE MATRICULE = :MAT");
     q.bindValue(":MAT", mat);
 
-    return (q.exec()&&q.next());
+    return (q.exec());
 }
 
     bool voiture::modifier(int mat)
