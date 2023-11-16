@@ -1,4 +1,14 @@
-    QT       += sql
+INCLUDEPATH += C:/Users/Mega pc/Desktop/OpenSSL-1.1.1h_win32/include
+LIBS += -LC:/Users/Mega\ pc/Documents/Project2A/OpenSSL-1.1.1h_win32/magma_impl -lssleay32 -llibeay32
+
+
+
+
+
+
+
+
+    QT       += sql charts printsupport network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,29 +26,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    clickablelabel.cpp \
     crud.cpp \
     employe.cpp \
     main.cpp \
     mainwindow.cpp \
+    pdf.cpp \
     rh.cpp \
     connection.cpp \
     signup.cpp \
+    clickablelabel.cpp \
     user.cpp
 
 HEADERS += \
-    clickablelabel.h \
     crud.h \
     employe.h \
     mainwindow.h \
+    pdf.h \
     rh.h \
     connection.h \
     signup.h \
+    clickablelabel.h \
     user.h
 
 FORMS += \
     crud.ui \
     mainwindow.ui \
+    pdf.ui \
     rh.ui \
     signup.ui
 

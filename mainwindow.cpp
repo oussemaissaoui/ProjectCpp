@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QCloseEvent>
+
 
 #include <iostream>
 using namespace std;
@@ -31,6 +33,15 @@ MainWindow::~MainWindow()
 
 
 
+
+void MainWindow::set_login_status(bool status)
+{
+    login_status = status;
+}
+
+
+
+
 void MainWindow::on_pushButton_login_clicked()
 {
     
@@ -44,13 +55,24 @@ void MainWindow::checkPassword()
 
     QSqlQuery query;
 
-    query.prepare("SELECT * FROM users WHERE (email= :email OR username = :email) AND password = :password");
+    query.prepare("SELECT id_user FROM users WHERE (email= :email OR username = :email) AND password = :password");
     query.bindValue(":email",email);
     query.bindValue(":password",password);
 
     if(query.exec()&&query.next())
     {
         login_status=true;
+        if(ui->checkBox_stayLogin->isChecked())
+        {
+            QSqlQuery query2;
+            query2.prepare("INSERT INTO logs (LAST_LOGIN_ID) VALUES (:last_login)");
+            query2.bindValue(":last_login",query.value(0).toString());
+            query2.exec();
+            cout<<"checked ::: !!!!!!!!!!!!!!!!!"<<endl;
+            
+
+        }
+        
         this->close();
 
     }

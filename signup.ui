@@ -35,7 +35,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="signup1">
     <widget class="QLabel" name="bg">
@@ -92,6 +92,9 @@
       <string notr="true">background-color: rgba(255, 255, 255, 0);
 border:none;</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -100,6 +103,9 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:22pt; font-weight:600; color:#ffffff;&quot;&gt;YOUR MISSION START HERE&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600; color:#ccaa67;&quot;&gt;FIRST LET'S GET YOUR EMAIL.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse</set>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_email">
@@ -184,15 +190,15 @@ border-left-color: rgb(204, 170, 103);
       <rect>
        <x>30</x>
        <y>20</y>
-       <width>91</width>
-       <height>71</height>
+       <width>100</width>
+       <height>100</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="image.qrc">:/img/alleco.png</pixmap>
+      <pixmap resource="image.qrc">:/img/image/logo_blanc.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -351,15 +357,15 @@ border-left-color: rgb(204, 170, 103);
       <rect>
        <x>30</x>
        <y>20</y>
-       <width>91</width>
-       <height>71</height>
+       <width>100</width>
+       <height>100</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="image.qrc">:/img/alleco.png</pixmap>
+      <pixmap resource="image.qrc">:/img/image/logo_blanc.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -748,15 +754,15 @@ border-left-color: rgb(204, 170, 103);
       <rect>
        <x>30</x>
        <y>20</y>
-       <width>91</width>
-       <height>71</height>
+       <width>100</width>
+       <height>100</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="image.qrc">:/img/alleco.png</pixmap>
+      <pixmap resource="image.qrc">:/img/image/logo_blanc.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>

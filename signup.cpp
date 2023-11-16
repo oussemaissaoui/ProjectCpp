@@ -1,6 +1,6 @@
 #include "signup.h"
 #include "ui_signup.h"
-
+#include <QDebug>
 
 
 Signup::Signup(QWidget *parent) :
@@ -37,7 +37,7 @@ void Signup::on_pushButton_clicked()
     if(isEmailValid(findChild<QLineEdit*>("lineEdit_email")->text())==true)
     {
         ui->stackedWidget->setCurrentWidget(ui->signup2);
-        emptmp.set_email(ui->lineEdit_email->text());
+        usertmp.set_email(ui->lineEdit_email->text());
     }
 
 
@@ -47,33 +47,28 @@ void Signup::on_pushButton_clicked()
 void Signup::on_pushButton_next_clicked()
 {
     cout<<"URG "<<usertmp.get_email().toStdString()<<endl;
+    usertmp.set_username(ui->lineEdit_username->text());
     if(isPasswordConfirmValid() && isPasswordConditionValid() )
     {
+        
+        try
+        {
+
+            if(usertmp.get_username() == "")
+                 throw "Username can't be empty";
+        }
+        catch(const char* msg)
+        {
+            
+            
+
+            QMessageBox::critical(nullptr,"Error",msg);
+            return;
+        }
+
+        usertmp.set_password(ui->lineEdit_password->text());
+        
         ui->stackedWidget->setCurrentWidget(ui->signup3);
-        emptmp.set_username(ui->lineEdit_username->text());
-        emptmp.set_password(ui->lineEdit_password->text());
-        
-        
-
-
-        /*ui->pushButton_next->setStyleSheet("QPushButton{\
-                        color: rgb(204, 170, 103);\
-                        	background-color: rgb(17, 17, 17);\
-                        border: 1px solid black;\
-                        border-bottom-color: rgb(255 ,0 , 0);\
-                        border-top-color: rgb(255 ,0 , 0);\
-                        border-right-color: rgb(255 ,0 , 0);\
-                        border-left-color: rgb(255 ,0 , 0);\
-                        }QPushButton:hover{\
-                        	color: rgb(255, 234, 183);\
-                        	background-color: rgb(17, 17, 17);\
-                        border: 1px solid black;\
-                        border-bottom-color: rgb(255, 0, 0);\
-                        border-top-color: rgb(0, 255, 0);\
-                        border-right-color: rgb(0, 255, 0);\
-                        border-left-color: rgb(0, 255, 0);\
-                        }");*/
-        
     }
     else
     {
@@ -242,37 +237,44 @@ bool Signup::isPasswordConfirmValid()
 
 void Signup::on_pushButton_signup_clicked()
 {
-    emptmp.set_id_user(ui->lineEdit_cin->text());
-
-
-
-    emptmp.set_cin(ui->lineEdit_cin->text());
-    emptmp.set_nom(ui->lineEdit_nom->text());
-    emptmp.set_prenom(ui->lineEdit_prenom->text());
-    emptmp.set_telephone(ui->lineEdit_tel->text());
-    emptmp.set_date_naiss(ui->date_naissance->date());
-    emptmp.set_sexe(ui->comboBox_sexe->currentText());
+    usertmp.set_id_user(ui->lineEdit_cin->text());
+    usertmp.set_cin(ui->lineEdit_cin->text());
+    usertmp.set_nom(ui->lineEdit_nom->text());
+    usertmp.set_prenom(ui->lineEdit_prenom->text());
+    usertmp.set_telephone(ui->lineEdit_tel->text());
+    usertmp.set_date_naiss(ui->date_naissance->date());
+    usertmp.set_sexe(ui->comboBox_sexe->currentText());
     emptmp.set_status(ui->comboBox_status->currentText());
-    emptmp.set_role("User");
+    usertmp.set_role("User");
+
+    /*try{
+        if(emptmp.get_cin()=="")
+            throw "Cin can't be empty";
+        if(emptmp.get_cin()=="")
+            throw "Cin can't be empty";
+        
+    }*/
+
+
     
 
 
 
-    bool test= emptmp.ajouter();
+    bool test= usertmp.ajouter_user();
 
             if (test )
             {
                 QMessageBox::information(nullptr, QObject::tr("OK"),
                                          QObject::tr("SignUp effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
+                this->close();
             }
             else
             {
                 QMessageBox::critical(nullptr, QObject::tr("NOT OK"),
                                        QObject::tr("SignUp non effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
 
-                emptmp.supprimer(emptmp.get_cin());
             }
 
 
-    this->close();
+   
 }

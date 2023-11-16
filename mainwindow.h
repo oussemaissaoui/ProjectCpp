@@ -23,6 +23,9 @@ public:
     ~MainWindow();
     void checkPassword();
     bool get_login_status(){return login_status;}
+    void set_login_status(bool);
+
+
     void Show_Button_Login();
     void handleMouseEnter();
     void click_signup();
@@ -40,5 +43,8 @@ private:
     Ui::MainWindow *ui;
     bool login_status;
     bool isSignupOpen  ;
+
+
+    
 };
 #endif // MAINWINDOW_H

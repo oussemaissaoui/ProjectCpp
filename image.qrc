@@ -9,5 +9,10 @@
         <file>image/step1.png</file>
         <file>image/step2.png</file>
         <file>image/step3.png</file>
+        <file>image/logo_blanc.png</file>
+        <file>image/charts.png</file>
+        <file>image/pdf.png</file>
+        <file>image/Logo_noir.png</file>
+        <file>image/Ai.jpg</file>
     </qresource>
 </RCC>
