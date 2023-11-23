@@ -194,6 +194,7 @@ void Finger::update_label()
               }
               else
                   cout<<"modifie user mriglaaa !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+                  this->close();
 
                 // Return true if at least one row was affected
           } else {

@@ -21,13 +21,13 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Connection c;
+    /*Connection c;
     bool test=c.createconnect();
     if(test)
     {Finger f;
     f.show();
-    f.exec();}
-    /*Connection c;
+    f.exec();}*/
+    Connection c;
     bool test=c.createconnect();
     
     
@@ -82,6 +82,6 @@ int main(int argc, char *argv[])
 
 
 
-    cout<<"application exec"<<endl;*/
+    cout<<"application exec"<<endl;
     return 0;
 }
