@@ -6,7 +6,7 @@
 #include <QMessageBox>
 #include <QFontMetrics>
 #include <QPixmap>
-#include <qDebug>
+#include <QDebug>
 #include <QDate>
 #include <QDateTime>
 pdf::pdf(QWidget *parent) :
@@ -54,13 +54,13 @@ bool pdf::generatePDF(const QString &filePath) {
     // Draw text on the PDF
 
 
-    QRect textRect= fontMetrics.boundingRect(QRect(0, 0, 0, 0), Qt::AlignLeft, text);
+    //QRect textRect= fontMetrics.boundingRect(QRect(0, 0, 0, 0), Qt::AlignLeft, text);
 
     qDebug() << "Text Width:" << pdfWriter.width();
     qDebug() << "Text Height:" << pdfWriter.height();
 
-    int x = (pdfWriter.width() - textRect.width()) / 2;
-    int y = (pdfWriter.height() - textRect.height()) / 2;
+    //int x = (pdfWriter.width() - textRect.width()) / 2;
+    //int y = (pdfWriter.height() - textRect.height()) / 2;
 
 
     painter.drawText(250,2500, pdfWriter.width(), pdfWriter.height(), Qt::AlignHCenter , text);

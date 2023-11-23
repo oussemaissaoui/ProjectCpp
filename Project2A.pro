@@ -1,18 +1,12 @@
-INCLUDEPATH += C:/Users/Mega pc/Desktop/OpenSSL-1.1.1h_win32/include
-LIBS += -LC:/Users/Mega\ pc/Documents/Project2A/OpenSSL-1.1.1h_win32/magma_impl -lssleay32 -llibeay32
 
 
-
-
-
-
-
-
-    QT       += sql charts printsupport network
+QT       += sql charts printsupport  serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+
+
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -26,34 +20,43 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    aidialog.cpp \
     crud.cpp \
     employe.cpp \
+    finger.cpp \
     main.cpp \
     mainwindow.cpp \
     pdf.cpp \
     rh.cpp \
     connection.cpp \
     signup.cpp \
+    arduino.cpp \
     clickablelabel.cpp \
     user.cpp
 
 HEADERS += \
+    aidialog.h \
     crud.h \
     employe.h \
+    finger.h \
     mainwindow.h \
     pdf.h \
     rh.h \
     connection.h \
     signup.h \
+    arduino.h \
     clickablelabel.h \
     user.h
 
 FORMS += \
+    aidialog.ui \
     crud.ui \
+    finger.ui \
     mainwindow.ui \
     pdf.ui \
     rh.ui \
     signup.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -62,3 +65,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     image.qrc
+
+
+

@@ -13,7 +13,10 @@ CRUD::CRUD(QWidget *parent) :
     ui->setupUi(this);
     ui->EmployerSide_2->setVisible(false);
     ui->Userside_2->setVisible(false);
+
     connect(ui->lineEdit_cin_2, &QLineEdit::textChanged, this, &CRUD::SetLineEdit_value);
+
+
     ui->table_employe->setModel(e.afficher());
     cout<<tab_widget_index<<endl;
     ui->tabWidget->setCurrentIndex(tab_widget_index);

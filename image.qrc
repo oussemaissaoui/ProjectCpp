@@ -14,5 +14,9 @@
         <file>image/pdf.png</file>
         <file>image/Logo_noir.png</file>
         <file>image/Ai.jpg</file>
+        <file>image/BackgroundAI.jpg</file>
+        <file>image/Fingerprint.gif</file>
+        <file>image/fingerprint.png</file>
+        <file>image/PutFinger.gif</file>
     </qresource>
 </RCC>

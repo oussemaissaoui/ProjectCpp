@@ -2,10 +2,10 @@
 #include "ui_rh.h"
 #include <QCloseEvent>
 #include "crud.h"
+#include "aidialog.h"
 #include "pdf.h"
 #include <QSqlQuery>
 #include <QCoreApplication>
-
 
 
 
@@ -14,6 +14,7 @@ rh::rh(QWidget *parent) :
     ui(new Ui::rh)
 {
     ui->setupUi(this);
+    isAIDialogOpen=false;
 }
 
 rh::~rh()
@@ -163,50 +164,20 @@ void rh::on_pushButton_CRUD_3_clicked()
     p.exec();
 }
 
+
+
 void rh::on_pushButton_CRUD_4_clicked()
 {
-    QNetworkAccessManager *manager = new QNetworkAccessManager();
 
-        // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
-        QUrl url("https://api.openai.com/v1/engines/davinci/completions");
+    if(!isAIDialogOpen)
+    {
+        isAIDialogOpen=true;
 
-        QNetworkRequest request(url);
-        request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
+        AIDIALOG ai;
+        ai.setModal(true);
+        ai.show();
+        ai.exec();
 
-
-        // Set the content type header
-        request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-
-        // Set the authorization header with your API key
-        QString apiKey = "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";
-        QByteArray authHeaderData = "Bearer " + apiKey.toUtf8();
-        request.setRawHeader("Authorization", authHeaderData);
-
-        // Construct your request payload (check the API documentation)
-        QJsonObject payload;
-        payload["input"] = "Hello, GPT-3!";  // Assuming a sample input for testing
-
-        // Convert the JSON object to a byte array
-        jsonDoc = QJsonDocument(payload);
-        QByteArray requestData = jsonDoc.toJson();
-
-        // Send the request
-        QNetworkReply *reply = manager->post(request, requestData);
-
-        // Handle the response asynchronously
-        QObject::connect(reply, &QNetworkReply::finished, [this, manager, reply]() {
-            if (reply->error() == QNetworkReply::NoError) {
-                // Process the API response (reply->readAll())
-                QByteArray responseData = reply->readAll();
-                QString responseString = QString::fromUtf8(responseData);
-                qDebug() << "API Response:" << responseString;
-            } else {
-                // Handle the error
-                qDebug() << "Error:" << reply->errorString();
-            }
-
-            // Clean up
-            reply->deleteLater();
-            manager->deleteLater();
-        });
+        isAIDialogOpen=false;
+    }
 }

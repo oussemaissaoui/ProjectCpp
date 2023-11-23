@@ -5,7 +5,14 @@
 #include <QSqlQueryModel>
 #include "rh.h"
 #include <iostream>
-
+#include <QProcess>
+#include <QFile>
+#include <QDebug>
+#include <QThread>
+#include <QFile>
+#include <QTextStream>
+#include <QTimer>
+#include "finger.h"
 
 
 using namespace std;
@@ -15,6 +22,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Connection c;
+    bool test=c.createconnect();
+    if(test)
+    {Finger f;
+    f.show();
+    f.exec();}
+    /*Connection c;
     bool test=c.createconnect();
     
     
@@ -69,6 +82,6 @@ int main(int argc, char *argv[])
 
 
 
-    cout<<"application exec"<<endl;
+    cout<<"application exec"<<endl;*/
     return 0;
 }

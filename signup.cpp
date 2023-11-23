@@ -1,6 +1,7 @@
 #include "signup.h"
 #include "ui_signup.h"
 #include <QDebug>
+#include "finger.h"
 
 
 Signup::Signup(QWidget *parent) :
@@ -266,6 +267,11 @@ void Signup::on_pushButton_signup_clicked()
             {
                 QMessageBox::information(nullptr, QObject::tr("OK"),
                                          QObject::tr("SignUp effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
+
+                    Finger f(usertmp);
+                    f.setModal(true);
+                    f.show();
+                    f.exec();
                 this->close();
             }
             else

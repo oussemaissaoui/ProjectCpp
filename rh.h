@@ -1,6 +1,8 @@
 #ifndef RH_H
 #define RH_H
 
+
+
 #include <QMainWindow>
 //statistique
 #include <QtWidgets/QMainWindow>
@@ -14,15 +16,7 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
-//ai
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QNetworkReply>
-#include <QUrl>
-#include <QJsonObject>  // Add this line
-#include <QJsonValue>
-#include <QJsonDocument>
-QT_CHARTS_USE_NAMESPACE
+
 
 namespace Ui {
 class rh;
@@ -36,6 +30,8 @@ public:
     explicit rh(QWidget *parent = nullptr);
     ~rh();
     QMainWindow chart_window;
+    bool isAIDialogOpen;
+
 
 private slots:
     void on_pushButton_CRUD_clicked();
@@ -48,7 +44,7 @@ private slots:
 
 private:
     Ui::rh *ui;
-    QJsonDocument jsonDoc;
+
     
 protected:
 void closeEvent(QCloseEvent *event);
