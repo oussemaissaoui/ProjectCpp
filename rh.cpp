@@ -38,7 +38,7 @@ void rh::on_pushButton_CRUD_clicked()
 
  void rh::closeEvent(QCloseEvent *event)
     {
-        QMessageBox msgBox;
+        /*QMessageBox msgBox;
         msgBox.setWindowTitle("EXIT NOW ?");
         msgBox.setIcon(QMessageBox::Question);
         msgBox.setText("Do You Want to Exit or Sign out ?");
@@ -61,10 +61,13 @@ void rh::on_pushButton_CRUD_clicked()
             QSqlQuery query;
             query.prepare("DELETE FROM LOGS");
             query.exec();
-        } else {
-            // Ignore the close event
-            event->accept();
         }
+        else if (reply == QMessageBox::No)
+        {
+            this->close();
+        }*/
+        emit destroyed();
+
     }
 
 void rh::on_pushButton_CRUD_2_clicked()

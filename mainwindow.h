@@ -7,19 +7,24 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlDatabase>
-
+#include "clickablelabel.h"
 #include "signup.h"
+#include "rh.h"
+#include <QApplication>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void checkPassword();
     bool get_login_status(){return login_status;}
@@ -30,21 +35,47 @@ public:
     void handleMouseEnter();
     void click_signup();
     void handleMouseLeave();
+    void set_stackedwidget_page(int index);
+    void hide_show_pass();
+
+
+signals:
+    void login_status_changed();
+
+
 
 
 
 
 private slots:
-
-
+    void show_profil();
+    void set_profilshown_status();
     void on_pushButton_login_clicked();
+    void enable_disable_signout_btn();
+    void onAdminButtonClicked();
+
+    void onRhWindowClosed();
+
+
+    void on_pushButton_exit2_clicked();
+
+    void on_pushButton_signout2_clicked();
+
+    void on_pushButton_exit1_clicked();
 
 private:
     Ui::MainWindow *ui;
     bool login_status;
-    bool isSignupOpen  ;
+    bool profil_shown;
+    bool isSignupOpen;
+    bool pass_visible;
 
 
-    
+
+
+
+
 };
 #endif // MAINWINDOW_H
+
+

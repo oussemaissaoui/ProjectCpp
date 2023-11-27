@@ -160,21 +160,32 @@ debug/qrc_image.cpp: image.qrc \
 		alleco.png \
 		26760.jpg \
 		crud.png \
-		image/signup1.png \
-		image/step2.png \
-		image/PutFinger.gif \
-		image/fingerprint.png \
-		image/step1.png \
-		image/Fingerprint.gif \
-		image/Ai.jpg \
-		image/logo_blanc.png \
-		image/divider.png \
-		image/charts.png \
-		image/signup.png \
-		image/step3.png \
-		image/pdf.png \
 		image/Logo_noir.png \
-		image/BackgroundAI.jpg
+		image/Gestion_Finance.png \
+		image/eyes_close.png \
+		image/Gestion_reservation.jpg \
+		image/Gestion_emp.jpg \
+		image/appMenu.jpg \
+		image/admin.jpg \
+		image/profil.png \
+		image/divider.png \
+		image/PutFinger.gif \
+		image/charts.png \
+		image/signup1.png \
+		image/Ai.jpg \
+		image/Menuapp.png \
+		image/Gestion_inventaire.jpg \
+		image/pdf.png \
+		image/eyes_open.png \
+		image/Fingerprint.gif \
+		image/step1.png \
+		image/step2.png \
+		image/Gestion_fournisseur.png \
+		image/step3.png \
+		image/BackgroundAI.jpg \
+		image/logo_blanc.png \
+		image/signup.png \
+		image/fingerprint.png
 	C:\Qt\Qt5.9.9\5.9.9\mingw53_32\bin\rcc.exe -name image image.qrc -o debug\qrc_image.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -728,13 +739,17 @@ debug/moc_mainwindow.cpp: ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMain
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
+		clickablelabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLabel \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QMouseEvent \
 		signup.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QDialog \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QRegularExpression \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qregularexpression.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLineEdit \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlineedit.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextcursor.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextformat.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qpen.h \
@@ -750,6 +765,65 @@ debug/moc_mainwindow.cpp: ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMain
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
 		employe.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDate \
+		rh.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartView \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartGlobal \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QtGlobal \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QPen \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QFont \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QVariant \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChart \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchart.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLegend \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qlegend.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGraphicsWidget \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicswidget.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicslayoutitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QBrush \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QMargins \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGraphicsView \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qpainter.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qscrollarea.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsscene.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QStringList \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarSet \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarset.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarCategoryAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarcategoryaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QHorizontalStackedBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qhorizontalstackedbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLineSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qlineseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QXYSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qxyseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QCategoryAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qcategoryaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QValueAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qvalueaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSlice \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieslice.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QApplication \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qapplication.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qcoreapplication.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qeventloop.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
 		mainwindow.h \
 		debug/moc_predefs.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/bin/moc.exe
@@ -2261,13 +2335,17 @@ debug/main.o: main.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
+		clickablelabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLabel \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QMouseEvent \
 		signup.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QDialog \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QRegularExpression \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qregularexpression.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLineEdit \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlineedit.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextcursor.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextformat.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qpen.h \
@@ -2283,14 +2361,6 @@ debug/main.o: main.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
 		employe.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDate \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QApplication \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qapplication.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qcoreapplication.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qeventloop.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
-		connection.h \
 		rh.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartView \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartview.h \
@@ -2343,6 +2413,14 @@ debug/main.o: main.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieseries.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSlice \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieslice.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QApplication \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qapplication.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qcoreapplication.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qeventloop.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
+		connection.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QProcess \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qprocess.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QFile \
@@ -2484,13 +2562,17 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
+		clickablelabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLabel \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QMouseEvent \
 		signup.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QDialog \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QRegularExpression \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qregularexpression.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLineEdit \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlineedit.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextcursor.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextformat.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qpen.h \
@@ -2506,11 +2588,58 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
 		employe.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDate \
-		ui_mainwindow.h \
+		rh.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartView \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartGlobal \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QtGlobal \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QPen \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QFont \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QVariant \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAction \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qaction.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChart \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchart.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLegend \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qlegend.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGraphicsWidget \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicswidget.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicslayoutitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QBrush \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QMargins \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGraphicsView \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qpainter.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qscrollarea.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsscene.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QStringList \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarSet \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarset.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarCategoryAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarcategoryaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QHorizontalStackedBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qhorizontalstackedbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLineSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qlineseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QXYSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qxyseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QCategoryAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qcategoryaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QValueAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qvalueaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSlice \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieslice.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QApplication \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qapplication.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -2518,17 +2647,27 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
+		ui_mainwindow.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAction \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qaction.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qactiongroup.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QButtonGroup \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QCheckBox \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qcheckbox.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QFrame \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGridLayout \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlayout.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qboxlayout.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGroupBox \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgroupbox.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QHBoxLayout \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qstyleoption.h \
@@ -2539,17 +2678,18 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qstyle.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qtabbar.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qrubberband.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLabel \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlabel.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QPushButton \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QScrollArea \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QStackedWidget \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qstackedwidget.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QTextEdit \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qtextedit.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextdocument.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QVBoxLayout \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QWidget \
-		clickablelabel.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QMouseEvent \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QCloseEvent
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QCloseEvent \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/pdf.o: pdf.cpp pdf.h \

@@ -33,7 +33,8 @@ int main(int argc, char *argv[])
     
 
 
-    MainWindow w_login;
+   MainWindow w_login;
+
 
     if(test)
     {
@@ -57,22 +58,37 @@ int main(int argc, char *argv[])
         int rowcount=query.value(0).toInt();
         if(rowcount !=0)
         {
+            //w_login.set_login_status(true);
             w_login.set_login_status(true);
+            emit w_login.login_status_changed();
+            w_login.set_stackedwidget_page(1);
+
         }
+        else
+        {
+            w_login.set_login_status(false);
+            w_login.set_stackedwidget_page(0);
+
+        }
+
     }
+    else cout<<"erooororooror"<<endl;
+    cout<<"test0"<<endl;
 
-
-    if(w_login.get_login_status()==false)
-    {
     w_login.show();
     a.exec();
-    }
-    if(w_login.get_login_status())
+
+
+
+
+
+
+    /*if(w_login.get_login_status())
     {
     rh w_rh;
     w_rh.show();
     a.exec();
-    }
+    }*/
 
 
 

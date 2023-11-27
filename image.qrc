@@ -18,5 +18,16 @@
         <file>image/Fingerprint.gif</file>
         <file>image/fingerprint.png</file>
         <file>image/PutFinger.gif</file>
+        <file>image/profil.png</file>
+        <file>image/appMenu.jpg</file>
+        <file>image/Menuapp.png</file>
+        <file>image/eyes_close.png</file>
+        <file>image/eyes_open.png</file>
+        <file>image/admin.jpg</file>
+        <file>image/Gestion_emp.jpg</file>
+        <file>image/Gestion_Finance.png</file>
+        <file>image/Gestion_fournisseur.png</file>
+        <file>image/Gestion_inventaire.jpg</file>
+        <file>image/Gestion_reservation.jpg</file>
     </qresource>
 </RCC>
