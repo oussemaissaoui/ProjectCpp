@@ -1,24 +1,35 @@
 #include "connection.h"
+#include <QDebug>
 
 Connection::Connection()
 {
-
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(checkDatabase()));
+    timer->start(5000);
 }
 
 bool Connection::createconnect()
-{bool test=false;
-QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+{
+    bool test=false;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 
-db.setDatabaseName("Source_Project2A");
-db.setUserName("rayenn");
-db.setPassword("123123");
+    db.setDatabaseName("Source_Project2A");
+    db.setUserName("rayenn");
+    db.setPassword("123123");
 
-if (db.open())
-test=true;
-
-
-
-
-
+    if (db.open())
+        test=true;
     return  test;
 }
+
+void Connection::checkDatabase() {
+    QSqlQuery query;
+    if (query.exec("SELECT SIGNAL FROM VOITURES WHERE SIGNAL = 1")) {
+        if (query.next()) {
+            qDebug() << "Signal received from database";
+            emit signalReceived();
+        }
+    }
+}
+
+

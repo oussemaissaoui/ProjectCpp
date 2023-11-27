@@ -6,6 +6,7 @@
 
 QT+= core gui sql
 QT+= sql
+QT+= charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,18 +27,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    gest_vehi.cpp \
         main.cpp \
-        mainwindow.cpp \
     connection.cpp \
+    notification.cpp \
+    pdf.cpp \
+    stat_vehi.cpp \
     voiture.cpp
 
 HEADERS += \
-        mainwindow.h \
     connection.h \
+    gest_vehi.h \
+    notification.h \
+    pdf.h \
+    stat_vehi.h \
     voiture.h
 
 FORMS += \
-        mainwindow.ui
+    gest_vehi.ui \
+    notification.ui \
+    pdf.ui \
+    stat_vehi.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

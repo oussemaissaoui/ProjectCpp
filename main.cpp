@@ -1,9 +1,7 @@
-#include "mainwindow.h"
+#include "gest_vehi.h"
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
-
-// zdfvzfevf
 
 int main(int argc, char *argv[])
 {
@@ -11,22 +9,18 @@ int main(int argc, char *argv[])
     Connection c;
     bool test=c.createconnect();
 
-
-    MainWindow w;
+    gest_vehi w;
 
     if(test)
-    {w.show();
+    {
+        w.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                     QObject::tr("connection successful.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
-
-}
+    }
     else
         QMessageBox::critical(nullptr, QObject::tr("database is not open"),
                     QObject::tr("connection failed.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
-
-
-
     return a.exec();
 }
