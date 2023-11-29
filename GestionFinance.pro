@@ -42,7 +42,6 @@ HEADERS += \
     dialog.h
 
 FORMS += \
-    arduino.ui \
     dialog.ui
 
 # Default rules for deployment.

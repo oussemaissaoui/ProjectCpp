@@ -124,3 +124,17 @@ QSqlQueryModel * Facture::recherche(QString a)
     return m_Model;
 }
 
+
+int Facture::return_montant(int data)
+{
+    QString data_str=QString::number(data);
+    QSqlQuery query;
+    query.prepare("SELECT * FROM FACTURE WHERE MONTANT=:data_str");
+    query.bindValue(":data_str",data_str);
+    query.exec();
+    query.next();
+    int etat=query.value(6).toInt();
+
+   return etat;
+}
+

@@ -45,11 +45,12 @@ Dialog::Dialog(QWidget *parent) :
     // Connecter un QTimer à une fonction qui sera appelée toutes les 10 secondes
         QTimer *timer = new QTimer(this);
         connect(timer, SIGNAL(timeout()), this, SLOT(notification()));
-        connect(timer, SIGNAL(timeout()), this, SLOT(affiche()));
+        //connect(timer, SIGNAL(timeout()), this, SLOT(f.affiche()));
         timer->start(10000); // temps en millisecondeso
 
 
-        int ret=A.connect_arduino();
+//---------------------------------------------------------arduino------------------------------------------------
+        /*int ret=A.connect_arduino();
         switch (ret)
         {
         case(0):qDebug()<< "arduino is available and connected to :"<<A.getarduino_port_name();
@@ -58,9 +59,75 @@ Dialog::Dialog(QWidget *parent) :
             break;
         case (-1):qDebug()<<"arduino is not available";
         }
-        QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+        QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));*/
+        arduino A;
 
+
+        int ret=A.connect_arduino();
+
+            switch (ret) {
+            case 0 :
+                qDebug()<<"Arduino is available and connected to : "<<A.getarduino_port_name();
+                ui->setupUi(this);
+                break;
+
+            case 1 :
+                qDebug()<<"Arduino is available but not connected to : "<<A.getarduino_port_name();
+                break;
+            case -1 :
+                qDebug()<<"Arduino is not available ";
+                break;
+            }
+
+            QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 }
+
+void Dialog::update_label()
+{
+    data=A.read_from_arduino();
+    QString keyPressed = data.trimmed();
+    if(!keyPressed.isEmpty()) {
+        qDebug() << keyPressed;
+        if (keyPressed.toInt() != 0 || keyPressed == "0")
+            ui->lineEdit_id_arduino->insert(keyPressed);
+        else if (keyPressed == "*")
+            ui->lineEdit_id_arduino->clear();
+        else if (keyPressed == "A")
+            ui->lineEdit_id_arduino->backspace();
+        else if (keyPressed == "D")
+            Dialog::on_verify_clicked();
+    }
+}
+
+void Dialog::on_verify_clicked()
+{
+    qDebug() << "Bouton Verifier Clicked" ;
+
+    int data=ui->lineEdit_id_arduino->text().toInt();
+    QString data_str=ui->lineEdit_id_arduino->text();
+    qDebug() << data;
+    qDebug() << data_str;
+
+               if(data_str!="")
+               {
+
+               if(f.recherche(data_str))
+               {
+                   int etatt=f.return_montant(data);
+
+                   qDebug()<<etatt;
+               }
+
+               else
+                   QMessageBox::information(this, "Facture", "Facture non trouvé");
+               }
+                data=0;
+               if(data_str=="")
+               {
+                    QMessageBox::information(this, "Reclamation", "Veuillez remplir le champs");
+               }
+}
+
 
 Dialog::~Dialog()
 {
@@ -247,10 +314,6 @@ void Dialog::on_pushButton_supprimer_clicked()
     delete model;
 }
 
-void Dialog::on_pushButton_2_clicked()
-{
-    ui->tableView_facture->setModel(f.affiche());
-}
 
 void Dialog::on_pushButton_ajouter_2_clicked()
 {
@@ -348,10 +411,6 @@ void Dialog::on_radioButton_clicked()
     ui->tableView_facture->setModel(f.affiche_by_id());
 }
 
-void Dialog::on_pushButton_PDF_2_clicked()
-{
-
-}
 
 void Dialog::on_pushButton_Statistique_clicked()
 {
@@ -475,39 +534,15 @@ void Dialog::on_qr_clicked()
 
 //---------------------------------------------------------------------
 
-void Dialog::update_label()
-{
-    data=A.read_from_arduino();
-
-    if(data=="1")
-
-    ui->label_3->setText("ON"); // si les données reçues de arduino via la liaison série sont égales à 1 // alors afficher ON
-
-    else if (data=="0")
-
-        ui->label_3->setText("OFF");
-    // si les données reçues de arduino via la liaison série sont égales à 0
-    //alors afficher ON
-}
 
 
 
-void Dialog::on_pushButton_clicked()
-{
-    A.write_to_arduino("1");
-}
 
-void Dialog::on_pushButton_3_clicked()
-{
-    A.write_to_arduino("2");
-}
 
-void Dialog::on_pushButton_4_clicked()
-{
-    A.write_to_arduino("3");
-}
 
-void Dialog::on_pushButton_21_clicked()
-{
-    A.write_to_arduino("0");
-}
+
+
+
+
+
+

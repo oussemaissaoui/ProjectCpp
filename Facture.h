@@ -34,6 +34,7 @@ class Facture
     QSqlQueryModel * recherche(QString );
     QSqlQueryModel * affiche ();
     QSqlQueryModel * affiche_by_id();
+    int return_montant(int data);
 
 private:
     QString type;

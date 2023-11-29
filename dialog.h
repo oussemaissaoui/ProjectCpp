@@ -34,8 +34,6 @@ private slots:
 
     void on_pushButton_supprimer_clicked();
 
-    void on_pushButton_2_clicked();
-
     void on_pushButton_ajouter_2_clicked();
 
     void on_pushButton_PDF_clicked();
@@ -44,8 +42,6 @@ private slots:
 
     void on_radioButton_clicked();
 
-    void on_pushButton_PDF_2_clicked();
-
     void on_pushButton_Statistique_clicked();
 
     void on_qr_clicked();
@@ -53,13 +49,7 @@ private slots:
 
     void update_label();
 
-    void on_pushButton_clicked();
-
-    void on_pushButton_3_clicked();
-
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_21_clicked();
+    void on_verify_clicked();
 
 private:
     Ui::Dialog *ui;
