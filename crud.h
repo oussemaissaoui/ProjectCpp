@@ -58,6 +58,17 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_genpdf_clicked();
+    bool generatePDF(const QString &filePath);
+    void on_ask_ai_clicked();
+    void simulateChat(const QString& chatContent);
+    QString readTextFromFile(const QString& filePath);
+    void typeText(const QString& text, int delay);
+
+
+
+    void on_stat_clicked();
+
 private:
     Ui::CRUD *ui;
     employe e;

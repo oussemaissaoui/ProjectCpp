@@ -158,7 +158,6 @@ bool Signup::isPasswordConditionValid()
         
         ui->lineEdit_confirmpass->move(ui->lineEdit_confirmpass->x() , 240);
         ui->pushButton_next->move(ui->pushButton_next->x() , 311);
-        ui->groupBox_step123->move(ui->groupBox_step123->x() , 330);
         ui->label_pass_err3->move(ui->label_pass_err3->x() , ui->lineEdit_confirmpass->y()+40);
 
 
@@ -180,7 +179,6 @@ bool Signup::isPasswordConditionValid()
 
         ui->lineEdit_confirmpass->move(ui->lineEdit_confirmpass->x() , 270);
         ui->pushButton_next->move(ui->pushButton_next->x() , 341);
-        ui->groupBox_step123->move(ui->groupBox_step123->x() , 360);
         ui->label_pass_err3->move(ui->label_pass_err3->x() , ui->lineEdit_confirmpass->y()+40);
 
         return false;

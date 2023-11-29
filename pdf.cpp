@@ -1,4 +1,4 @@
-#include "pdf.h"
+/*#include "pdf.h"
 #include "ui_pdf.h"
 #include <QSqlQuery>
 #include <QSqlQueryModel>
@@ -143,4 +143,4 @@ void pdf::on_pushButton_genpdf_clicked()
     }
 
 
-}
+}*/

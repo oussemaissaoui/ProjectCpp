@@ -25,7 +25,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "clickablelabel.h"
@@ -38,24 +37,23 @@ public:
     QWidget *centralwidget;
     QStackedWidget *stackedWidget;
     QWidget *page;
-    QLabel *label_bg_main;
     ClickableLabel *label_profil;
     QGroupBox *groupBox_2;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_setting1;
     QPushButton *pushButton_signout1;
     QPushButton *pushButton_exit1;
-    QGroupBox *groupBox;
+    QLabel *label;
     QLabel *label_logo_alleco;
-    QLabel *label_login_noeditable;
     QLineEdit *lineEdit_username;
+    QLabel *label_login_noeditable;
     QLineEdit *lineEdit_password;
-    QTextEdit *textEdit_copyright;
-    QPushButton *pushButton_login;
-    QCheckBox *checkBox_stayLogin;
-    ClickableLabel *label_signup;
-    ClickableLabel *label_eye;
     QLabel *label_wrong;
+    ClickableLabel *label_eye;
+    QCheckBox *checkBox_stayLogin;
+    QPushButton *pushButton_login;
+    ClickableLabel *label_signup;
+    QLabel *label_2;
     QWidget *page_2;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
@@ -98,25 +96,16 @@ public:
         stackedWidget->setGeometry(QRect(0, 0, 1200, 600));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
-        label_bg_main = new QLabel(page);
-        label_bg_main->setObjectName(QStringLiteral("label_bg_main"));
-        label_bg_main->setEnabled(true);
-        label_bg_main->setGeometry(QRect(270, 0, 941, 641));
-        label_bg_main->setPixmap(QPixmap(QString::fromUtf8(":/img/26760.jpg")));
-        label_bg_main->setScaledContents(true);
-        label_bg_main->setAlignment(Qt::AlignCenter);
-        label_bg_main->setWordWrap(false);
-        label_bg_main->setTextInteractionFlags(Qt::NoTextInteraction);
         label_profil = new ClickableLabel(page);
         label_profil->setObjectName(QStringLiteral("label_profil"));
-        label_profil->setGeometry(QRect(1120, 20, 61, 61));
+        label_profil->setGeometry(QRect(1130, 30, 61, 61));
         label_profil->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "border-radius:30;"));
         label_profil->setPixmap(QPixmap(QString::fromUtf8(":/img/image/profil.png")));
         label_profil->setScaledContents(true);
         groupBox_2 = new QGroupBox(page);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(920, 50, 191, 131));
+        groupBox_2->setGeometry(QRect(930, 90, 191, 131));
         groupBox_2->setStyleSheet(QLatin1String("background-color: rgb(33, 31, 31);\n"
 "border:none;"));
         verticalLayout = new QVBoxLayout(groupBox_2);
@@ -181,128 +170,164 @@ public:
 
         verticalLayout->addWidget(pushButton_exit1);
 
-        groupBox = new QGroupBox(page);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(0, 0, 271, 611));
-        label_logo_alleco = new QLabel(groupBox);
+        label = new QLabel(page);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(-10, -10, 1251, 641));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/img/d9c105d19a69658c8c819ac633d9eb64.jpg")));
+        label->setScaledContents(true);
+        label_logo_alleco = new QLabel(page);
         label_logo_alleco->setObjectName(QStringLiteral("label_logo_alleco"));
-        label_logo_alleco->setGeometry(QRect(50, 20, 171, 81));
+        label_logo_alleco->setGeometry(QRect(30, 20, 71, 51));
         label_logo_alleco->setPixmap(QPixmap(QString::fromUtf8(":/img/alleco.png")));
         label_logo_alleco->setScaledContents(true);
         label_logo_alleco->setAlignment(Qt::AlignCenter);
         label_logo_alleco->setWordWrap(false);
-        label_login_noeditable = new QLabel(groupBox);
-        label_login_noeditable->setObjectName(QStringLiteral("label_login_noeditable"));
-        label_login_noeditable->setGeometry(QRect(85, 140, 111, 31));
-        QFont font;
-        font.setPointSize(20);
-        font.setBold(true);
-        font.setWeight(75);
-        label_login_noeditable->setFont(font);
-        label_login_noeditable->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
-        label_login_noeditable->setAlignment(Qt::AlignCenter);
-        lineEdit_username = new QLineEdit(groupBox);
+        lineEdit_username = new QLineEdit(page);
         lineEdit_username->setObjectName(QStringLiteral("lineEdit_username"));
         lineEdit_username->setEnabled(true);
-        lineEdit_username->setGeometry(QRect(30, 200, 210, 40));
-        QFont font1;
-        font1.setPointSize(8);
-        font1.setBold(false);
-        font1.setWeight(50);
-        lineEdit_username->setFont(font1);
+        lineEdit_username->setGeometry(QRect(30, 200, 321, 40));
+        QFont font;
+        font.setPointSize(8);
+        font.setBold(false);
+        font.setWeight(50);
+        lineEdit_username->setFont(font);
         lineEdit_username->setCursor(QCursor(Qt::IBeamCursor));
-        lineEdit_username->setStyleSheet(QLatin1String("/* Default state (when the cursor is not on the line edit) */\n"
+        lineEdit_username->setStyleSheet(QString::fromUtf8("/* Style g\303\251n\303\251ral des QLineEdit */\n"
 "QLineEdit {\n"
-"    background-color: rgba(0, 0, 0, 0);\n"
-"    border: none;\n"
-"    border-bottom-color: rgb(136, 212, 119);\n"
-"    color: rgba(0, 0, 0, 240);\n"
-"    padding-bottom: 7px;\n"
+"  padding: 5px;\n"
+"  border: 2px solid #808080; /* Bordure grise */\n"
+"  border-radius: 5px; /* Coins arrondis */\n"
+"  background-color: white; /* Fond blanc */\n"
+"  color: black; /* Couleur du texte noir */\n"
 "}\n"
 "\n"
-"/* Hover state (when the cursor is on the line edit) */\n"
-"QLineEdit:focus{\n"
-"    background-color: rgba(0, 0, 0, 0);\n"
-"    border: 2px solid black;\n"
-"    border-bottom-color: rgb(136, 212, 119);\n"
-"    color: rgba(0, 0, 0, 240);\n"
-"    padding-bottom: 7px;\n"
-"	border-radius:3px;\n"
-"\n"
-"    \n"
+"/* Style au survol du QLineEdit */\n"
+"QLineEdit:hover {\n"
+"  border-color: #2CBB63; /* Couleur de la bordure verte au survol */\n"
 "}\n"
 "\n"
-"QLineEdit:hover{\n"
-"    \n"
-"	background-color: rgb(231, 231, 231);\n"
-"   \n"
-"\n"
-"    \n"
-"}\n"
-""));
-        lineEdit_password = new QLineEdit(groupBox);
+"/* Style au focus du QLineEdit */\n"
+"QLineEdit:focus {\n"
+"  border-color: #2CBB63; /* Couleur de la bordure verte au focus */\n"
+"  outline: none; /* Supprime le contour du focus */\n"
+"}"));
+        label_login_noeditable = new QLabel(page);
+        label_login_noeditable->setObjectName(QStringLiteral("label_login_noeditable"));
+        label_login_noeditable->setGeometry(QRect(120, 140, 151, 31));
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_login_noeditable->setFont(font1);
+        label_login_noeditable->setStyleSheet(QStringLiteral("color: rgb(0, 0, 0);"));
+        label_login_noeditable->setAlignment(Qt::AlignCenter);
+        lineEdit_password = new QLineEdit(page);
         lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
         lineEdit_password->setEnabled(true);
-        lineEdit_password->setGeometry(QRect(30, 270, 210, 40));
-        lineEdit_password->setStyleSheet(QLatin1String("/* Default state (when the cursor is not on the line edit) */\n"
+        lineEdit_password->setGeometry(QRect(30, 260, 321, 40));
+        lineEdit_password->setStyleSheet(QString::fromUtf8("/* Style g\303\251n\303\251ral des QLineEdit */\n"
 "QLineEdit {\n"
-"    background-color: rgba(0, 0, 0, 0);\n"
-"    border: none;\n"
-"    border-bottom-color: rgb(136, 212, 119);\n"
-"    color: rgba(0, 0, 0, 240);\n"
-"    padding-bottom: 7px;\n"
+"  padding: 5px;\n"
+"  border: 2px solid #808080; /* Bordure grise */\n"
+"  border-radius: 5px; /* Coins arrondis */\n"
+"  background-color: white; /* Fond blanc */\n"
+"  color: black; /* Couleur du texte noir */\n"
 "}\n"
 "\n"
-"/* Hover state (when the cursor is on the line edit) */\n"
-"QLineEdit:focus{\n"
-"    background-color: rgba(0, 0, 0, 0);\n"
-"    border: 2px solid black;\n"
-"    border-bottom-color: rgb(136, 212, 119);\n"
-"    color: rgba(0, 0, 0, 240);\n"
-"    padding-bottom: 7px;\n"
-"	border-radius:3px;\n"
-"\n"
-"    \n"
+"/* Style au survol du QLineEdit */\n"
+"QLineEdit:hover {\n"
+"  border-color: #2CBB63; /* Couleur de la bordure verte au survol */\n"
 "}\n"
 "\n"
-"QLineEdit:hover{\n"
-"    \n"
-"	background-color: rgb(231, 231, 231);\n"
-"   \n"
-"\n"
-"    \n"
-"}\n"
-""));
+"/* Style au focus du QLineEdit */\n"
+"QLineEdit:focus {\n"
+"  border-color: #2CBB63; /* Couleur de la bordure verte au focus */\n"
+"  outline: none; /* Supprime le contour du focus */\n"
+"}"));
         lineEdit_password->setEchoMode(QLineEdit::Password);
-        textEdit_copyright = new QTextEdit(groupBox);
-        textEdit_copyright->setObjectName(QStringLiteral("textEdit_copyright"));
-        textEdit_copyright->setGeometry(QRect(0, 570, 271, 31));
-        textEdit_copyright->setStyleSheet(QStringLiteral("border:none;"));
-        pushButton_login = new QPushButton(groupBox);
-        pushButton_login->setObjectName(QStringLiteral("pushButton_login"));
-        pushButton_login->setGeometry(QRect(110, 420, 50, 50));
-        QFont font2;
-        font2.setPointSize(17);
-        pushButton_login->setFont(font2);
-        pushButton_login->setStyleSheet(QLatin1String("QPushButton{\n"
-"background-color: rgb(113, 186, 95);\n"
-"border-radius:5px;\n"
-"}\n"
-"\n"
-"\n"
-"QPushButton:hover{\n"
-"background-color: rgb(113, 220, 95);\n"
-"border-radius:5px;\n"
-"}\n"
-"\n"
-""));
-        checkBox_stayLogin = new QCheckBox(groupBox);
+        label_wrong = new QLabel(page);
+        label_wrong->setObjectName(QStringLiteral("label_wrong"));
+        label_wrong->setGeometry(QRect(30, 320, 201, 21));
+        label_wrong->setStyleSheet(QStringLiteral("color: rgb(170, 0, 0);"));
+        label_eye = new ClickableLabel(page);
+        label_eye->setObjectName(QStringLiteral("label_eye"));
+        label_eye->setGeometry(QRect(310, 270, 31, 21));
+        label_eye->setPixmap(QPixmap(QString::fromUtf8(":/img/image/eyes_close.png")));
+        label_eye->setScaledContents(true);
+        checkBox_stayLogin = new QCheckBox(page);
         checkBox_stayLogin->setObjectName(QStringLiteral("checkBox_stayLogin"));
-        checkBox_stayLogin->setGeometry(QRect(30, 330, 101, 20));
+        checkBox_stayLogin->setGeometry(QRect(30, 350, 111, 20));
         checkBox_stayLogin->setCursor(QCursor(Qt::PointingHandCursor));
-        label_signup = new ClickableLabel(groupBox);
+        checkBox_stayLogin->setStyleSheet(QString::fromUtf8("/* Style g\303\251n\303\251ral du QCheckBox */\n"
+"QCheckBox {\n"
+"  spacing: 5px; /* Espacement entre le texte et la case */\n"
+"  font-size: 14px; /* Taille de police */\n"
+"  color: black; /* Couleur du texte */\n"
+"}\n"
+"\n"
+"/* Style de la case \303\240 cocher */\n"
+"QCheckBox::indicator {\n"
+"  width: 16px; /* Largeur de la case */\n"
+"  height: 16px; /* Hauteur de la case */\n"
+"}\n"
+"\n"
+"/* Style de la case \303\240 cocher lorsque coch\303\251e */\n"
+"QCheckBox::indicator:checked {\n"
+"  background-color: #2CBB63; /* Couleur de fond lorsque coch\303\251e */\n"
+"  border: 1px solid #2CBB63; /* Bordure de la case lorsque coch\303\251e */\n"
+"}\n"
+"\n"
+"/* Style de la case \303\240 cocher lorsque d\303\251sactiv\303\251e */\n"
+"QCheckBox::indicator:disabled {\n"
+"  background-color: #ccc; /* Couleur de fond lorsque d\303\251sactiv\303\251e */\n"
+"  border: 1px solid #ccc; /* Bordure de la case lorsque d\303\251sactiv\303\251e */\n"
+"}\n"
+"\n"
+"/* Style du texte du QCheckBox */\n"
+"QCheckBox::indicator::u"
+                        "nchecked {\n"
+"  /* Style du texte lorsque la case n'est pas coch\303\251e */\n"
+"}\n"
+"\n"
+"/* Style du texte du QCheckBox lorsque coch\303\251e */\n"
+"QCheckBox::indicator::checked {\n"
+"  /* Style du texte lorsque la case est coch\303\251e */\n"
+"}"));
+        pushButton_login = new QPushButton(page);
+        pushButton_login->setObjectName(QStringLiteral("pushButton_login"));
+        pushButton_login->setGeometry(QRect(90, 400, 211, 61));
+        QFont font2;
+        font2.setBold(true);
+        font2.setWeight(75);
+        pushButton_login->setFont(font2);
+        pushButton_login->setStyleSheet(QString::fromUtf8("/* Style g\303\251n\303\251ral du QPushButton */\n"
+"QPushButton {\n"
+"  padding: 8px 16px; /* Espacement int\303\251rieur du bouton */\n"
+"  border: none; /* Suppression de la bordure par d\303\251faut */\n"
+"  border-radius: 5px; /* Coins arrondis */\n"
+"  background-color: #2CBB63; /* Couleur de fond */\n"
+"  color: white; /* Couleur du texte */\n"
+"  font-size: 14px; /* Taille de police */\n"
+"}\n"
+"\n"
+"/* Style au survol du QPushButton */\n"
+"QPushButton:hover {\n"
+"  background-color: #26A859; /* Couleur de fond au survol */\n"
+"}\n"
+"\n"
+"/* Style lors du clic sur QPushButton */\n"
+"QPushButton:pressed {\n"
+"  background-color: #1E834E; /* Couleur de fond lors du clic */\n"
+"}\n"
+"\n"
+"/* Style du QPushButton lorsque d\303\251sactiv\303\251 */\n"
+"QPushButton:disabled {\n"
+"  background-color: #ccc; /* Couleur de fond lorsque d\303\251sactiv\303\251 */\n"
+"  color: #999; /* Couleur du texte lorsque d\303\251sactiv\303\251 */\n"
+"}"));
+        label_signup = new ClickableLabel(page);
         label_signup->setObjectName(QStringLiteral("label_signup"));
-        label_signup->setGeometry(QRect(110, 534, 50, 16));
+        label_signup->setGeometry(QRect(160, 520, 61, 21));
         QFont font3;
         font3.setPointSize(10);
         font3.setUnderline(true);
@@ -319,16 +344,23 @@ public:
 "QLabel:hover{\n"
 "	color: rgb(0, 0, 0);\n"
 "}"));
-        label_eye = new ClickableLabel(groupBox);
-        label_eye->setObjectName(QStringLiteral("label_eye"));
-        label_eye->setGeometry(QRect(200, 280, 31, 21));
-        label_eye->setPixmap(QPixmap(QString::fromUtf8(":/img/image/eyes_close.png")));
-        label_eye->setScaledContents(true);
-        label_wrong = new QLabel(groupBox);
-        label_wrong->setObjectName(QStringLiteral("label_wrong"));
-        label_wrong->setGeometry(QRect(40, 310, 151, 21));
-        label_wrong->setStyleSheet(QStringLiteral("color: rgb(170, 0, 0);"));
+        label_2 = new QLabel(page);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(90, 540, 241, 41));
         stackedWidget->addWidget(page);
+        label->raise();
+        label_profil->raise();
+        groupBox_2->raise();
+        label_logo_alleco->raise();
+        lineEdit_username->raise();
+        label_login_noeditable->raise();
+        lineEdit_password->raise();
+        label_wrong->raise();
+        label_eye->raise();
+        checkBox_stayLogin->raise();
+        pushButton_login->raise();
+        label_signup->raise();
+        label_2->raise();
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
         scrollArea = new QScrollArea(page_2);
@@ -339,7 +371,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -616, 1200, 1200));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1200, 1200));
         scrollAreaWidgetContents->setMinimumSize(QSize(1200, 1200));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -492,7 +524,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -501,31 +533,25 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "AllEco", Q_NULLPTR));
-        label_bg_main->setText(QString());
         label_profil->setText(QString());
         groupBox_2->setTitle(QString());
         pushButton_setting1->setText(QApplication::translate("MainWindow", "SETTINGS", Q_NULLPTR));
         pushButton_signout1->setText(QApplication::translate("MainWindow", "SIGN OUT", Q_NULLPTR));
         pushButton_exit1->setText(QApplication::translate("MainWindow", "EXIT", Q_NULLPTR));
-        groupBox->setTitle(QString());
+        label->setText(QString());
         label_logo_alleco->setText(QString());
-        label_login_noeditable->setText(QApplication::translate("MainWindow", "Sign In", Q_NULLPTR));
         lineEdit_username->setText(QString());
         lineEdit_username->setPlaceholderText(QApplication::translate("MainWindow", "USERNAME", Q_NULLPTR));
+        label_login_noeditable->setText(QApplication::translate("MainWindow", "Sign In", Q_NULLPTR));
         lineEdit_password->setText(QString());
         lineEdit_password->setPlaceholderText(QApplication::translate("MainWindow", "PASSWORD", Q_NULLPTR));
-        textEdit_copyright->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:6pt;\">THIS APP IS PROTECTED BY DEEPCODE TM AND ITS </span><span style=\" font-family:'MS Shell Dlg 2'; font-size:6pt; text-decoration: underline;\">PRIVACY POLICY</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:6pt;\"> </span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:6pt;\">AND </span><span style=\" font-family:'"
-                        "MS Shell Dlg 2'; font-size:6pt; text-decoration: underline;\">TERMS OF SERVICES</span><span style=\" font-family:'MS Shell Dlg 2'; font-size:6pt;\"> APPLY .</span></p></body></html>", Q_NULLPTR));
-        pushButton_login->setText(QApplication::translate("MainWindow", "->", Q_NULLPTR));
-        checkBox_stayLogin->setText(QApplication::translate("MainWindow", "Stay signed in", Q_NULLPTR));
-        label_signup->setText(QApplication::translate("MainWindow", "Sign Up!", Q_NULLPTR));
-        label_eye->setText(QString());
         label_wrong->setText(QApplication::translate("MainWindow", "wrong password or username!", Q_NULLPTR));
+        label_eye->setText(QString());
+        checkBox_stayLogin->setText(QApplication::translate("MainWindow", "Stay signed in", Q_NULLPTR));
+        pushButton_login->setText(QApplication::translate("MainWindow", "Sign in", Q_NULLPTR));
+        label_signup->setText(QApplication::translate("MainWindow", "Sign Up!", Q_NULLPTR));
+        label_2->setText(QApplication::translate("MainWindow", "THIS APP IS PROTECTED BY DEEPCODE TM AND ITS PRIVACY POLICY \n"
+"AND TERMS OF SERVICES APPLY .", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
         pushButton_7->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));

@@ -43,45 +43,14 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label_bg_main">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>0</y>
-        <width>941</width>
-        <height>641</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="image.qrc">:/img/26760.jpg</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>false</bool>
-      </property>
-      <property name="textInteractionFlags">
-       <set>Qt::NoTextInteraction</set>
-      </property>
-     </widget>
      <widget class="ClickableLabel" name="label_profil">
       <property name="geometry">
        <rect>
-        <x>1120</x>
-        <y>20</y>
+        <x>1130</x>
+        <y>30</y>
         <width>61</width>
         <height>61</height>
        </rect>
@@ -103,8 +72,8 @@ border-radius:30;</string>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>920</x>
-        <y>50</y>
+        <x>930</x>
+        <y>90</y>
         <width>191</width>
         <height>131</height>
        </rect>
@@ -221,270 +190,322 @@ border-radius:7;
        </item>
       </layout>
      </widget>
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>271</width>
-        <height>611</height>
+        <x>-10</x>
+        <y>-10</y>
+        <width>1251</width>
+        <height>641</height>
        </rect>
       </property>
-      <property name="title">
+      <property name="text">
        <string/>
       </property>
-      <widget class="QLabel" name="label_logo_alleco">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>20</y>
-         <width>171</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="image.qrc">:/img/alleco.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_login_noeditable">
-       <property name="geometry">
-        <rect>
-         <x>85</x>
-         <y>140</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>20</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>Sign In</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_username">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>200</y>
-         <width>210</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>IBeamCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">/* Default state (when the cursor is not on the line edit) */
+      <property name="pixmap">
+       <pixmap resource="image.qrc">:/img/d9c105d19a69658c8c819ac633d9eb64.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_logo_alleco">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>71</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="image.qrc">:/img/alleco.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_username">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>200</y>
+        <width>321</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Style général des QLineEdit */
 QLineEdit {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    border-bottom-color: rgb(136, 212, 119);
-    color: rgba(0, 0, 0, 240);
-    padding-bottom: 7px;
+  padding: 5px;
+  border: 2px solid #808080; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: white; /* Fond blanc */
+  color: black; /* Couleur du texte noir */
 }
 
-/* Hover state (when the cursor is on the line edit) */
-QLineEdit:focus{
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid black;
-    border-bottom-color: rgb(136, 212, 119);
-    color: rgba(0, 0, 0, 240);
-    padding-bottom: 7px;
-	border-radius:3px;
-
-    
+/* Style au survol du QLineEdit */
+QLineEdit:hover {
+  border-color: #2CBB63; /* Couleur de la bordure verte au survol */
 }
 
-QLineEdit:hover{
-    
-	background-color: rgb(231, 231, 231);
-   
-
-    
-}
-</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>USERNAME</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_password">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>270</y>
-         <width>210</width>
-         <height>40</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">/* Default state (when the cursor is not on the line edit) */
+/* Style au focus du QLineEdit */
+QLineEdit:focus {
+  border-color: #2CBB63; /* Couleur de la bordure verte au focus */
+  outline: none; /* Supprime le contour du focus */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>USERNAME</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_login_noeditable">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>140</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Sign In</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_password">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>260</y>
+        <width>321</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Style général des QLineEdit */
 QLineEdit {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    border-bottom-color: rgb(136, 212, 119);
-    color: rgba(0, 0, 0, 240);
-    padding-bottom: 7px;
+  padding: 5px;
+  border: 2px solid #808080; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: white; /* Fond blanc */
+  color: black; /* Couleur du texte noir */
 }
 
-/* Hover state (when the cursor is on the line edit) */
-QLineEdit:focus{
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid black;
-    border-bottom-color: rgb(136, 212, 119);
-    color: rgba(0, 0, 0, 240);
-    padding-bottom: 7px;
-	border-radius:3px;
-
-    
+/* Style au survol du QLineEdit */
+QLineEdit:hover {
+  border-color: #2CBB63; /* Couleur de la bordure verte au survol */
 }
 
-QLineEdit:hover{
-    
-	background-color: rgb(231, 231, 231);
-   
-
-    
+/* Style au focus du QLineEdit */
+QLineEdit:focus {
+  border-color: #2CBB63; /* Couleur de la bordure verte au focus */
+  outline: none; /* Supprime le contour du focus */
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>PASSWORD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_wrong">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>320</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(170, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>wrong password or username!</string>
+      </property>
+     </widget>
+     <widget class="ClickableLabel" name="label_eye">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>270</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="image.qrc">:/img/image/eyes_close.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_stayLogin">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>350</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Style général du QCheckBox */
+QCheckBox {
+  spacing: 5px; /* Espacement entre le texte et la case */
+  font-size: 14px; /* Taille de police */
+  color: black; /* Couleur du texte */
 }
-</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-       <property name="placeholderText">
-        <string>PASSWORD</string>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="textEdit_copyright">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>570</y>
-         <width>271</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border:none;</string>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt;&quot;&gt;THIS APP IS PROTECTED BY DEEPCODE TM AND ITS &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt; text-decoration: underline;&quot;&gt;PRIVACY POLICY&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt;&quot;&gt;AND &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt; text-decoration: underline;&quot;&gt;TERMS OF SERVICES&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt;&quot;&gt; APPLY .&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_login">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>420</y>
-         <width>50</width>
-         <height>50</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>17</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton{
-background-color: rgb(113, 186, 95);
-border-radius:5px;
+
+/* Style de la case à cocher */
+QCheckBox::indicator {
+  width: 16px; /* Largeur de la case */
+  height: 16px; /* Hauteur de la case */
 }
 
-
-QPushButton:hover{
-background-color: rgb(113, 220, 95);
-border-radius:5px;
+/* Style de la case à cocher lorsque cochée */
+QCheckBox::indicator:checked {
+  background-color: #2CBB63; /* Couleur de fond lorsque cochée */
+  border: 1px solid #2CBB63; /* Bordure de la case lorsque cochée */
 }
 
-</string>
-       </property>
-       <property name="text">
-        <string>-&gt;</string>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="checkBox_stayLogin">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>330</y>
-         <width>101</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="text">
-        <string>Stay signed in</string>
-       </property>
-      </widget>
-      <widget class="ClickableLabel" name="label_signup">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>534</y>
-         <width>50</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <underline>true</underline>
-         <strikeout>false</strikeout>
-         <kerning>false</kerning>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLabel{
+/* Style de la case à cocher lorsque désactivée */
+QCheckBox::indicator:disabled {
+  background-color: #ccc; /* Couleur de fond lorsque désactivée */
+  border: 1px solid #ccc; /* Bordure de la case lorsque désactivée */
+}
+
+/* Style du texte du QCheckBox */
+QCheckBox::indicator::unchecked {
+  /* Style du texte lorsque la case n'est pas cochée */
+}
+
+/* Style du texte du QCheckBox lorsque cochée */
+QCheckBox::indicator::checked {
+  /* Style du texte lorsque la case est cochée */
+}</string>
+      </property>
+      <property name="text">
+       <string>Stay signed in</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_login">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>400</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Style général du QPushButton */
+QPushButton {
+  padding: 8px 16px; /* Espacement intérieur du bouton */
+  border: none; /* Suppression de la bordure par défaut */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: #2CBB63; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  font-size: 14px; /* Taille de police */
+}
+
+/* Style au survol du QPushButton */
+QPushButton:hover {
+  background-color: #26A859; /* Couleur de fond au survol */
+}
+
+/* Style lors du clic sur QPushButton */
+QPushButton:pressed {
+  background-color: #1E834E; /* Couleur de fond lors du clic */
+}
+
+/* Style du QPushButton lorsque désactivé */
+QPushButton:disabled {
+  background-color: #ccc; /* Couleur de fond lorsque désactivé */
+  color: #999; /* Couleur du texte lorsque désactivé */
+}</string>
+      </property>
+      <property name="text">
+       <string>Sign in</string>
+      </property>
+     </widget>
+     <widget class="ClickableLabel" name="label_signup">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>520</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <underline>true</underline>
+        <strikeout>false</strikeout>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
 	
 	
 	color: rgb(154, 154, 154);
@@ -494,47 +515,38 @@ border-radius:5px;
 QLabel:hover{
 	color: rgb(0, 0, 0);
 }</string>
-       </property>
-       <property name="text">
-        <string>Sign Up!</string>
-       </property>
-      </widget>
-      <widget class="ClickableLabel" name="label_eye">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>280</y>
-         <width>31</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="image.qrc">:/img/image/eyes_close.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_wrong">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>310</y>
-         <width>151</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(170, 0, 0);</string>
-       </property>
-       <property name="text">
-        <string>wrong password or username!</string>
-       </property>
-      </widget>
+      </property>
+      <property name="text">
+       <string>Sign Up!</string>
+      </property>
      </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>540</y>
+        <width>241</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>THIS APP IS PROTECTED BY DEEPCODE TM AND ITS PRIVACY POLICY 
+AND TERMS OF SERVICES APPLY .</string>
+      </property>
+     </widget>
+     <zorder>label</zorder>
+     <zorder>label_profil</zorder>
+     <zorder>groupBox_2</zorder>
+     <zorder>label_logo_alleco</zorder>
+     <zorder>lineEdit_username</zorder>
+     <zorder>label_login_noeditable</zorder>
+     <zorder>lineEdit_password</zorder>
+     <zorder>label_wrong</zorder>
+     <zorder>label_eye</zorder>
+     <zorder>checkBox_stayLogin</zorder>
+     <zorder>pushButton_login</zorder>
+     <zorder>label_signup</zorder>
+     <zorder>label_2</zorder>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QScrollArea" name="scrollArea">
@@ -562,7 +574,7 @@ QLabel:hover{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-616</y>
+         <y>0</y>
          <width>1200</width>
          <height>1200</height>
         </rect>

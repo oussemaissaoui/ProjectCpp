@@ -179,14 +179,29 @@ font: 87 10pt &quot;Arial Black&quot;;</string>
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>50</y>
+         <y>110</y>
          <width>451</width>
          <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border:none;
-background-color: rgba(255, 255, 255, 0);</string>
+        <string notr="true">QTextEdit {
+  padding: 5px;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+QTextEdit:hover {
+  border-color: #2CBB63;
+}
+
+QTextEdit:focus {
+  border-color: #2CBB63;
+  outline: none;
+}
+</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -203,21 +218,71 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>440</y>
-         <width>281</width>
-         <height>22</height>
+         <y>430</y>
+         <width>341</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(130, 255, 102);
-color: rgb(0, 0, 0);
-font: 87 10pt &quot;Arial Black&quot;;</string>
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
        </property>
        <property name="text">
         <string>Press Me If Your Finger On Sensor</string>
        </property>
        <property name="checkable">
         <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>50</y>
+         <width>361</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border: 2px solid grey; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Hold Your Finger On Sensor Until Process Finish </string>
        </property>
       </widget>
      </widget>

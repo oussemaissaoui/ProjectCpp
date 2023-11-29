@@ -39,6 +39,7 @@ public:
     QLabel *label_Gif_page2;
     QTextEdit *textEdit_page2;
     QPushButton *pushButton_Hold;
+    QLabel *label;
 
     void setupUi(QDialog *Finger)
     {
@@ -101,17 +102,70 @@ public:
         label_Gif_page2->setGeometry(QRect(0, 0, 600, 500));
         textEdit_page2 = new QTextEdit(page_2);
         textEdit_page2->setObjectName(QStringLiteral("textEdit_page2"));
-        textEdit_page2->setGeometry(QRect(70, 50, 451, 41));
-        textEdit_page2->setStyleSheet(QLatin1String("border:none;\n"
-"background-color: rgba(255, 255, 255, 0);"));
+        textEdit_page2->setGeometry(QRect(70, 110, 451, 41));
+        textEdit_page2->setStyleSheet(QLatin1String("QTextEdit {\n"
+"  padding: 5px;\n"
+"  border: 2px solid #808080;\n"
+"  border-radius: 5px;\n"
+"  background-color: white;\n"
+"  color: black;\n"
+"}\n"
+"\n"
+"QTextEdit:hover {\n"
+"  border-color: #2CBB63;\n"
+"}\n"
+"\n"
+"QTextEdit:focus {\n"
+"  border-color: #2CBB63;\n"
+"  outline: none;\n"
+"}\n"
+""));
         textEdit_page2->setTextInteractionFlags(Qt::NoTextInteraction);
         pushButton_Hold = new QPushButton(page_2);
         pushButton_Hold->setObjectName(QStringLiteral("pushButton_Hold"));
-        pushButton_Hold->setGeometry(QRect(140, 440, 281, 22));
-        pushButton_Hold->setStyleSheet(QLatin1String("background-color: rgb(130, 255, 102);\n"
-"color: rgb(0, 0, 0);\n"
-"font: 87 10pt \"Arial Black\";"));
+        pushButton_Hold->setGeometry(QRect(140, 430, 341, 51));
+        pushButton_Hold->setStyleSheet(QLatin1String("QPushButton {\n"
+"  border: none;\n"
+"  border-radius: 8px;\n"
+"  padding: 10px 20px;\n"
+"  background-color: #2CBB63; /* Green color */\n"
+"  color: white;\n"
+"  font-size: 14px;\n"
+"  font-weight: bold;\n"
+"  text-transform: uppercase;\n"
+"  transition: background-color 0.3s ease;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: #7AE59A; /* Lighter green color on hover */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color: #A2EFB6; /* Lighter green color when pressed */\n"
+"  border: 5px solid #2CBB63; /* Green contour */\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"  outline: none;\n"
+"  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);\n"
+"}"));
         pushButton_Hold->setCheckable(false);
+        label = new QLabel(page_2);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(110, 50, 361, 51));
+        label->setStyleSheet(QLatin1String("QLabel {\n"
+"  padding: 5px;\n"
+"  border: 2px solid grey; /* Grey underline */\n"
+"  background-color: white; /* White background */\n"
+"  color: black; /* Black text color */\n"
+"  font-weight: bold; /* Bolder text */\n"
+"  font-size:14px;\n"
+"}\n"
+"\n"
+"QLabel:hover {\n"
+"  border-color: #2CBB63; /* Green underline color on hover */\n"
+"  color: black; /* Dark green text color on hover */\n"
+"}"));
         stackedWidget->addWidget(page_2);
 
         gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
@@ -144,6 +198,7 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; color:#82ff66;\">Hold Your Finger On Sensor Until Process Finish </span></p></body></html>", Q_NULLPTR));
         pushButton_Hold->setText(QApplication::translate("Finger", "Press Me If Your Finger On Sensor", Q_NULLPTR));
+        label->setText(QApplication::translate("Finger", "Hold Your Finger On Sensor Until Process Finish ", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -38,7 +38,7 @@ void rh::on_pushButton_CRUD_clicked()
 
  void rh::closeEvent(QCloseEvent *event)
     {
-        /*QMessageBox msgBox;
+        QMessageBox msgBox;
         msgBox.setWindowTitle("EXIT NOW ?");
         msgBox.setIcon(QMessageBox::Question);
         msgBox.setText("Do You Want to Exit or Sign out ?");
@@ -65,12 +65,12 @@ void rh::on_pushButton_CRUD_clicked()
         else if (reply == QMessageBox::No)
         {
             this->close();
-        }*/
+        }
         emit destroyed();
 
     }
 
-void rh::on_pushButton_CRUD_2_clicked()
+/*void rh::on_pushButton_CRUD_2_clicked()
 {
     QDate currentDate = QDate::currentDate();
     QSqlQuery query;
@@ -158,18 +158,18 @@ double percentage_sup49 = (double)age_sup49 / totalUsers * 100;
         chart_window.setCentralWidget(chartView);
         chart_window.resize(800, 600);
         chart_window.show();
-}
+}*/
 
-void rh::on_pushButton_CRUD_3_clicked()
+/*void rh::on_pushButton_CRUD_3_clicked()
 {
     pdf p;
     p.show();
     p.exec();
-}
+}*/
 
 
 
-void rh::on_pushButton_CRUD_4_clicked()
+/*void rh::on_pushButton_CRUD_4_clicked()
 {
 
     if(!isAIDialogOpen)
@@ -183,4 +183,4 @@ void rh::on_pushButton_CRUD_4_clicked()
 
         isAIDialogOpen=false;
     }
-}
+}*/

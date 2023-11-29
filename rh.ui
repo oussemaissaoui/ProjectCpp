@@ -46,7 +46,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1168</width>
+         <width>1165</width>
          <height>582</height>
         </rect>
        </property>
@@ -125,111 +125,6 @@ QPushButton:hover{
         </property>
         <property name="text">
          <string>Privilege Available</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_CRUD_2">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>230</y>
-          <width>225</width>
-          <height>150</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-
-
-}
-
-QPushButton:hover{
-	background-color: rgb(255, 255, 255);
-	border: 5px solid black;
-	border-radius:15px;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="image.qrc">
-          <normaloff>:/img/image/charts.png</normaloff>:/img/image/charts.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>203</width>
-          <height>119</height>
-         </size>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_CRUD_3">
-        <property name="geometry">
-         <rect>
-          <x>720</x>
-          <y>230</y>
-          <width>225</width>
-          <height>150</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-
-
-}
-
-QPushButton:hover{
-	background-color: rgb(255, 255, 255);
-	border: 5px solid black;
-	border-radius:15px;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="image.qrc">
-          <normaloff>:/img/image/pdf.png</normaloff>:/img/image/pdf.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>203</width>
-          <height>119</height>
-         </size>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_CRUD_4">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>410</y>
-          <width>225</width>
-          <height>150</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-
-
-}
-
-QPushButton:hover{
-	background-color: rgb(255, 255, 255);
-	border: 5px solid black;
-	border-radius:15px;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="image.qrc">
-          <normaloff>:/img/image/Ai.jpg</normaloff>:/img/image/Ai.jpg</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>215</width>
-          <height>126</height>
-         </size>
         </property>
        </widget>
       </widget>

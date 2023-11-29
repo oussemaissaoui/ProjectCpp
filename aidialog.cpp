@@ -1,4 +1,4 @@
-#include "aidialog.h"
+/*#include "aidialog.h"
 #include "ui_aidialog.h"
 #include <iostream>
 #include <fstream>
@@ -60,7 +60,7 @@ void AIDIALOG::typeText(const QString& text, int delay)
         }
 
         return content;
-    }*/
+    }
 
 QString AIDIALOG::readTextFromFile(const QString& filePath) {
     QString content;
@@ -89,7 +89,7 @@ QString AIDIALOG::readTextFromFile(const QString& filePath) {
 
 
 
-/*void AIDIALOG::typeText(const QString& text, int delay)
+void AIDIALOG::typeText(const QString& text, int delay)
 {
     for (QChar c : text)
     {
@@ -97,7 +97,7 @@ QString AIDIALOG::readTextFromFile(const QString& filePath) {
         QCoreApplication::processEvents();  // Process events to update the GUI
         QThread::msleep(delay);
     }
-}*/
+}
 
 void AIDIALOG::simulateChat(const QString& chatContent)
 {
@@ -254,4 +254,4 @@ void AIDIALOG::on_pushButton_clicked()
 
 
 
-}
+}*/

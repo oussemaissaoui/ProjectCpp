@@ -36,11 +36,11 @@ public:
 private slots:
     void on_pushButton_CRUD_clicked();
 
-    void on_pushButton_CRUD_2_clicked();
+    //void on_pushButton_CRUD_2_clicked();
 
-    void on_pushButton_CRUD_3_clicked();
+   // void on_pushButton_CRUD_3_clicked();
 
-    void on_pushButton_CRUD_4_clicked();
+   // void on_pushButton_CRUD_4_clicked();
 
 private:
     Ui::rh *ui;

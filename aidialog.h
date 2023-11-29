@@ -1,4 +1,4 @@
-#ifndef AIDIALOG_H
+/*#ifndef AIDIALOG_H
 #define AIDIALOG_H
 
 #include <QDialog>
@@ -29,3 +29,4 @@ private:
 
 
 #endif // AIDIALOG_H
+*/

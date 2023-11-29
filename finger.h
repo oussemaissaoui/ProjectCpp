@@ -32,6 +32,7 @@ private slots:
     void on_pushButton_Hold_clicked();
     void waiting_for_result_add();
 
+
 private:
     Ui::Finger *ui;
     user tmpuser;

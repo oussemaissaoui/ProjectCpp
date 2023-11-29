@@ -1,4 +1,4 @@
-#ifndef PDF_H
+/*#ifndef PDF_H
 #define PDF_H
 
 #include <QDialog>
@@ -26,4 +26,4 @@ private:
     Ui::pdf *ui;
 };
 
-#endif // PDF_H
+#endif // PDF_H*/

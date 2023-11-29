@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>666</width>
-    <height>498</height>
+    <width>1202</width>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,47 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+  border: 0px solid #2CBB63; /* Green contour */
+  border-radius: 8px;
+  background-color: white;
+}
+
+QTabWidget::tab-bar {
+  alignment: center;
+}
+
+QTabBar::tab {
+  background-color: white;
+  color: black; /* Black text color */
+  border: none; /* Remove the border */
+  padding: 14px 25px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+}
+
+QTabBar::tab:selected {
+  background-color: white; /* Green color */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #2CBB63; /* Green underline */
+}
+
+QTabBar::tab:hover {
+  background-color: white; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 4px solid #2CBB63; /* Green underline */
+}
+
+QTabBar::tab:selected:hover {
+  background-color: white; /* Green color */
+  color: black; /* Black text color */
+}</string>
+     </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="ajouter">
       <attribute name="title">
@@ -26,35 +65,49 @@
       <widget class="QGroupBox" name="groupBox">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>20</x>
          <y>10</y>
-         <width>621</width>
-         <height>421</height>
+         <width>1141</width>
+         <height>511</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
        </property>
        <property name="title">
         <string>Add Employer</string>
        </property>
-       <widget class="QPushButton" name="ajouter_emp">
-        <property name="geometry">
-         <rect>
-          <x>280</x>
-          <y>380</y>
-          <width>80</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>ajouter</string>
-        </property>
-       </widget>
        <widget class="QGroupBox" name="Userside">
         <property name="geometry">
          <rect>
-          <x>310</x>
-          <y>40</y>
-          <width>291</width>
-          <height>301</height>
+          <x>590</x>
+          <y>50</y>
+          <width>381</width>
+          <height>381</height>
          </rect>
         </property>
         <property name="title">
@@ -63,11 +116,26 @@
         <widget class="QLabel" name="label_nom_5">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>160</y>
-           <width>48</width>
-           <height>16</height>
+           <x>27</x>
+           <y>189</y>
+           <width>141</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Role</string>
@@ -76,11 +144,26 @@
         <widget class="QLabel" name="label_nom_4">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>120</y>
-           <width>48</width>
-           <height>16</height>
+           <x>27</x>
+           <y>150</y>
+           <width>141</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>password</string>
@@ -89,11 +172,26 @@
         <widget class="QLabel" name="label_nom_2">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>40</y>
-           <width>48</width>
-           <height>14</height>
+           <x>30</x>
+           <y>70</y>
+           <width>141</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>username</string>
@@ -102,11 +200,26 @@
         <widget class="QLabel" name="label_email">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>80</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>109</y>
+           <width>141</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Email</string>
@@ -115,11 +228,26 @@
         <widget class="QComboBox" name="comboBox_role">
          <property name="geometry">
           <rect>
-           <x>80</x>
-           <y>160</y>
-           <width>151</width>
-           <height>22</height>
+           <x>180</x>
+           <y>190</y>
+           <width>191</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
          <item>
           <property name="text">
@@ -130,51 +258,145 @@
         <widget class="QLineEdit" name="lineEdit_pass">
          <property name="geometry">
           <rect>
-           <x>80</x>
-           <y>120</y>
+           <x>180</x>
+           <y>150</y>
            <width>191</width>
-           <height>21</height>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+         </property>
+         <property name="placeholderText">
+          <string>*********</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_email">
          <property name="geometry">
           <rect>
-           <x>80</x>
-           <y>80</y>
+           <x>180</x>
+           <y>110</y>
            <width>191</width>
-           <height>21</height>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+         </property>
+         <property name="placeholderText">
+          <string>user@gmailcom</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_username">
          <property name="geometry">
           <rect>
-           <x>80</x>
-           <y>40</y>
+           <x>180</x>
+           <y>70</y>
            <width>191</width>
-           <height>21</height>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
         </widget>
         <widget class="QDateEdit" name="datenaiss_Edit">
          <property name="geometry">
           <rect>
-           <x>90</x>
-           <y>210</y>
-           <width>110</width>
-           <height>22</height>
+           <x>180</x>
+           <y>240</y>
+           <width>191</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDateEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QDateEdit:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_nom_14">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>240</y>
+           <width>151</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+         </property>
+         <property name="text">
+          <string>Date de naissance </string>
          </property>
         </widget>
        </widget>
        <widget class="QGroupBox" name="EmployerSide">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>40</y>
-          <width>281</width>
-          <height>331</height>
+          <x>90</x>
+          <y>50</y>
+          <width>431</width>
+          <height>381</height>
          </rect>
         </property>
         <property name="title">
@@ -183,11 +405,26 @@
         <widget class="QLabel" name="label">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>220</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>250</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>sexe</string>
@@ -196,11 +433,26 @@
         <widget class="QComboBox" name="comboBox_status">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>190</y>
-           <width>151</width>
-           <height>22</height>
+           <x>140</x>
+           <y>211</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
          <item>
           <property name="text">
@@ -221,41 +473,101 @@
         <widget class="QLineEdit" name="lineEdit_nom">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>30</y>
-           <width>201</width>
-           <height>21</height>
+           <x>140</x>
+           <y>50</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_cin">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>110</y>
-           <width>201</width>
-           <height>21</height>
+           <x>140</x>
+           <y>130</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_prenom">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>70</y>
-           <width>201</width>
-           <height>21</height>
+           <x>140</x>
+           <y>90</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_prenom">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>70</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>90</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Prenom</string>
@@ -264,11 +576,26 @@
         <widget class="QLabel" name="label_cin">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>110</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>130</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>CIN/Id</string>
@@ -277,21 +604,54 @@
         <widget class="QLineEdit" name="lineEdit_tel">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>150</y>
-           <width>201</width>
-           <height>21</height>
+           <x>140</x>
+           <y>170</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+         </property>
+         <property name="placeholderText">
+          <string>+216 99 999 999</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_status">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>190</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>210</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Status</string>
@@ -300,24 +660,54 @@
         <widget class="QLabel" name="label_tel">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>150</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>170</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+         </property>
          <property name="text">
-          <string>NUM tel</string>
+          <string>Telephone</string>
          </property>
         </widget>
         <widget class="QComboBox" name="comboBox_sexe">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>220</y>
-           <width>151</width>
-           <height>22</height>
+           <x>140</x>
+           <y>251</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
          <item>
           <property name="text">
@@ -333,11 +723,26 @@
         <widget class="QLabel" name="label_nom">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>30</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>50</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Nom</string>
@@ -346,11 +751,26 @@
         <widget class="QComboBox" name="comboBox_poste_2">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>250</y>
-           <width>151</width>
-           <height>22</height>
+           <x>140</x>
+           <y>291</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
          <item>
           <property name="text">
@@ -391,11 +811,26 @@
         <widget class="QLabel" name="label_7">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>290</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>330</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Salaire</string>
@@ -404,83 +839,476 @@
         <widget class="QLineEdit" name="lineEdit_salaire_2">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>290</y>
-           <width>191</width>
-           <height>21</height>
+           <x>140</x>
+           <y>330</y>
+           <width>281</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_6">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>250</y>
-           <width>47</width>
-           <height>14</height>
+           <x>30</x>
+           <y>290</y>
+           <width>91</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
          </property>
          <property name="text">
           <string>Poste</string>
          </property>
         </widget>
        </widget>
+       <widget class="QPushButton" name="ajouter_emp">
+        <property name="geometry">
+         <rect>
+          <x>1010</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="affichier">
       <attribute name="title">
-       <string>Affichier</string>
+       <string>Afficher</string>
       </attribute>
       <widget class="QTableView" name="table_employe">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>0</x>
+         <y>250</y>
+         <width>1181</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableView {
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  gridline-color: #2CBB63; /* Grid line color */
+}
+
+QTableView::item {
+  padding: 5px; /* Add padding to table cells */
+}
+
+QTableView::item:selected {
+  background-color: #2CBB63; /* Set the background color of selected cells */
+  color: white; /* Set the text color of selected cells */
+}
+
+QHeaderView::section {
+  background-color: #2CBB63; /* Set the background color of header sections */
+  color: white; /* Set the text color of header sections */
+  font-weight: bold; /* Bolder text */
+}</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
          <y>20</y>
-         <width>611</width>
-         <height>421</height>
+         <width>601</width>
+         <height>211</height>
         </rect>
        </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="supprimer">
-      <attribute name="title">
-       <string>Supprimer</string>
-      </attribute>
-      <widget class="QLabel" name="label_supp_id">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>90</y>
-         <width>71</width>
-         <height>14</height>
-        </rect>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
        </property>
-       <property name="text">
-        <string>ID_Pour_Supp</string>
+       <property name="title">
+        <string>Settings of sort</string>
        </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_idsupp">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>90</y>
-         <width>113</width>
-         <height>21</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_supp">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>201</y>
-         <width>101</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Supprimer</string>
-       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Table to show :</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="requete1">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>60</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>users</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>employe</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Data to show :</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_2">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>110</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>All</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>ID_user</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>username</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>prenom</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>109</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Type of sort:</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="requete4">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>110</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>smallest to largest</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>largest to smallest</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>160</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+        </property>
+        <property name="text">
+         <string>Sort</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>60</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Order by :</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="requete3">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>60</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>id_user</string>
+         </property>
+        </item>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="Modifier">
@@ -490,11 +1318,38 @@
       <widget class="QGroupBox" name="EmployerSide_2">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>281</width>
-         <height>301</height>
+         <x>150</x>
+         <y>100</y>
+         <width>411</width>
+         <height>391</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
        </property>
        <property name="title">
         <string>Employer</string>
@@ -502,11 +1357,26 @@
        <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>180</y>
-          <width>47</width>
-          <height>14</height>
+          <x>20</x>
+          <y>230</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>sexe</string>
@@ -515,11 +1385,26 @@
        <widget class="QComboBox" name="comboBox_status_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>150</y>
-          <width>151</width>
-          <height>22</height>
+          <x>120</x>
+          <y>191</y>
+          <width>271</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
         <item>
          <property name="text">
@@ -540,31 +1425,100 @@
        <widget class="QLineEdit" name="lineEdit_nom_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>30</y>
-          <width>201</width>
-          <height>21</height>
+          <x>120</x>
+          <y>70</y>
+          <width>271</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_prenom_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>70</y>
-          <width>201</width>
+          <x>120</x>
+          <y>120</y>
+          <width>271</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_prenom_2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>70</y>
-          <width>47</width>
-          <height>14</height>
+          <x>16</x>
+          <y>110</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Prenom</string>
@@ -573,21 +1527,63 @@
        <widget class="QLineEdit" name="lineEdit_tel_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>110</y>
-          <width>201</width>
+          <x>120</x>
+          <y>160</y>
+          <width>271</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_status_2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>150</y>
-          <width>47</width>
-          <height>14</height>
+          <x>20</x>
+          <y>189</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Status</string>
@@ -596,24 +1592,54 @@
        <widget class="QLabel" name="label_tel_2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>110</y>
-          <width>47</width>
-          <height>14</height>
+          <x>16</x>
+          <y>149</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
         <property name="text">
-         <string>NUM tel</string>
+         <string>Telephone</string>
         </property>
        </widget>
        <widget class="QComboBox" name="comboBox_sexe_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>180</y>
-          <width>151</width>
-          <height>22</height>
+          <x>120</x>
+          <y>231</y>
+          <width>271</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
         <item>
          <property name="text">
@@ -629,11 +1655,26 @@
        <widget class="QLabel" name="label_nom_3">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>47</width>
-          <height>14</height>
+          <x>20</x>
+          <y>70</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Nom</string>
@@ -642,11 +1683,26 @@
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>220</y>
-          <width>47</width>
-          <height>14</height>
+          <x>20</x>
+          <y>270</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Poste</string>
@@ -655,11 +1711,26 @@
        <widget class="QComboBox" name="comboBox_poste">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>220</y>
-          <width>151</width>
-          <height>22</height>
+          <x>120</x>
+          <y>270</y>
+          <width>271</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
         <item>
          <property name="text">
@@ -700,11 +1771,26 @@
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>260</y>
-          <width>47</width>
-          <height>14</height>
+          <x>20</x>
+          <y>310</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Salaire</string>
@@ -713,22 +1799,76 @@
        <widget class="QLineEdit" name="lineEdit_salaire">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>260</y>
-          <width>191</width>
-          <height>21</height>
+          <x>120</x>
+          <y>310</y>
+          <width>271</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
       </widget>
       <widget class="QGroupBox" name="Userside_2">
        <property name="geometry">
         <rect>
-         <x>340</x>
-         <y>20</y>
-         <width>281</width>
-         <height>241</height>
+         <x>600</x>
+         <y>100</y>
+         <width>461</width>
+         <height>391</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
        </property>
        <property name="title">
         <string>User</string>
@@ -736,11 +1876,26 @@
        <widget class="QLabel" name="label_nom_6">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>160</y>
-          <width>48</width>
-          <height>16</height>
+          <x>20</x>
+          <y>199</y>
+          <width>151</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Role</string>
@@ -749,11 +1904,26 @@
        <widget class="QLabel" name="label_nom_7">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>120</y>
-          <width>48</width>
-          <height>16</height>
+          <x>20</x>
+          <y>160</y>
+          <width>151</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>password</string>
@@ -762,11 +1932,26 @@
        <widget class="QLabel" name="label_nom_8">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>48</width>
-          <height>14</height>
+          <x>17</x>
+          <y>70</y>
+          <width>151</width>
+          <height>41</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>username</string>
@@ -775,11 +1960,26 @@
        <widget class="QLabel" name="label_email_2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>80</y>
-          <width>47</width>
-          <height>14</height>
+          <x>20</x>
+          <y>120</y>
+          <width>151</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
         </property>
         <property name="text">
          <string>Email</string>
@@ -788,11 +1988,26 @@
        <widget class="QComboBox" name="comboBox_role_2">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>160</y>
-          <width>151</width>
-          <height>22</height>
+          <x>180</x>
+          <y>201</y>
+          <width>251</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
         <item>
          <property name="text">
@@ -808,290 +2023,883 @@
        <widget class="QLineEdit" name="lineEdit_pass_2">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>120</y>
-          <width>191</width>
-          <height>21</height>
+          <x>180</x>
+          <y>160</y>
+          <width>251</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_email_2">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>80</y>
-          <width>191</width>
-          <height>21</height>
+          <x>180</x>
+          <y>120</y>
+          <width>251</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_username_2">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>40</y>
-          <width>191</width>
-          <height>21</height>
+          <x>180</x>
+          <y>80</y>
+          <width>251</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
         </property>
        </widget>
        <widget class="QDateEdit" name="datenaiss_Edit_2">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>200</y>
-          <width>110</width>
-          <height>22</height>
+          <x>180</x>
+          <y>250</y>
+          <width>251</width>
+          <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QDateEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QDateEdit:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_nom_13">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>250</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Date de naissance </string>
         </property>
        </widget>
       </widget>
       <widget class="QLineEdit" name="lineEdit_cin_2">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>330</y>
-         <width>201</width>
-         <height>21</height>
+         <x>170</x>
+         <y>30</y>
+         <width>371</width>
+         <height>41</height>
         </rect>
        </property>
-      </widget>
-      <widget class="QLabel" name="label_cin_2">
-       <property name="geometry">
-        <rect>
-         <x>60</x>
-         <y>330</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+}
+
+QLineEdit:hover {
+  border-color: #2CBB63; /* Green border color on hover */
+}
+
+QLineEdit:focus {
+  border-color: #2CBB63; /* Green border color on focus */
+  outline: none; /* Remove focus outline */
+}</string>
        </property>
-       <property name="text">
-        <string>ID/CIN</string>
+       <property name="placeholderText">
+        <string>identifiant ou CIN de l'employé </string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_modifier">
        <property name="geometry">
         <rect>
-         <x>440</x>
-         <y>330</y>
-         <width>80</width>
-         <height>22</height>
+         <x>550</x>
+         <y>30</y>
+         <width>121</width>
+         <height>41</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
        </property>
        <property name="text">
         <string>Modifier</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_supp">
+       <property name="geometry">
+        <rect>
+         <x>680</x>
+         <y>30</y>
+         <width>131</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_genpdf">
+       <property name="geometry">
+        <rect>
+         <x>820</x>
+         <y>30</y>
+         <width>181</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Generer pdf</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>tri</string>
+       <string>Statistique</string>
       </attribute>
-      <widget class="QTableView" name="tableView_sort">
+      <widget class="QPushButton" name="stat">
        <property name="geometry">
         <rect>
-         <x>240</x>
-         <y>10</y>
-         <width>391</width>
-         <height>431</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QGroupBox" name="groupBox_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
+         <x>1000</x>
          <y>20</y>
-         <width>211</width>
-         <height>421</height>
+         <width>141</width>
+         <height>51</height>
         </rect>
        </property>
-       <property name="title">
-        <string>Settings of sort</string>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
        </property>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>76</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Table to show :</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="requete1">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>50</y>
-          <width>111</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <item>
-         <property name="text">
-          <string>users</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>employe</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QLabel" name="label_8">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>90</y>
-          <width>76</width>
-          <height>14</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Data to show :</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_2">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>90</y>
-          <width>111</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <item>
-         <property name="text">
-          <string>All</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>ID_user</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Email</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>username</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>prenom</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QLabel" name="label_9">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>150</y>
-          <width>71</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Type of sort:</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="requete4">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>150</y>
-          <width>111</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <item>
-         <property name="text">
-          <string>smallest to largest</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>largest to smallest</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>240</y>
-          <width>80</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Sort</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>120</y>
-          <width>61</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Order by :</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="requete3">
-        <property name="geometry">
-         <rect>
-          <x>90</x>
-          <y>120</y>
-          <width>111</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <item>
-         <property name="text">
-          <string>id_user</string>
-         </property>
-        </item>
-       </widget>
+       <property name="text">
+        <string>Statistique</string>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Page</string>
+       <string>ASK AI</string>
       </attribute>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QGroupBox" name="groupBox_3">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>300</y>
-         <width>80</width>
-         <height>22</height>
+         <x>10</x>
+         <y>260</y>
+         <width>1161</width>
+         <height>361</height>
         </rect>
        </property>
-       <property name="text">
-        <string>PushButton</string>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
        </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>1131</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit {
+  padding: 5px;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+QTextEdit:hover {
+  border-color: #2CBB63;
+}
+
+QTextEdit:focus {
+  border-color: #2CBB63;
+  outline: none;
+}
+</string>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QTableView" name="tableView">
+      <widget class="QGroupBox" name="groupBox_4">
        <property name="geometry">
         <rect>
-         <x>160</x>
-         <y>20</y>
-         <width>461</width>
-         <height>341</height>
+         <x>10</x>
+         <y>10</y>
+         <width>771</width>
+         <height>251</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>20</y>
+          <width>151</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Ask Your Question</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_question">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>741</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+}
+
+QLineEdit:hover {
+  border-color: #2CBB63; /* Green border color on hover */
+}
+
+QLineEdit:focus {
+  border-color: #2CBB63; /* Green border color on focus */
+  outline: none; /* Remove focus outline */
+}</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ask_ai">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>210</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+        </property>
+        <property name="text">
+         <string>ASK AI</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>10</y>
+         <width>381</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
+       </property>
+       <property name="title">
+        <string>Settings AI</string>
+       </property>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>39</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Language :</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_Language">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>50</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>English</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Frensh</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QComboBox" name="comboBox_Length">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>100</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Short</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Medium</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Long</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>89</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>length Text :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>139</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>Conversation Mode:</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_mode">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>150</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}background-color: rgb(130, 255, 102);
+color: rgb(0, 0, 0);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Casual Chat</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>More Structured</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>189</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+        </property>
+        <property name="text">
+         <string>styles:</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_Style">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>200</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QComboBox:hover {
+  border-bottom: 4px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Formal</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Informal</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Academic</string>
+         </property>
+        </item>
+       </widget>
       </widget>
      </widget>
     </widget>
