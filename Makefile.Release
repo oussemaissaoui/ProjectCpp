@@ -824,6 +824,13 @@ release/moc_mainwindow.cpp: ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMa
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
+		arduino.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPort \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialport.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QByteArray \
 		mainwindow.h \
 		release/moc_predefs.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/bin/moc.exe
@@ -1102,6 +1109,23 @@ release/moc_rh.cpp: ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMainWindow
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieseries.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSlice \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieslice.h \
+		user.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QString \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDateTime \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qdatetime.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQuery \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquery.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQueryModel \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDebug \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMessageBox \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qmessagebox.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdialog.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
 		rh.h \
 		release/moc_predefs.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/bin/moc.exe
@@ -1895,6 +1919,9 @@ release/crud.o: crud.cpp ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAppli
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QTabWidget \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QTableView \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qtableview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QTextEdit \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qtextedit.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextdocument.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QWidget \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QIntValidator
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\crud.o crud.cpp
@@ -2420,6 +2447,13 @@ release/main.o: main.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
+		arduino.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPort \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialport.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QByteArray \
 		connection.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QProcess \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qprocess.h \
@@ -2439,13 +2473,7 @@ release/main.o: main.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qpointer.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qjsonobject.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qjsonvalue.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qfactoryinterface.h \
-		arduino.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPort \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialport.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportglobal.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPortInfo \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportinfo.h
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qfactoryinterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -2647,6 +2675,13 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
+		arduino.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPort \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialport.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QByteArray \
 		ui_mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAction \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qaction.h \
@@ -2860,7 +2895,79 @@ release/pdf.o: pdf.cpp pdf.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDebug \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDate \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qdatetime.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDateTime
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDateTime \
+		mainwindow.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMainWindow \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qmainwindow.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QObject \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QString \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
+		clickablelabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QLabel \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qlabel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QMouseEvent \
+		signup.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QRegularExpression \
+		user.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
+		employe.h \
+		rh.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartView \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChartGlobal \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchartglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QtGlobal \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QPen \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QFont \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QChart \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qchart.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLegend \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qlegend.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGraphicsWidget \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicswidget.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicslayoutitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsitem.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QBrush \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QMargins \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QGraphicsView \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsview.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qscrollarea.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qgraphicsscene.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QAbstractBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qabstractbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QStringList \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarSet \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarset.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QBarCategoryAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qbarcategoryaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QHorizontalStackedBarSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qhorizontalstackedbarseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QLineSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qlineseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QXYSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qxyseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QCategoryAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qcategoryaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QValueAxis \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qvalueaxis.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSeries \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieseries.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSlice \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieslice.h \
+		arduino.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPort \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialport.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/QSerialPortInfo \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSerialPort/qserialportinfo.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QByteArray
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\pdf.o pdf.cpp
 
 release/rh.o: rh.cpp rh.h \
@@ -3022,6 +3129,23 @@ release/rh.o: rh.cpp rh.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieseries.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/QPieSlice \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCharts/qpieslice.h \
+		user.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QString \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDateTime \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qdatetime.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQuery \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquery.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQueryModel \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDebug \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMessageBox \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qmessagebox.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdialog.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
 		ui_rh.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAction \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qaction.h \
@@ -3043,7 +3167,6 @@ release/rh.o: rh.cpp rh.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qstyleoption.h \
@@ -3064,24 +3187,8 @@ release/rh.o: rh.cpp rh.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QWidget \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QCloseEvent \
 		crud.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQuery \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquery.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQueryModel \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquerymodel.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QDialog \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qdialog.h \
 		employe.h \
-		user.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QString \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDateTime \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qdatetime.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDebug \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMessageBox \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qmessagebox.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDate \
 		aidialog.h \
 		pdf.h \

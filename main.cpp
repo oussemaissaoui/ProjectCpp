@@ -99,5 +99,6 @@ int main(int argc, char *argv[])
 
 
     cout<<"application exec"<<endl;
+    qDebug() << "byebye: " << w_login.curr_user.get_cin();
     return 0;
 }

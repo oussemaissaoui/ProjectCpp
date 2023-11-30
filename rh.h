@@ -16,6 +16,7 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+#include "user.h"
 
 
 namespace Ui {
@@ -27,7 +28,7 @@ class rh : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit rh(QWidget *parent = nullptr);
+    explicit rh(user &curr_user,QWidget *parent = nullptr);
     ~rh();
     QMainWindow chart_window;
     bool isAIDialogOpen;

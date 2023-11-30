@@ -28,7 +28,7 @@ CRUD::CRUD(QWidget *parent) :
     QIntValidator *validator = new QIntValidator(this);
     ui->lineEdit_cin->setValidator(validator);
     ui->lineEdit_tel->setValidator(validator);
-    ui->lineEdit_idsupp->setValidator(validator);
+    //ui->lineEdit_cin_2->setValidator(validator);
     ui->lineEdit_cin_2->setValidator(validator);
     ui->lineEdit_tel_2->setValidator(validator);
 
@@ -81,9 +81,9 @@ void CRUD::on_pushButton_supp_clicked()
 {
     employe e;
     ui->table_employe->setModel(e.afficher());
-    e.set_cin(ui->lineEdit_idsupp->text());
+    e.set_cin(ui->lineEdit_cin_2->text());
     user u;
-    u.set_id_user(ui->lineEdit_idsupp->text());
+    u.set_id_user(ui->lineEdit_cin_2->text());
     bool test = e.supprimer(e.get_cin());
     bool test2 =u.supprimer_user();
             if (test || test2)
@@ -253,7 +253,7 @@ void CRUD::on_pushButton_clicked()
         qDebug() << "Error in SQL query: " << model->lastError().text();
     }
 
-    ui->tableView_sort->setModel(model);
+    ui->table_employe->setModel(model);
 
 }
 

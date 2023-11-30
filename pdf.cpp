@@ -9,11 +9,13 @@
 #include <QDebug>
 #include <QDate>
 #include <QDateTime>
+#include "mainwindow.h"
 pdf::pdf(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::pdf)
 {
     ui->setupUi(this);
+    qDebug()<<MainWindow::curr_user.get_cin()<<endl;
 }
 
 pdf::~pdf()

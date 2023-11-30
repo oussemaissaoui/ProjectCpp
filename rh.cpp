@@ -9,12 +9,14 @@
 
 
 
-rh::rh(QWidget *parent) :
+
+rh::rh(user &curr_user,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::rh)
 {
     ui->setupUi(this);
     isAIDialogOpen=false;
+    curr_user.set_cin("111111");
 }
 
 rh::~rh()

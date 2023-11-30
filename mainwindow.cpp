@@ -6,18 +6,35 @@
 #include <iostream>
 #include <QPushButton>
 #include "rh.h"
+#include <sstream>
 #include <QPixmap>
+#include <QLabel>
+
 using namespace std;
 
-
+user MainWindow::curr_user;
 
 MainWindow::MainWindow( QWidget *parent)
                        : QMainWindow(parent),
                          ui(new Ui::MainWindow)
 {
 
+    curr_user.set_cin("123456");
+    //ARDUINO-----------------------------------------------------------------
+    ret=A.connect_arduino(); // lancer la connexion à arduino
+        switch(ret){
+        case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+            break;
+        case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+           break;
+        case(-1):qDebug() << "arduino is not available";
+        }
+
+    //ARDUINO-----------------------------------------------------------------
 
 
+
+    qDebug() << "MainWindow constructor - curr_user value: " << curr_user.get_cin();
     //page 1
     profil_shown=false;
     login_status=false;
@@ -88,6 +105,33 @@ MainWindow::MainWindow( QWidget *parent)
 
 
 
+
+        if(ret==0)
+        {
+            // Create a pushbutton For Admin
+                QPushButton *finger_btn = new QPushButton("", this);
+
+                // Set the button's size (optional)
+                finger_btn->setFixedSize(50, 50);
+
+                // Set an icon for the button (optional)
+                QIcon icon(":/img/image/fingerprint.png");  // Replace with the actual path to your icon
+
+                finger_btn->setIcon(icon);
+                finger_btn->setIconSize(finger_btn->size());
+
+
+                // Add the button to the horizontal layout
+                ui->verticalLayout_3->addWidget(finger_btn);
+
+                connect(finger_btn,SIGNAL(clicked()),this,SLOT(fingerprint_clicked()));
+
+
+        }
+        else
+        {
+            //ui->pushButton_login->raise();
+        }
 
 
 
@@ -244,6 +288,7 @@ void MainWindow::Show_Button_Login()
         ui->pushButton_login->hide();
     } else {
         ui->pushButton_login->show();
+        ui->pushButton_login->raise();
     }
 }
 
@@ -295,7 +340,7 @@ void MainWindow::onAdminButtonClicked()
     this->hide();
 
     // Create the rh window if it doesn't exist
-    rh *w_rh = new rh;
+    rh *w_rh = new rh(MainWindow::curr_user);
 
     // Connect the destroyed signal to the onRhWindowClosed slot
     connect(w_rh, &QObject::destroyed, this, &MainWindow::onRhWindowClosed);
@@ -312,6 +357,112 @@ void MainWindow::onRhWindowClosed()
     // Perform any additional actions after rh is closed
 
     // Make sure to manage the memory of dynamically allocated objects
+
+}
+
+
+void MainWindow::fingerprint_clicked()
+{
+    cout<<"clicked"<<endl;
+    Log_viafinger();
+
+}
+
+void MainWindow::Log_viafinger()
+{
+    A.write_to_arduino("SEARCH");
+    data=A.read_from_arduino();
+    //cout<<"1"<<endl;
+    int number=-1;
+    //qDebug()<<data<<endl;
+    //cout<<"2"<<endl;
+
+    QString stringFromByteArray = QString::fromUtf8(data);
+    string data_str =stringFromByteArray.toStdString();
+
+    // Check if the string contains "Found ID #"
+       if (stringFromByteArray.contains("Found ID #")) {
+           // Extract the number after "Found ID #"
+           number = stringFromByteArray.midRef(stringFromByteArray.indexOf("#") + 1).toInt();
+           std::cout << "Found ID: " << number << std::endl;
+       } else {
+           std::cout << "Invalid format: " << stringFromByteArray.toStdString() << std::endl;
+       }
+
+
+
+
+
+
+       //partie connection
+       if(number!=-1)
+       {QSqlQuery query;
+       query.prepare("SELECT * FROM users WHERE ID_FINGER=:id_f");
+       query.bindValue(":id_f",number);
+
+
+       if(query.exec()&&query.next())
+       {
+           ui->lineEdit_password->clear();
+           ui->lineEdit_username->clear();
+
+           ui->label_wrong->setVisible(false);
+           //ui->checkBox_stayLogin->setChecked(false);
+           login_status=true;
+           emit login_status_changed();
+           cout<<"we are here1 "<<endl;
+           if(ui->checkBox_stayLogin->isChecked())
+           {
+               QSqlQuery query2;
+               query2.prepare("INSERT INTO logs (LAST_LOGIN_ID) VALUES (:last_login)");
+               query2.bindValue(":last_login",query.value(0).toString());
+               if(query2.exec())
+               cout<<"checked ::: !!!!!!!!!!!!!!!!!"<<endl;
+
+               else cout<<"we are hereee "<<endl;
+
+
+           }
+            curr_user.set_email(query.value(0).toString());
+            curr_user.set_password(query.value(1).toString());
+            curr_user.set_cin(query.value(2).toString());
+            curr_user.set_id_user(query.value(2).toString());
+            curr_user.set_username(query.value(3).toString());
+            curr_user.set_role(query.value(4).toString());
+            curr_user.set_nom(query.value(5).toString());
+            curr_user.set_prenom(query.value(6).toString());
+            curr_user.set_sexe(query.value(7).toString());
+            curr_user.set_date_naiss(query.value(9).toDate());
+            //curr_user.set_role(query.value(4).toString());
+            QString nom_prenom="SUCCESS:"+curr_user.get_nom()+" "+curr_user.get_prenom();
+            QByteArray nom_prenom2 = nom_prenom.toUtf8();
+
+            A.write_to_arduino(nom_prenom2);
+
+            qDebug()<<curr_user.get_cin()<<endl;
+
+
+
+
+           ui->stackedWidget->setCurrentIndex(1);
+           ui->groupBox_4->setVisible(false);
+           profil_shown=false;
+
+       }
+       else
+       {
+           login_status=false;
+           emit login_status_changed();
+           ui->label_wrong->setVisible(true);
+       }
+       }
+       else
+       {
+           ui->label_wrong->setVisible(true);
+
+       }
+
+
 
 }
 

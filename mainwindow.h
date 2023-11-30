@@ -10,8 +10,12 @@
 #include "clickablelabel.h"
 #include "signup.h"
 #include "rh.h"
+#include "user.h"
 #include <QApplication>
 #include <QDebug>
+#include "arduino.h"
+#include <QByteArray>
+#include <string>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,6 +41,8 @@ public:
     void handleMouseLeave();
     void set_stackedwidget_page(int index);
     void hide_show_pass();
+    static user curr_user;
+    void Log_viafinger();
 
 
 signals:
@@ -63,12 +69,20 @@ private slots:
 
     void on_pushButton_exit1_clicked();
 
+    void fingerprint_clicked();
+
+
 private:
     Ui::MainWindow *ui;
     bool login_status;
     bool profil_shown;
     bool isSignupOpen;
     bool pass_visible;
+    int ret;
+    Arduino A;
+    QByteArray data;
+
+
 
 
 

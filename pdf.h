@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QPdfWriter>
 #include <QPainter>
+#include <iostream>
+using namespace std;
 
 
 namespace Ui {

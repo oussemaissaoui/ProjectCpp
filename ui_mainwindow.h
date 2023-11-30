@@ -56,6 +56,8 @@ public:
     ClickableLabel *label_signup;
     ClickableLabel *label_eye;
     QLabel *label_wrong;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout_3;
     QWidget *page_2;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
@@ -243,7 +245,7 @@ public:
         lineEdit_password = new QLineEdit(groupBox);
         lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
         lineEdit_password->setEnabled(true);
-        lineEdit_password->setGeometry(QRect(30, 270, 210, 40));
+        lineEdit_password->setGeometry(QRect(30, 250, 210, 40));
         lineEdit_password->setStyleSheet(QLatin1String("/* Default state (when the cursor is not on the line edit) */\n"
 "QLineEdit {\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
@@ -298,7 +300,7 @@ public:
 ""));
         checkBox_stayLogin = new QCheckBox(groupBox);
         checkBox_stayLogin->setObjectName(QStringLiteral("checkBox_stayLogin"));
-        checkBox_stayLogin->setGeometry(QRect(30, 330, 101, 20));
+        checkBox_stayLogin->setGeometry(QRect(30, 310, 101, 20));
         checkBox_stayLogin->setCursor(QCursor(Qt::PointingHandCursor));
         label_signup = new ClickableLabel(groupBox);
         label_signup->setObjectName(QStringLiteral("label_signup"));
@@ -321,13 +323,19 @@ public:
 "}"));
         label_eye = new ClickableLabel(groupBox);
         label_eye->setObjectName(QStringLiteral("label_eye"));
-        label_eye->setGeometry(QRect(200, 280, 31, 21));
+        label_eye->setGeometry(QRect(200, 260, 31, 21));
         label_eye->setPixmap(QPixmap(QString::fromUtf8(":/img/image/eyes_close.png")));
         label_eye->setScaledContents(true);
         label_wrong = new QLabel(groupBox);
         label_wrong->setObjectName(QStringLiteral("label_wrong"));
-        label_wrong->setGeometry(QRect(40, 310, 151, 21));
+        label_wrong->setGeometry(QRect(40, 290, 151, 21));
         label_wrong->setStyleSheet(QStringLiteral("color: rgb(170, 0, 0);"));
+        verticalLayoutWidget = new QWidget(groupBox);
+        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(110, 420, 51, 51));
+        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -339,7 +347,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -616, 1200, 1200));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1200, 1200));
         scrollAreaWidgetContents->setMinimumSize(QSize(1200, 1200));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -492,7 +500,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
