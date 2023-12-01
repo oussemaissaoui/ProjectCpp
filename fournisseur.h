@@ -7,7 +7,7 @@
 #include <QtDebug>
 
 class fournisseur {
-    QString id, nom, prenom, sexe, nom_entreprise, email;
+    QString id,sexe, nom, prenom, nom_entreprise, email;
     int cin;
     qint64 tel;
 
@@ -37,10 +37,16 @@ public:
 
     bool ajouter();
     QSqlQueryModel* afficher();
-    QSqlQueryModel* rechercher(const QString &aux);
+    QSqlQueryModel* tritype(const QString &aux);
     int Supprimer(int);
     fournisseur modifier(QString);
     bool modifier2(QString, fournisseur);
+    QSqlQueryModel * trierFournisseurparId();
+    QSqlQueryModel * trierFournisseurparNom();
+    QSqlQueryModel * trierFournisseuparNomEntreprise();
+
+
+    QSqlQueryModel* RechercheFournisseur(QString recherche);
 };
 
 #endif // FOURNISSEUR_H

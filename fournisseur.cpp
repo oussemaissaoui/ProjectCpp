@@ -21,8 +21,13 @@ Connection c;
     QSqlQuery query;
 
     query.prepare("INSERT INTO FOURNISSEUR (ID, NOM, PRENOM, CIN, TEL, NOM_ENTREPRISE, SEXE, EMAIL) VALUES (:ID, :NOM, :PRENOM, :CIN, :TEL, :NOM_ENTREPRISE, :SEXE, :EMAIL);");
+    std::srand(std::time(0));
 
-    query.bindValue(":ID", 55);
+      // Génération d'une valeur aléatoire entre 100 et 999 inclus
+      int nombre = std::rand() % 900 + 100;
+
+    //int randomid=rand(10);
+    query.bindValue(":ID", nombre);
     query.bindValue(":NOM", nom);
 
     query.bindValue(":PRENOM", prenom);
@@ -47,10 +52,31 @@ QSqlQueryModel* fournisseur::afficher() {
     // Set headers if needed
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
-    // Add headers for other fields as well
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("CIN"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TEL"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("NOM_ENTREPRISE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("SEXE"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("EMAIL"));
     return model;
 }
 
+QSqlQueryModel* fournisseur::tritype(const QString &aux) {
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM FOURNISSEUR ORDER BY " + aux + " ASC");
+
+    // Set headers for each field
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("CIN"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TEL"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("NOM_ENTREPRISE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("SEXE"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("EMAIL"));
+
+    return model;
+}
 int fournisseur::Supprimer(int cin)
 {
     QSqlQuery query;
@@ -91,16 +117,68 @@ fournisseur fournisseur::modifier(QString id) {
 
 bool fournisseur::modifier2(QString id, fournisseur fournisseur) {
     QSqlQuery query;
-    query.prepare("UPDATE FOURNISSEUR SET ID = :id, NOM = :nom, PRENOM = :prenom, CIN = :cin, TEL = :tel, NOM_ENTREPRISE = :nom_entreprise, SEXE = :sexe, EMAIL = :email WHERE CIN = :id;");
-    query.bindValue(":id", cin);
+    query.prepare("UPDATE FOURNISSEUR SET ID = :id, NOM = :nom, PRENOM = :prenom, CIN = :cin, TEL = :tel, NOM_ENTREPRISE = :nom_entreprise, SEXE = :sexe, EMAIL = :email WHERE ID = :id;");
+    query.bindValue(":id", id);
     query.bindValue(":nom", fournisseur.getNom());
-      query.bindValue(":prenom", fournisseur.getPrenom());
-      query.bindValue(":cin",QString::number(  fournisseur.getCin()));
-      query.bindValue(":tel", QString::number( fournisseur.getTel()));
-      query.bindValue(":nom_entreprise", fournisseur.getNomEntreprise());
-      query.bindValue(":sexe", fournisseur.getSexe());
-      query.bindValue(":email", fournisseur.getEmail());
-
+    query.bindValue(":prenom", fournisseur.getPrenom());
+    query.bindValue(":cin", QString::number(fournisseur.getCin()));
+    query.bindValue(":tel", QString::number(fournisseur.getTel()));
+    query.bindValue(":nom_entreprise", fournisseur.getNomEntreprise());
+    query.bindValue(":sexe", fournisseur.getSexe());
+    query.bindValue(":email", fournisseur.getEmail());
 
     return query.exec();
+}
+
+
+QSqlQueryModel * fournisseur::trierFournisseurparId()
+{
+
+    QSqlQuery * q = new  QSqlQuery ();
+           QSqlQueryModel * model = new  QSqlQueryModel ();
+           q->prepare("SELECT * FROM fournisseur order by id ASC");
+           q->exec();
+           model->setQuery(*q);
+           return model;
+}
+
+
+QSqlQueryModel * fournisseur::trierFournisseurparNom()
+{
+
+    QSqlQuery * q = new  QSqlQuery ();
+           QSqlQueryModel * model = new  QSqlQueryModel ();
+           q->prepare("SELECT * FROM fournisseur order by nom ASC");
+           q->exec();
+           model->setQuery(*q);
+           return model;
+}
+
+
+QSqlQueryModel * fournisseur::trierFournisseuparNomEntreprise()
+{
+
+    QSqlQuery * q = new  QSqlQuery ();
+           QSqlQueryModel * model = new  QSqlQueryModel ();
+           q->prepare("SELECT * FROM fournisseur order by nom_entreprise ASC");
+           q->exec();
+           model->setQuery(*q);
+           return model;
+}
+
+
+QSqlQueryModel* fournisseur::RechercheFournisseur(QString recherche)
+ {
+     QSqlQueryModel * model= new QSqlQueryModel();
+     model->setQuery("SELECT * FROM fournisseur WHERE id LIKE '"+recherche+"%' OR nom LIKE '"+recherche+"%' OR prenom LIKE '"+recherche+"%'");
+     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+     model->setHeaderData(3, Qt::Horizontal, QObject::tr("CIN"));
+     model->setHeaderData(4, Qt::Horizontal, QObject::tr("TEL"));
+     model->setHeaderData(5, Qt::Horizontal, QObject::tr("NOM_ENTREPRISE"));
+     model->setHeaderData(6, Qt::Horizontal, QObject::tr("SEXE"));
+     model->setHeaderData(7, Qt::Horizontal, QObject::tr("EMAIL"));
+
+return model;
 }
