@@ -52,7 +52,28 @@ QSqlQueryModel * Facture::affiche()
 
     QSqlQueryModel* model=new QSqlQueryModel();
 
-              model->setQuery("SELECT* FROM FACTURE");
+              model->setQuery("SELECT* FROM FACTURE ");
+              model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
+              model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEE"));
+              model->setHeaderData(3, Qt::Horizontal, QObject::tr("MONTANT"));
+              model->setHeaderData(4, Qt::Horizontal, QObject::tr("DURE"));
+
+
+    return model;
+}
+
+QSqlQueryModel * Facture::affiche_2(QString data)
+{
+    QSqlQuery query;
+    query.prepare("SELECT * FROM FACTURE WHERE DATEE=:data");
+    query.bindValue(":data",data);
+    query.exec();
+    query.next();
+
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+              model->setQuery("SELECT * FROM FACTURE WHERE DATEE=:data_str ");
               model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
               model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
               model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEE"));
@@ -125,11 +146,11 @@ QSqlQueryModel * Facture::recherche(QString a)
 }
 
 
-int Facture::return_montant(int data)
+int Facture::return_facture(int data)
 {
     QString data_str=QString::number(data);
     QSqlQuery query;
-    query.prepare("SELECT * FROM FACTURE WHERE MONTANT=:data_str");
+    query.prepare("SELECT * FROM FACTURE WHERE DATEE=:data_str");
     query.bindValue(":data_str",data_str);
     query.exec();
     query.next();
@@ -137,4 +158,5 @@ int Facture::return_montant(int data)
 
    return etat;
 }
+
 

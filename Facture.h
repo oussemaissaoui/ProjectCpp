@@ -34,10 +34,12 @@ class Facture
     QSqlQueryModel * recherche(QString );
     QSqlQueryModel * affiche ();
     QSqlQueryModel * affiche_by_id();
-    int return_montant(int data);
+    QSqlQueryModel * affiche_2(QString);
+
+    int return_facture(int data);
 
 private:
-    QString type;
+    QString type ;
     long id;
     int montant_total,dure;
     QString datee;

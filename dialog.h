@@ -26,7 +26,7 @@ class Dialog : public QDialog
 public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
-
+     QByteArray read_from_arduino();
 private slots:
     void on_pushButton_ajouter_clicked();
 
@@ -49,13 +49,17 @@ private slots:
 
     void update_label();
 
+    //void on_verify_clicked();
+
+    void on_pushButton_clicked();
+
     void on_verify_clicked();
 
 private:
     Ui::Dialog *ui;
     Facture Stmp;
     Facture f;
-    arduino A;
+    Arduino A;
     QByteArray data;
 };
 

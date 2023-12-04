@@ -98,18 +98,18 @@ void Dialog::on_verify_clicked()
     qDebug() << "Bouton Verifier Clicked" ;
 
     //int data=ui->lineEdit_id_arduino->text().toInt();
-    QString data_str=ui->lineEdit_id_arduino->text();
-    qDebug() << data_str;
-    qDebug() << data_str;
+    QString data=ui->lineEdit_id_arduino->text();
+    qDebug() << data;
+    qDebug() << data;
 
-               if(data_str!="")
+               if(data!="")
                {
 
-               if(f.recherche(data_str))
+               if(f.recherche(data))
                {
                    //int etatt=f.return_facture(data);
-                   f.affiche_2(data_str);
-                       ui->tableView_facture_2->setModel(f.affiche_2(data_str));
+                   f.affiche_2(data);
+                       ui->tableView_facture_2->setModel(f.affiche_2(data));
 
 
                   // qDebug()<<etatt;
@@ -119,7 +119,7 @@ void Dialog::on_verify_clicked()
                    QMessageBox::information(this, "Facture", "Facture non trouvé");
                }
                 data=0;
-               if(data_str=="")
+               if(data=="")
                {
                     QMessageBox::information(this, "facture", "Veuillez remplir le champs");
                }
