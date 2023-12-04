@@ -98,31 +98,44 @@ void Dialog::on_verify_clicked()
     qDebug() << "Bouton Verifier Clicked" ;
 
     //int data=ui->lineEdit_id_arduino->text().toInt();
-    QString data_str=ui->lineEdit_id_arduino->text();
-    qDebug() << data_str;
-    qDebug() << data_str;
+    QString data=ui->lineEdit_id_arduino->text();
+    qDebug() << data;
+    qDebug() << data;
 
-               if(data_str!="")
+
+
+
+               if(!data.isEmpty())
                {
 
-               if(f.recherche(data_str))
-               {
-                   //int etatt=f.return_facture(data);
-                   f.affiche_2(data_str);
-                       ui->tableView_facture_2->setModel(f.affiche_2(data_str));
+                   bool conversionOk;
+                       int data1 = data.toInt(&conversionOk);
 
+                       if (conversionOk) {
+                              // The conversion to integer was successful, you can use 'data' in your code
+                              qDebug() << "Converted data to integer: " << data1;
 
-                  // qDebug()<<etatt;
-               }
+                              QSqlQuery query;
+                              query.prepare("SELECT * FROM FACTURE WHERE ID = :arg1");
+                              query.bindValue(":arg1", data1);
 
-               else
-                   QMessageBox::information(this, "Facture", "Facture non trouvé");
-               }
-                data=0;
-               if(data_str=="")
-               {
-                    QMessageBox::information(this, "facture", "Veuillez remplir le champs");
-               }
+                              if (!query.exec()) {
+                                  qWarning() << "Erreur : " << query.lastError().text();
+                              }
+
+                              if (query.next()) {
+                                  ui->tableView_facture_2->setModel(f.recherche2(data1));
+                              } else {
+                                  QMessageBox::information(this, "Facture", "Facture non trouvé");
+                                  ui->tableView_facture_2->setModel(f.affiche());
+                              }
+                          } else {
+                              // The conversion to integer failed
+                              QMessageBox::information(this, "Facture", "Veuillez entrer un ID valide (entier)");
+                          }
+                      } else {
+                          QMessageBox::information(this, "Facture", "Veuillez remplir le champ");
+                      }
 }
 
 

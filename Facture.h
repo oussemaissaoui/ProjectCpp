@@ -32,6 +32,7 @@ class Facture
     bool supprimer (long);
     bool modifier(long);
     QSqlQueryModel * recherche(QString );
+    QSqlQueryModel * recherche2(int );
     QSqlQueryModel * affiche ();
     QSqlQueryModel * affiche_by_id();
     QSqlQueryModel * affiche_2(QString);

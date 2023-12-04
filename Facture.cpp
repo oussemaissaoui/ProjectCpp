@@ -54,9 +54,9 @@ QSqlQueryModel * Facture::affiche()
 
               model->setQuery("SELECT* FROM FACTURE ");
               model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-              model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
-              model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEE"));
-              model->setHeaderData(3, Qt::Horizontal, QObject::tr("MONTANT"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("MONTANT"));
+              model->setHeaderData(2, Qt::Horizontal, QObject::tr("TYPE"));
+              model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATEE"));
               model->setHeaderData(4, Qt::Horizontal, QObject::tr("DURE"));
 
 
@@ -65,19 +65,24 @@ QSqlQueryModel * Facture::affiche()
 
 QSqlQueryModel * Facture::affiche_2(QString data)
 {
+    /*QString str = data;
+    int id = str.toInt();
+    QString res = QString::number(id);*/
+
     QSqlQuery query;
     query.prepare("SELECT * FROM FACTURE WHERE DATEE=:data");
     query.bindValue(":data",data);
+    //query.bindValue(":ID", res);
     query.exec();
     query.next();
 
     QSqlQueryModel* model=new QSqlQueryModel();
 
-              model->setQuery("SELECT * FROM FACTURE WHERE DATEE=:data_str ");
+              model->setQuery("SELECT * FROM FACTURE WHERE DATEE=:data ");
               model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-              model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
-              model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEE"));
-              model->setHeaderData(3, Qt::Horizontal, QObject::tr("MONTANT"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("MONTANT"));
+              model->setHeaderData(2, Qt::Horizontal, QObject::tr("TYPE"));
+              model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATEE"));
               model->setHeaderData(4, Qt::Horizontal, QObject::tr("DURE"));
 
 
@@ -90,9 +95,9 @@ QSqlQueryModel * Facture::affiche_by_id()
 
     m_Model->setQuery("SELECT* FROM FACTURE ORDER BY ID DESC");
     m_Model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    m_Model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
-    m_Model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEE"));
-    m_Model->setHeaderData(3, Qt::Horizontal, QObject::tr("MONTANT"));
+    m_Model->setHeaderData(1, Qt::Horizontal, QObject::tr("MONTANT"));
+    m_Model->setHeaderData(2, Qt::Horizontal, QObject::tr("TYPE"));
+    m_Model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATEE"));
     m_Model->setHeaderData(4, Qt::Horizontal, QObject::tr("DURE"));
 
     return m_Model;
@@ -137,16 +142,16 @@ QSqlQueryModel * Facture::recherche(QString a)
 
     // Définir les en-têtes de colonne
     m_Model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    m_Model->setHeaderData(1, Qt::Horizontal, QObject::tr("TYPE"));
-    m_Model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEE"));
-    m_Model->setHeaderData(3, Qt::Horizontal, QObject::tr("MONTANT"));
-    m_Model->setHeaderData(3, Qt::Horizontal, QObject::tr("DURE"));
+    m_Model->setHeaderData(1, Qt::Horizontal, QObject::tr("MONTANT"));
+    m_Model->setHeaderData(2, Qt::Horizontal, QObject::tr("TYPE"));
+    m_Model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATEE"));
+    m_Model->setHeaderData(4, Qt::Horizontal, QObject::tr("DURE"));
 
     return m_Model;
 }
 
 
-int Facture::return_facture(int data)
+/*int Facture::return_facture(int data)
 {
     QString data_str=QString::number(data);
     QSqlQuery query;
@@ -157,6 +162,22 @@ int Facture::return_facture(int data)
     int etat=query.value(6).toInt();
 
    return etat;
-}
+}*/
+QSqlQueryModel* Facture::recherche2(int id)
+{
+    QSqlQueryModel* m_Model = new QSqlQueryModel();
 
+    // Définir une requête SQL avec une condition WHERE pour filtrer les résultats par ID
+    QString query = "SELECT * FROM FACTURE WHERE ID = " + QString::number(id);
+    m_Model->setQuery(query);
+
+    // Définir les en-têtes de colonne
+    m_Model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    m_Model->setHeaderData(1, Qt::Horizontal, QObject::tr("MONTANT"));
+    m_Model->setHeaderData(2, Qt::Horizontal, QObject::tr("TYPE"));
+    m_Model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATEE"));
+    m_Model->setHeaderData(4, Qt::Horizontal, QObject::tr("DURE"));
+
+    return m_Model;
+}
 

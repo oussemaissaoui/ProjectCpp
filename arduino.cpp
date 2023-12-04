@@ -46,7 +46,6 @@ int Arduino::connect_arduino(const QString &portName)
     }
 }
 
-
 int Arduino::close_arduino()
 {
     if (serial->isOpen()) {
