@@ -68,10 +68,14 @@ public:
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_5;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout_3;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_10;
+    QFrame *frame_2;
+    QLabel *label_6;
+    QTextEdit *textEdit;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QLabel *label_7;
     ClickableLabel *label_profil_2;
     QLabel *label_Menuapp;
     QGroupBox *groupBox_4;
@@ -359,13 +363,14 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -52, 1200, 1200));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -316, 1200, 1200));
         scrollAreaWidgetContents->setMinimumSize(QSize(1200, 1200));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(10, 10, 10, 10);
+        gridLayout_2->setVerticalSpacing(60);
+        gridLayout_2->setContentsMargins(50, 10, 10, 10);
         frame = new QFrame(scrollAreaWidgetContents);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setMinimumSize(QSize(383, 400));
@@ -373,7 +378,7 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         verticalLayoutWidget_2 = new QWidget(frame);
         verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(100, 139, 971, 431));
+        verticalLayoutWidget_2->setGeometry(QRect(100, 139, 971, 421));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_4->setSpacing(50);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
@@ -384,31 +389,58 @@ public:
         label_5->setStyleSheet(QLatin1String("font: 26pt \"MS Shell Dlg 2\";\n"
 "color: rgb(255, 255, 255);\n"
 "font: 87 28pt \"Arial Black\";"));
+        widget = new QWidget(frame);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(-120, 580, 1202, 652));
+        horizontalLayout_3 = new QHBoxLayout(widget);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        frame_2 = new QFrame(widget);
+        frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setMinimumSize(QSize(1000, 650));
+        frame_2->setMaximumSize(QSize(1200, 650));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        label_6 = new QLabel(frame_2);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(160, 63, 991, 371));
+        label_6->setStyleSheet(QStringLiteral("border-radius:30px;"));
+        label_6->setPixmap(QPixmap(QString::fromUtf8(":/img/image/announce.png")));
+        label_6->setScaledContents(true);
+        textEdit = new QTextEdit(frame_2);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(150, 470, 791, 111));
+        pushButton_3 = new QPushButton(frame_2);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(650, 480, 241, 41));
+        pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(38, 38, 38);\n"
+"border-radius:15px;"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/img/image/apple-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon1);
+        pushButton_3->setIconSize(QSize(24, 24));
+        pushButton_4 = new QPushButton(frame_2);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(910, 480, 241, 41));
+        pushButton_4->setStyleSheet(QLatin1String("background-color: rgb(38, 38, 38);\n"
+"border-radius:15px;"));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/img/image/play-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_4->setIcon(icon2);
+        pushButton_4->setIconSize(QSize(20, 20));
+        label_7 = new QLabel(frame_2);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(160, 20, 171, 33));
+        label_7->setStyleSheet(QLatin1String("font: 20pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);"));
+
+        horizontalLayout_3->addWidget(frame_2);
+
 
         gridLayout_2->addWidget(frame, 0, 0, 1, 1);
 
 
         gridLayout->addLayout(gridLayout_2, 2, 0, 1, 1);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        pushButton_12 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
-
-        horizontalLayout_3->addWidget(pushButton_12);
-
-        pushButton_11 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-
-        horizontalLayout_3->addWidget(pushButton_11);
-
-        pushButton_10 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-
-        horizontalLayout_3->addWidget(pushButton_10);
-
-
-        gridLayout->addLayout(horizontalLayout_3, 3, 0, 1, 1);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
         label_profil_2 = new ClickableLabel(page_2);
@@ -523,9 +555,9 @@ public:
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton->setStyleSheet(QLatin1String("background-color: rgb(31, 31, 31);\n"
 "border-radius:15px;"));
-        QIcon icon1;
-        icon1.addFile(QStringLiteral(":/img/image/logo_blanc.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon1);
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/img/image/logo_blanc.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon3);
         groupBox_5 = new QGroupBox(page_3);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
         groupBox_5->setGeometry(QRect(359, -11, 851, 621));
@@ -604,9 +636,16 @@ public:
         label_eye->setText(QString());
         label_wrong->setText(QApplication::translate("MainWindow", "wrong password or username!", Q_NULLPTR));
         label_5->setText(QApplication::translate("MainWindow", "My Accesses", Q_NULLPTR));
-        pushButton_12->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_11->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_10->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        label_6->setText(QString());
+        textEdit->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:20pt; font-weight:600; color:#82ff66;\">Download AllEco App Coming Soon</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600; color:#82ff66;\">Join the revolution of smart , sustainble Transportation with <br />AllEco app</span></p></body></html>", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "iOS App Store", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Play Store", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "Special Events", Q_NULLPTR));
         label_profil_2->setText(QString());
         label_Menuapp->setText(QString());
         groupBox_4->setTitle(QString());

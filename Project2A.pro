@@ -23,12 +23,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     aidialog.cpp \
     crud.cpp \
+    dialog.cpp \
     employe.cpp \
     finger.cpp \
     fourn.cpp \
     fournisseur.cpp \
+    gespiece.cpp \
+    gest_vehi.cpp \
     main.cpp \
     mainwindow.cpp \
+    notification.cpp \
     pdf.cpp \
     reserv.cpp \
     reservation.cpp \
@@ -38,17 +42,27 @@ SOURCES += \
     arduino.cpp \
     clickablelabel.cpp \
     qrcodegen.cpp \
+    stat_vehi.cpp \
     user.cpp \
+    smtp.cpp \
+    qcustomplot.cpp \
+    piece.cpp \
+    Facture.cpp \
+    voiture.cpp \
     widget.cpp
 
 HEADERS += \
     aidialog.h \
     crud.h \
+    dialog.h \
     employe.h \
     finger.h \
     fourn.h \
     fournisseur.h \
+    gespiece.h \
+    gest_vehi.h \
     mainwindow.h \
+    notification.h \
     pdf.h \
     reserv.h \
     reservation.h \
@@ -58,19 +72,30 @@ HEADERS += \
     arduino.h \
     clickablelabel.h \
     qrcodegen.h \
+    stat_vehi.h \
     user.h \
+    smtp.h \
+    qcustomplot.h \
+    piece.h \
+    Facture.h \
+    voiture.h \
     widget.h
 
 FORMS += \
     aidialog.ui \
     crud.ui \
+    dialog.ui \
     finger.ui \
     fourn.ui \
+    gespiece.ui \
+    gest_vehi.ui \
     mainwindow.ui \
+    notification.ui \
     pdf.ui \
     reserv.ui \
     rh.ui \
     signup.ui \
+    stat_vehi.ui \
     widget.ui
 
 

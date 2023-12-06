@@ -14,6 +14,9 @@
 #include <QHBoxLayout>
 #include <QComboBox>
 #include "fourn.h"
+#include "gespiece.h"
+#include "dialog.h"
+#include "gest_vehi.h"
 
 using namespace std;
 
@@ -24,8 +27,11 @@ MainWindow::MainWindow( QWidget *parent)
                          ui(new Ui::MainWindow)
 {
     admin_btn=nullptr;
-    GestionEmp_btn=nullptr;
+    GestionFacture_btn=nullptr;
     GestionRes_btn=nullptr;
+    GestionFourn_btn=nullptr;
+    GestionPiece_btn=nullptr;
+    GestionVehi_btn=nullptr;
     curr_user.set_cin("123456");
     last_index=0;
     //ARDUINO-----------------------------------------------------------------
@@ -203,227 +209,6 @@ void MainWindow::on_pushButton_login_clicked()
     
    if(checkPassword())
    {
-       /*QHBoxLayout *horizontalLayout = new QHBoxLayout;
-        QHBoxLayout *currentHLayout = horizontalLayout;
-        ui->verticalLayout_4->addLayout(horizontalLayout);
-    if(curr_user.get_role()=="Admin"){// Create a pushbutton For Admin
-
-       admin_btn = new QPushButton("", this);
-
-       // Set the button's size (optional)
-       admin_btn->setFixedSize(250,150 );
-
-
-       // Set an icon for the button (optional)
-       QIcon icon(":/img/image/admin.jpg");  // Replace with the actual path to your icon
-
-       admin_btn->setIcon(icon);
-       QSize size(200,130);
-       admin_btn->setIconSize(size);
-       currentHLayout->addWidget(admin_btn);
-
-       // Add the button to the horizontal layout
-       if(currentHLayout->count()%3==0)
-       {
-            QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
-            currentHLayout = newhorizontalLayout;
-            ui->verticalLayout_4->addLayout(newhorizontalLayout);
-
-       }
-
-       admin_btn->setStyleSheet("QPushButton:hover{background-color: rgb(255, 255, 255);"
-                                "border: 5px solid black;"
-                                "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
-                                "border-radius:15px;}"
-                                 "QPushButton{background-color: rgb(255, 255, 255);"
-                                   "border: 5px solid black;"
-                                   "border-radius:15px;}"
-
-
-                                );
-       // Create a drop shadow effect
-           QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
-           drop_shadow->setBlurRadius(20);
-           drop_shadow->setColor(QColor(255, 215, 0, 255));
-           drop_shadow->setOffset(10, 20);
-
-           admin_btn->setMouseTracking(true);
-
-              // Install an event filter to handle enterEvent and leaveEvent
-              admin_btn->installEventFilter(this);
-
-
-
-
-
-       // Connect the hovered signal to a lambda function that sets the graphics effect
-
-       connect(admin_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
-        //add text under btn
-        admin_Lab = new QLabel;
-        admin_Lab->setText("Gestion Admin");
-        admin_Lab->setGeometry(admin_btn->x() , admin_btn->x()+admin_btn->height(),250,25);
-        //admin_Lab->set
-
-
-       }
-    if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_emp
-        GestionEmp_btn = new QPushButton("", this);
-
-        // Set the button's size (optional)
-        GestionEmp_btn->setFixedSize(250,150 );
-
-        // Set an icon for the button (optional)
-        QIcon icon(":/img/image/Gestion_emp.jpg");  // Replace with the actual path to your icon
-
-        GestionEmp_btn->setIcon(icon);
-        QSize size(250,130 );
-        GestionEmp_btn->setIconSize(size);
-        currentHLayout->addWidget(GestionEmp_btn);
-
-        // Add the button to the horizontal layout
-        if(currentHLayout->count()%3==0)
-        {
-             QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
-             currentHLayout = newhorizontalLayout;
-             ui->verticalLayout_4->addLayout(newhorizontalLayout);
-
-        }
-
-        GestionEmp_btn->setStyleSheet("QPushButton:hover{background-color: rgb(71,186, 205);"
-                                 "border: 5px solid black;"
-                                 "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
-                                 "border-radius:15px;}"
-                                  "QPushButton{background-color: rgb(71,186, 205);;"
-                                    "border: 5px solid black;"
-                                    "border-radius:15px;}"
-
-
-                                 );
-        // Create a drop shadow effect
-            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
-            drop_shadow->setBlurRadius(20);
-            drop_shadow->setColor(QColor(255, 215, 0, 255));
-            drop_shadow->setOffset(10, 20);
-
-            GestionEmp_btn->setMouseTracking(true);
-
-               // Install an event filter to handle enterEvent and leaveEvent
-               GestionEmp_btn->installEventFilter(this);
-
-
-
-
-        // Connect the hovered signal to a lambda function that sets the graphics effect
-
-        connect(GestionEmp_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
-
-       }
-
-    if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
-        GestionRes_btn = new QPushButton("", this);
-
-        // Set the button's size (optional)
-        GestionRes_btn->setFixedSize(250,150 );
-
-        // Set an icon for the button (optional)
-        QIcon icon(":/img/image/Gestion_reservation.jpg");  // Replace with the actual path to your icon
-
-        GestionRes_btn->setIcon(icon);
-        QSize size(250,130);
-        GestionRes_btn->setIconSize(size);
-        currentHLayout->addWidget(GestionRes_btn);
-
-        // Add the button to the horizontal layout
-        if(currentHLayout->count()%3==0)
-        {
-             QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
-             currentHLayout = newhorizontalLayout;
-             ui->verticalLayout_4->addLayout(newhorizontalLayout);
-
-        }
-
-        GestionRes_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
-                                 "border: 5px solid black;"
-                                 "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
-                                 "border-radius:15px;}"
-                                  "QPushButton{background-color: rgb(27, 40, 72);"
-                                    "border: 5px solid black;"
-                                    "border-radius:15px;}"
-
-
-                                 );
-        // Create a drop shadow effect
-            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
-            drop_shadow->setBlurRadius(20);
-            drop_shadow->setColor(QColor(255, 215, 0, 255));
-            drop_shadow->setOffset(10, 20);
-
-            GestionRes_btn->setMouseTracking(true);
-
-               // Install an event filter to handle enterEvent and leaveEvent
-               GestionRes_btn->installEventFilter(this);
-
-
-
-
-        // Connect the hovered signal to a lambda function that sets the graphics effect
-
-        connect(GestionRes_btn,SIGNAL(clicked()),this,SLOT(onReserButtonClicked()));
-       }
-    if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
-        GestionFourn_btn = new QPushButton("", this);
-
-        // Set the button's size (optional)
-        GestionFourn_btn->setFixedSize(250,150 );
-
-        // Set an icon for the button (optional)
-        QIcon icon(":/img/image/Gestion_fournisseur.png");  // Replace with the actual path to your icon
-
-        GestionFourn_btn->setIcon(icon);
-        QSize size(250,130);
-        GestionFourn_btn->setIconSize(size);
-        currentHLayout->addWidget(GestionFourn_btn);
-
-        // Add the button to the horizontal layout
-        if(currentHLayout->count()%3==0)
-        {
-             QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
-             currentHLayout = newhorizontalLayout;
-             ui->verticalLayout_4->addLayout(newhorizontalLayout);
-
-        }
-
-        GestionFourn_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
-                                 "border: 5px solid black;"
-                                 "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
-                                 "border-radius:15px;}"
-                                  "QPushButton{background-color: rgb(27, 40, 72);"
-                                    "border: 5px solid black;"
-                                    "border-radius:15px;}"
-
-
-                                 );
-        // Create a drop shadow effect
-            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
-            drop_shadow->setBlurRadius(20);
-            drop_shadow->setColor(QColor(255, 215, 0, 255));
-            drop_shadow->setOffset(10, 20);
-
-            GestionFourn_btn->setMouseTracking(true);
-
-               // Install an event filter to handle enterEvent and leaveEvent
-               GestionFourn_btn->installEventFilter(this);
-
-
-
-
-        // Connect the hovered signal to a lambda function that sets the graphics effect
-
-        connect(GestionFourn_btn,SIGNAL(clicked()),this,SLOT(onFournButtonClicked()));
-       }
-        */
-
         add_Gestionbtn();
    }
 
@@ -498,18 +283,18 @@ void MainWindow::add_Gestionbtn()
 
     }
  if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_emp
-     GestionEmp_btn = new QPushButton("", this);
+     GestionFacture_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
-     GestionEmp_btn->setFixedSize(250,150 );
+     GestionFacture_btn->setFixedSize(250,150 );
 
      // Set an icon for the button (optional)
-     QIcon icon(":/img/image/Gestion_emp.jpg");  // Replace with the actual path to your icon
+     QIcon icon(":/img/image/Gestion_facture.png");  // Replace with the actual path to your icon
 
-     GestionEmp_btn->setIcon(icon);
+     GestionFacture_btn->setIcon(icon);
      QSize size(250,130 );
-     GestionEmp_btn->setIconSize(size);
-     currentHLayout->addWidget(GestionEmp_btn);
+     GestionFacture_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionFacture_btn);
 
      // Add the button to the horizontal layout
      if(currentHLayout->count()%3==0)
@@ -520,7 +305,7 @@ void MainWindow::add_Gestionbtn()
 
      }
 
-     GestionEmp_btn->setStyleSheet("QPushButton:hover{background-color: rgb(71,186, 205);"
+     GestionFacture_btn->setStyleSheet("QPushButton:hover{background-color: rgb(71,186, 205);"
                               "border: 5px solid black;"
                               "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
                               "border-radius:15px;}"
@@ -536,17 +321,17 @@ void MainWindow::add_Gestionbtn()
          drop_shadow->setColor(QColor(255, 215, 0, 255));
          drop_shadow->setOffset(10, 20);
 
-         GestionEmp_btn->setMouseTracking(true);
+         GestionFacture_btn->setMouseTracking(true);
 
             // Install an event filter to handle enterEvent and leaveEvent
-            GestionEmp_btn->installEventFilter(this);
+            GestionFacture_btn->installEventFilter(this);
 
 
 
 
      // Connect the hovered signal to a lambda function that sets the graphics effect
 
-     connect(GestionEmp_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
+     connect(GestionFacture_btn,SIGNAL(clicked()),this,SLOT(onFactureButtonClicked()));
 
     }
 
@@ -654,18 +439,18 @@ void MainWindow::add_Gestionbtn()
     }
 
  if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
-     GestionFourn_btn = new QPushButton("", this);
+     GestionPiece_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
-     GestionFourn_btn->setFixedSize(250,150 );
+     GestionPiece_btn->setFixedSize(250,150 );
 
      // Set an icon for the button (optional)
      QIcon icon(":/img/image/Gestion_inventaire.jpg");  // Replace with the actual path to your icon
 
-     GestionFourn_btn->setIcon(icon);
+     GestionPiece_btn->setIcon(icon);
      QSize size(250,130);
-     GestionFourn_btn->setIconSize(size);
-     currentHLayout->addWidget(GestionFourn_btn);
+     GestionPiece_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionPiece_btn);
 
      // Add the button to the horizontal layout
      if(currentHLayout->count()%3==0)
@@ -676,7 +461,7 @@ void MainWindow::add_Gestionbtn()
 
      }
 
-     GestionFourn_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
+     GestionPiece_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
                               "border: 5px solid black;"
                               "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
                               "border-radius:15px;}"
@@ -692,19 +477,85 @@ void MainWindow::add_Gestionbtn()
          drop_shadow->setColor(QColor(255, 215, 0, 255));
          drop_shadow->setOffset(10, 20);
 
-         GestionFourn_btn->setMouseTracking(true);
+         GestionPiece_btn->setMouseTracking(true);
 
             // Install an event filter to handle enterEvent and leaveEvent
-            GestionFourn_btn->installEventFilter(this);
+            GestionPiece_btn->installEventFilter(this);
 
 
 
 
      // Connect the hovered signal to a lambda function that sets the graphics effect
 
-     connect(GestionFourn_btn,SIGNAL(clicked()),this,SLOT(onFournButtonClicked()));
+     connect(GestionPiece_btn,SIGNAL(clicked()),this,SLOT(onPieceButtonClicked()));
     }
 
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+     GestionVehi_btn = new QPushButton("", this);
+
+     // Set the button's size (optional)
+     GestionVehi_btn->setFixedSize(250,150 );
+
+     // Set an icon for the button (optional)
+     QIcon icon(":/img/image/gestion_vehicule.jpg");  // Replace with the actual path to your icon
+
+     GestionVehi_btn->setIcon(icon);
+     QSize size(250,130);
+     GestionVehi_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionVehi_btn);
+
+     // Add the button to the horizontal layout
+     if(currentHLayout->count()%3==0)
+     {
+          QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+          currentHLayout = newhorizontalLayout;
+          ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+     }
+
+     GestionVehi_btn->setStyleSheet("QPushButton:hover{background-color: rgb(255, 255, 255);"
+                              "border: 5px solid black;"
+                              "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                              "border-radius:15px;}"
+                               "QPushButton{background-color: rgb(255, 255, 255);"
+                                 "border: 5px solid black;"
+                                 "border-radius:15px;}"
+
+
+                              );
+     // Create a drop shadow effect
+         QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+         drop_shadow->setBlurRadius(20);
+         drop_shadow->setColor(QColor(255, 215, 0, 255));
+         drop_shadow->setOffset(10, 20);
+
+         GestionVehi_btn->setMouseTracking(true);
+
+            // Install an event filter to handle enterEvent and leaveEvent
+            GestionVehi_btn->installEventFilter(this);
+
+
+
+
+     // Connect the hovered signal to a lambda function that sets the graphics effect
+
+     connect(GestionVehi_btn,SIGNAL(clicked()),this,SLOT(onVoitureButtonClicked()));
+    }
+
+
+}
+void MainWindow::onPieceButtonClicked()
+{
+    this->hide();
+
+    // Create the rh window if it doesn't exist
+    gesPiece  *p = new gesPiece;
+
+    // Connect the destroyed signal to the onRhWindowClosed slot
+    connect(p, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
+
+    p->show();
+    p->activateWindow();
 }
 
 void MainWindow::onReserButtonClicked()
@@ -736,12 +587,40 @@ void MainWindow::onFournButtonClicked()
     f->activateWindow();
 }
 
+void MainWindow::onFactureButtonClicked()
+{
+    this->hide();
+
+    // Create the rh window if it doesn't exist
+    Dialog  *d = new Dialog;
+
+    // Connect the destroyed signal to the onRhWindowClosed slot
+    connect(d, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
+
+    d->show();
+    d->activateWindow();
+}
+
+void MainWindow::onVoitureButtonClicked()
+{
+    this->hide();
+
+    // Create the rh window if it doesn't exist
+    gest_vehi  *v = new gest_vehi;
+
+    // Connect the destroyed signal to the onRhWindowClosed slot
+    connect(v, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
+
+    v->show();
+    v->activateWindow();
+}
+
 bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
     if (obj == admin_btn) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(53,238,255,255));
             drop_shadow->setOffset(0,0);
             admin_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -749,23 +628,23 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
             admin_btn->setGraphicsEffect(nullptr);
         }
     }
-    if (obj == GestionEmp_btn) {
+    if (obj == GestionFacture_btn) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(255,63,66,255));
             drop_shadow->setOffset(0,0);
-            GestionEmp_btn->setGraphicsEffect(drop_shadow);
+            GestionFacture_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
             // Mouse left the button
-            GestionEmp_btn->setGraphicsEffect(nullptr);
+            GestionFacture_btn->setGraphicsEffect(nullptr);
         }
     }
     if (obj == GestionRes_btn) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(86,255,73,255));
             drop_shadow->setOffset(0,0);
             GestionRes_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -777,12 +656,36 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(255,239,68,255));
             drop_shadow->setOffset(0,0);
             GestionFourn_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
             // Mouse left the button
             GestionFourn_btn->setGraphicsEffect(nullptr);
+        }
+    }
+    if (obj == GestionPiece_btn) {
+        if (event->type() == QEvent::Enter) {
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(30);
+            drop_shadow->setColor(QColor(255,110,43,255));
+            drop_shadow->setOffset(0,0);
+            GestionPiece_btn->setGraphicsEffect(drop_shadow);
+        } else if (event->type() == QEvent::Leave) {
+            // Mouse left the button
+            GestionPiece_btn->setGraphicsEffect(nullptr);
+        }
+    }
+    if (obj == GestionVehi_btn) {
+        if (event->type() == QEvent::Enter) {
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(30);
+            drop_shadow->setColor(QColor(255,110,43,255));
+            drop_shadow->setOffset(0,0);
+            GestionVehi_btn->setGraphicsEffect(drop_shadow);
+        } else if (event->type() == QEvent::Leave) {
+            // Mouse left the button
+            GestionVehi_btn->setGraphicsEffect(nullptr);
         }
     }
     return QMainWindow::eventFilter(obj, event);
@@ -935,7 +838,7 @@ void MainWindow::on_pushButton_exit2_clicked()
 {
     this->close();
     delete admin_btn;
-    delete GestionEmp_btn;
+    delete GestionFacture_btn;
     delete GestionRes_btn;
     delete GestionFourn_btn;
 }
@@ -956,9 +859,9 @@ void MainWindow::on_pushButton_signout2_clicked()
             admin_btn = nullptr;  // Set to nullptr after deletion
         }
 
-        if (GestionEmp_btn != nullptr) {
-            delete GestionEmp_btn;
-            GestionEmp_btn = nullptr;
+        if (GestionFacture_btn != nullptr) {
+            delete GestionFacture_btn;
+            GestionFacture_btn = nullptr;
         }
 
         if (GestionRes_btn != nullptr) {
@@ -968,6 +871,14 @@ void MainWindow::on_pushButton_signout2_clicked()
         if (GestionFourn_btn != nullptr) {
             delete GestionFourn_btn;
             GestionFourn_btn = nullptr;
+        }
+        if (GestionPiece_btn != nullptr) {
+            delete GestionPiece_btn;
+            GestionPiece_btn = nullptr;
+        }
+        if (GestionVehi_btn != nullptr) {
+            delete GestionVehi_btn;
+            GestionVehi_btn = nullptr;
         }
 
 
@@ -1086,6 +997,8 @@ void MainWindow::Log_viafinger()
             ui->label_nameprofil->setText(curr_user.get_nom()+" "+curr_user.get_prenom()+"#"+curr_user.get_role());
 
             QByteArray nom_prenom2 = nom_prenom.toUtf8();
+
+            add_Gestionbtn();
 
             A.write_to_arduino(nom_prenom2);
 

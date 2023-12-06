@@ -66,6 +66,9 @@ private slots:
     void onAdminButtonClicked();
     void onReserButtonClicked();
     void onFournButtonClicked();
+    void onPieceButtonClicked();
+    void onFactureButtonClicked();
+    void onVoitureButtonClicked();
 
     void onRhWindowClosed();
 
@@ -94,7 +97,7 @@ private:
     int ret;
     Arduino A;
     QByteArray data;
-    QPushButton *admin_btn,*GestionEmp_btn,*GestionRes_btn,*GestionFourn_btn;
+    QPushButton *admin_btn,*GestionFacture_btn,*GestionRes_btn,*GestionFourn_btn,*GestionPiece_btn,*GestionVehi_btn;
     QLabel *admin_Lab,*GestionEmp_Lab,*GestionRes_Lab,*GestionFourn_Lab;
     int last_index;
 

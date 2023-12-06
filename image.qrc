@@ -30,5 +30,11 @@
         <file>image/Gestion_inventaire.jpg</file>
         <file>image/Gestion_reservation.jpg</file>
         <file>image/Settings.png</file>
+        <file>image/Gestion_facture.png</file>
+        <file>image/announce.png</file>
+        <file>image/apple.png</file>
+        <file>image/apple-logo.png</file>
+        <file>image/play-logo.png</file>
+        <file>image/gestion_vehicule.jpg</file>
     </qresource>
 </RCC>
