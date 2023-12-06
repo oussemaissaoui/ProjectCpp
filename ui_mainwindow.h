@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
@@ -62,14 +63,11 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_7;
     QGridLayout *gridLayout_2;
     QFrame *frame;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *horizontalLayout;
+    QWidget *verticalLayoutWidget_2;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *label_5;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *pushButton_12;
     QPushButton *pushButton_11;
@@ -78,9 +76,21 @@ public:
     QLabel *label_Menuapp;
     QGroupBox *groupBox_4;
     QVBoxLayout *verticalLayout_2;
+    QLabel *label_nameprofil;
     QPushButton *pushButton_setting2;
     QPushButton *pushButton_signout2;
     QPushButton *pushButton_exit2;
+    QWidget *page_3;
+    QGroupBox *groupBox_3;
+    QLabel *label;
+    QPushButton *pushButton;
+    QGroupBox *groupBox_5;
+    QGroupBox *groupBox_6;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *label_4;
+    QComboBox *comboBox;
+    QPushButton *pushButton_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -339,6 +349,8 @@ public:
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
+        page_2->setStyleSheet(QLatin1String("background-color: rgb(28,28,28);\n"
+"border:none;"));
         scrollArea = new QScrollArea(page_2);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
         scrollArea->setEnabled(true);
@@ -347,30 +359,10 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1200, 1200));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -52, 1200, 1200));
         scrollAreaWidgetContents->setMinimumSize(QSize(1200, 1200));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        pushButton_9 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-
-        horizontalLayout_2->addWidget(pushButton_9);
-
-        pushButton_8 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-
-        horizontalLayout_2->addWidget(pushButton_8);
-
-        pushButton_7 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-
-        horizontalLayout_2->addWidget(pushButton_7);
-
-
-        gridLayout->addLayout(horizontalLayout_2, 3, 0, 1, 1);
-
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(10, 10, 10, 10);
@@ -379,12 +371,19 @@ public:
         frame->setMinimumSize(QSize(383, 400));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        horizontalLayoutWidget = new QWidget(frame);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(140, 110, 901, 211));
-        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayoutWidget_2 = new QWidget(frame);
+        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
+        verticalLayoutWidget_2->setGeometry(QRect(100, 139, 971, 431));
+        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_4->setSpacing(50);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(5, 5, 5, 5);
+        label_5 = new QLabel(frame);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(110, 80, 266, 53));
+        label_5->setStyleSheet(QLatin1String("font: 26pt \"MS Shell Dlg 2\";\n"
+"color: rgb(255, 255, 255);\n"
+"font: 87 28pt \"Arial Black\";"));
 
         gridLayout_2->addWidget(frame, 0, 0, 1, 1);
 
@@ -409,7 +408,7 @@ public:
         horizontalLayout_3->addWidget(pushButton_10);
 
 
-        gridLayout->addLayout(horizontalLayout_3, 4, 0, 1, 1);
+        gridLayout->addLayout(horizontalLayout_3, 3, 0, 1, 1);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
         label_profil_2 = new ClickableLabel(page_2);
@@ -430,13 +429,24 @@ public:
         label_Menuapp->setScaledContents(true);
         groupBox_4 = new QGroupBox(page_2);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(920, 50, 191, 131));
+        groupBox_4->setGeometry(QRect(920, 30, 191, 191));
         groupBox_4->setStyleSheet(QLatin1String("background-color: rgb(33, 31, 31);\n"
-"border:none;"));
+"border-radius:9;\n"
+"border-color: rgb(0, 0, 0);"));
         verticalLayout_2 = new QVBoxLayout(groupBox_4);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(20, 0, 20, 0);
+        label_nameprofil = new QLabel(groupBox_4);
+        label_nameprofil->setObjectName(QStringLiteral("label_nameprofil"));
+        label_nameprofil->setMinimumSize(QSize(160, 15));
+        label_nameprofil->setMaximumSize(QSize(180, 15));
+        label_nameprofil->setStyleSheet(QLatin1String("border-bottom-color: rgb(182, 172, 118);\n"
+"font: 87 8pt \"Arial Black\";\n"
+"color: rgb(255, 255, 255);"));
+
+        verticalLayout_2->addWidget(label_nameprofil);
+
         pushButton_setting2 = new QPushButton(groupBox_4);
         pushButton_setting2->setObjectName(QStringLiteral("pushButton_setting2"));
         pushButton_setting2->setMinimumSize(QSize(150, 30));
@@ -496,11 +506,70 @@ public:
         verticalLayout_2->addWidget(pushButton_exit2);
 
         stackedWidget->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName(QStringLiteral("page_3"));
+        page_3->setStyleSheet(QStringLiteral("background-color: rgb(28, 28, 28);"));
+        groupBox_3 = new QGroupBox(page_3);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setGeometry(QRect(-1, -11, 361, 621));
+        groupBox_3->setStyleSheet(QStringLiteral("border:none;"));
+        label = new QLabel(groupBox_3);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(80, 80, 123, 39));
+        label->setStyleSheet(QStringLiteral("font: 87 20pt \"Arial Black\";"));
+        pushButton = new QPushButton(groupBox_3);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(70, 170, 221, 31));
+        pushButton->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton->setStyleSheet(QLatin1String("background-color: rgb(31, 31, 31);\n"
+"border-radius:15px;"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/img/image/logo_blanc.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon1);
+        groupBox_5 = new QGroupBox(page_3);
+        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
+        groupBox_5->setGeometry(QRect(359, -11, 851, 621));
+        groupBox_5->setStyleSheet(QStringLiteral("border:none;"));
+        groupBox_6 = new QGroupBox(groupBox_5);
+        groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
+        groupBox_6->setGeometry(QRect(70, 70, 301, 61));
+        label_2 = new QLabel(groupBox_6);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(20, 10, 51, 51));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/img/image/logo_blanc.png")));
+        label_2->setScaledContents(true);
+        label_3 = new QLabel(groupBox_6);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(90, 0, 184, 64));
+        label_3->setStyleSheet(QStringLiteral("font: 40pt \"MS Shell Dlg 2\";"));
+        label_4 = new QLabel(groupBox_5);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(60, 200, 101, 16));
+        label_4->setStyleSheet(QLatin1String("\n"
+"font: 75 8pt \"Microsoft PhagsPa\";"));
+        comboBox = new QComboBox(groupBox_5);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(60, 230, 521, 41));
+        comboBox->setStyleSheet(QLatin1String("background-color: rgb(31, 31, 31);\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"border-radius:7px;"));
+        pushButton_2 = new QPushButton(groupBox_5);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(770, 40, 31, 31));
+        pushButton_2->setStyleSheet(QLatin1String("QPushButton:hover{background-color: rgb(34, 34, 34);\n"
+"	color: rgb(255, 255, 255);\n"
+"border-radius:8px;}\n"
+"QPushButton{background-color: rgb(28, 28, 28);\n"
+"color: rgb(255, 255, 255);\n"
+"	font: 11pt \"MS Shell Dlg 2\";\n"
+"border-radius:8px;}\n"
+""));
+        stackedWidget->addWidget(page_3);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -534,18 +603,31 @@ public:
         label_signup->setText(QApplication::translate("MainWindow", "Sign Up!", Q_NULLPTR));
         label_eye->setText(QString());
         label_wrong->setText(QApplication::translate("MainWindow", "wrong password or username!", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        label_5->setText(QApplication::translate("MainWindow", "My Accesses", Q_NULLPTR));
         pushButton_12->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
         pushButton_11->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
         pushButton_10->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
         label_profil_2->setText(QString());
         label_Menuapp->setText(QString());
         groupBox_4->setTitle(QString());
+        label_nameprofil->setText(QApplication::translate("MainWindow", "aze", Q_NULLPTR));
         pushButton_setting2->setText(QApplication::translate("MainWindow", "SETTINGS", Q_NULLPTR));
         pushButton_signout2->setText(QApplication::translate("MainWindow", "SIGN OUT", Q_NULLPTR));
         pushButton_exit2->setText(QApplication::translate("MainWindow", "EXIT", Q_NULLPTR));
+        groupBox_3->setTitle(QString());
+        label->setText(QApplication::translate("MainWindow", "Settings", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "AllEco", Q_NULLPTR));
+        groupBox_5->setTitle(QString());
+        groupBox_6->setTitle(QString());
+        label_2->setText(QString());
+        label_3->setText(QApplication::translate("MainWindow", "ALLECO", Q_NULLPTR));
+        label_4->setText(QApplication::translate("MainWindow", "ALLECO LANGUAGE", Q_NULLPTR));
+        comboBox->clear();
+        comboBox->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "English (US)", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "Frensh", Q_NULLPTR)
+        );
+        pushButton_2->setText(QApplication::translate("MainWindow", "X", Q_NULLPTR));
     } // retranslateUi
 
 };

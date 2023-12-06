@@ -226,6 +226,7 @@ Makefile: Project2A.pro ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.c
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/moc.prf \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/win32/opengl.prf \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/uic.prf \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/win32/dumpcpp.prf \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/qmake_use.prf \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/file_copies.prf \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/win32/windows.prf \
@@ -237,10 +238,16 @@ Makefile: Project2A.pro ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.c
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/qtmaind.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Charts.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5MultimediaWidgets.prl \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5AxContainer.prl \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5AxBase.prl \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Svg.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Widgets.prl \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Multimedia.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Gui.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Sql.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5SerialPort.prl \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Network.prl \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile Project2A.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -408,6 +415,7 @@ Makefile: Project2A.pro ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.c
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/moc.prf:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/win32/opengl.prf:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/uic.prf:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/win32/dumpcpp.prf:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/qmake_use.prf:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/file_copies.prf:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/mkspecs/features/win32/windows.prf:
@@ -419,10 +427,16 @@ Project2A.pro:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/qtmaind.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Charts.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5MultimediaWidgets.prl:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5AxContainer.prl:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5AxBase.prl:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Svg.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Widgets.prl:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Multimedia.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Gui.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Sql.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5SerialPort.prl:
+../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Network.prl:
 ../Qt/Qt5.9.9/5.9.9/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile Project2A.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

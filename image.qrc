@@ -29,5 +29,6 @@
         <file>image/Gestion_fournisseur.png</file>
         <file>image/Gestion_inventaire.jpg</file>
         <file>image/Gestion_reservation.jpg</file>
+        <file>image/Settings.png</file>
     </qresource>
 </RCC>

@@ -1,6 +1,7 @@
 
-
-QT       += sql charts printsupport  serialport
+QT       += sql charts printsupport serialport
+QT       += core gui sql multimedia multimediawidgets network printsupport widgets axcontainer charts serialport svg
+QT += multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,38 +25,53 @@ SOURCES += \
     crud.cpp \
     employe.cpp \
     finger.cpp \
+    fourn.cpp \
+    fournisseur.cpp \
     main.cpp \
     mainwindow.cpp \
     pdf.cpp \
+    reserv.cpp \
+    reservation.cpp \
     rh.cpp \
     connection.cpp \
     signup.cpp \
     arduino.cpp \
     clickablelabel.cpp \
-    user.cpp
+    qrcodegen.cpp \
+    user.cpp \
+    widget.cpp
 
 HEADERS += \
     aidialog.h \
     crud.h \
     employe.h \
     finger.h \
+    fourn.h \
+    fournisseur.h \
     mainwindow.h \
     pdf.h \
+    reserv.h \
+    reservation.h \
     rh.h \
     connection.h \
     signup.h \
     arduino.h \
     clickablelabel.h \
-    user.h
+    qrcodegen.h \
+    user.h \
+    widget.h
 
 FORMS += \
     aidialog.ui \
     crud.ui \
     finger.ui \
+    fourn.ui \
     mainwindow.ui \
     pdf.ui \
+    reserv.ui \
     rh.ui \
-    signup.ui
+    signup.ui \
+    widget.ui
 
 
 # Default rules for deployment.

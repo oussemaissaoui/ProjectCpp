@@ -16,6 +16,8 @@
 #include "arduino.h"
 #include <QByteArray>
 #include <string>
+#include "reserv.h"
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,7 +32,8 @@ class MainWindow : public QMainWindow
 public:
      explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void checkPassword();
+    bool checkPassword();
+    bool checkPassword(int state);
     bool get_login_status(){return login_status;}
     void set_login_status(bool);
 
@@ -43,6 +46,8 @@ public:
     void hide_show_pass();
     static user curr_user;
     void Log_viafinger();
+    bool eventFilter(QObject *obj, QEvent *event);
+    void add_Gestionbtn();
 
 
 signals:
@@ -59,6 +64,8 @@ private slots:
     void on_pushButton_login_clicked();
     void enable_disable_signout_btn();
     void onAdminButtonClicked();
+    void onReserButtonClicked();
+    void onFournButtonClicked();
 
     void onRhWindowClosed();
 
@@ -72,6 +79,12 @@ private slots:
     void fingerprint_clicked();
 
 
+    void on_pushButton_setting2_clicked();
+
+    void on_pushButton_setting1_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     bool login_status;
@@ -81,6 +94,9 @@ private:
     int ret;
     Arduino A;
     QByteArray data;
+    QPushButton *admin_btn,*GestionEmp_btn,*GestionRes_btn,*GestionFourn_btn;
+    QLabel *admin_Lab,*GestionEmp_Lab,*GestionRes_Lab,*GestionFourn_Lab;
+    int last_index;
 
 
 

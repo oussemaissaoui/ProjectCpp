@@ -13,7 +13,7 @@
 #include <QTextStream>
 #include <QTimer>
 #include "finger.h"
-
+#include "reserv.h"
 
 using namespace std;
 
@@ -56,12 +56,24 @@ int main(int argc, char *argv[])
     if(query.exec() && query.next())
     {
         int rowcount=query.value(0).toInt();
+        qDebug()<<query.value(0).toInt()<<"<-------- from logs"<<endl;
         if(rowcount !=0)
         {
             //w_login.set_login_status(true);
             w_login.set_login_status(true);
             emit w_login.login_status_changed();
+            //emit w_login.on_pushButton_login_clicked();
             w_login.set_stackedwidget_page(1);
+            QSqlQuery query2;
+            query2.prepare("SELECT LAST_LOGIN_ID FROM logs");
+            if (query2.exec() && query2.next())
+            {
+                int lastLoginID = query2.value(0).toInt();
+                w_login.checkPassword(lastLoginID);
+                qDebug() << "Done Here" << endl;
+            }
+
+
 
         }
         else

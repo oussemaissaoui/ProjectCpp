@@ -43,7 +43,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_bg_main">
@@ -548,6 +548,10 @@ QLabel:hover{
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(28,28,28);
+border:none;</string>
+     </property>
      <widget class="QScrollArea" name="scrollArea">
       <property name="enabled">
        <bool>true</bool>
@@ -573,7 +577,7 @@ QLabel:hover{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-52</y>
          <width>1200</width>
          <height>1200</height>
         </rect>
@@ -585,31 +589,6 @@ QLabel:hover{
         </size>
        </property>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="3" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QPushButton" name="pushButton_9">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_8">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_7">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="2" column="0">
          <layout class="QGridLayout" name="gridLayout_2">
           <property name="leftMargin">
@@ -638,22 +617,56 @@ QLabel:hover{
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <widget class="QWidget" name="horizontalLayoutWidget">
+            <widget class="QWidget" name="verticalLayoutWidget_2">
              <property name="geometry">
               <rect>
-               <x>140</x>
-               <y>110</y>
-               <width>901</width>
-               <height>211</height>
+               <x>100</x>
+               <y>139</y>
+               <width>971</width>
+               <height>431</height>
               </rect>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout"/>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <property name="spacing">
+               <number>50</number>
+              </property>
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+             </layout>
+            </widget>
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>110</x>
+               <y>80</y>
+               <width>266</width>
+               <height>53</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 26pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);
+font: 87 28pt &quot;Arial Black&quot;;</string>
+             </property>
+             <property name="text">
+              <string>My Accesses</string>
+             </property>
             </widget>
            </widget>
           </item>
          </layout>
         </item>
-        <item row="4" column="0">
+        <item row="3" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QPushButton" name="pushButton_12">
@@ -743,14 +756,15 @@ border-radius:30;</string>
       <property name="geometry">
        <rect>
         <x>920</x>
-        <y>50</y>
+        <y>30</y>
         <width>191</width>
-        <height>131</height>
+        <height>191</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(33, 31, 31);
-border:none;</string>
+border-radius:9;
+border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="title">
        <string/>
@@ -771,6 +785,30 @@ border:none;</string>
        <property name="bottomMargin">
         <number>0</number>
        </property>
+       <item>
+        <widget class="QLabel" name="label_nameprofil">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>180</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-bottom-color: rgb(182, 172, 118);
+font: 87 8pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string>aze</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QPushButton" name="pushButton_setting2">
          <property name="minimumSize">
@@ -859,6 +897,196 @@ border-radius:7;
         </widget>
        </item>
       </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(28, 28, 28);</string>
+     </property>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>-1</x>
+        <y>-11</y>
+        <width>361</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>80</y>
+         <width>123</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 87 20pt &quot;Arial Black&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Settings</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>170</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(31, 31, 31);
+border-radius:15px;</string>
+       </property>
+       <property name="text">
+        <string>AllEco</string>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/img/image/logo_blanc.png</normaloff>:/img/image/logo_blanc.png</iconset>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>359</x>
+        <y>-11</y>
+        <width>851</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>70</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="image.qrc">:/img/image/logo_blanc.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>0</y>
+          <width>184</width>
+          <height>64</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 40pt &quot;MS Shell Dlg 2&quot;;</string>
+        </property>
+        <property name="text">
+         <string>ALLECO</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>200</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+font: 75 8pt &quot;Microsoft PhagsPa&quot;;</string>
+       </property>
+       <property name="text">
+        <string>ALLECO LANGUAGE</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>230</y>
+         <width>521</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(31, 31, 31);
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+border-radius:7px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>English (US)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Frensh</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>40</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover{background-color: rgb(34, 34, 34);
+	color: rgb(255, 255, 255);
+border-radius:8px;}
+QPushButton{background-color: rgb(28, 28, 28);
+color: rgb(255, 255, 255);
+	font: 11pt &quot;MS Shell Dlg 2&quot;;
+border-radius:8px;}
+</string>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

@@ -63,6 +63,9 @@ Finger::~Finger()
            delete GifAnimation;
            delete GifAnimation2;
        }
+    A.close_arduino();
+    qDebug()<<"finger end"<<endl;
+
 }
 
 void Finger::raiseButtons_label()

@@ -10,6 +10,7 @@ class Arduino
 public:     //méthodes de la classe Arduino
     Arduino();
     int connect_arduino(); // permet de connecter le PC à Arduino
+    int connect_arduino(const QString &portName);
     int close_arduino(); // permet de femer la connexion
     int write_to_arduino( QByteArray ); // envoyer des données vers arduino
     QByteArray read_from_arduino();  //recevoir des données de la carte Arduino

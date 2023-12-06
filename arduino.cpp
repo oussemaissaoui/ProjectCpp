@@ -1,4 +1,5 @@
 #include "arduino.h"
+#include "qthread.h"
 Arduino::Arduino()
 {
     data="";
@@ -41,6 +42,35 @@ int Arduino::connect_arduino()
         }
         return -1;
 }
+
+
+int Arduino::connect_arduino(const QString &portName)
+{
+    if (serial->isOpen()) {
+        serial->close();
+        serial->setBaudRate(QSerialPort::Baud9600);
+        QThread::msleep(1000);
+    }
+
+    arduino_port_name = portName;
+    serial->setPortName(arduino_port_name);
+
+    if (serial->open(QSerialPort::ReadWrite)) {
+        serial->setBaudRate(QSerialPort::Baud9600);
+        serial->setDataBits(QSerialPort::Data8);
+        serial->setParity(QSerialPort::NoParity);
+        serial->setStopBits(QSerialPort::OneStop);
+        serial->setFlowControl(QSerialPort::NoFlowControl);
+
+        QThread::msleep(1000);
+
+        return 0;
+    } else {
+        qDebug() << "Failed to open serial port:" << serial->errorString();
+        return 1;
+    }
+}
+
 
 int Arduino::close_arduino()
 

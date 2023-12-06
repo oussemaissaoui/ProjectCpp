@@ -9,6 +9,11 @@
 #include <sstream>
 #include <QPixmap>
 #include <QLabel>
+#include <QGraphicsDropShadowEffect>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QComboBox>
+#include "fourn.h"
 
 using namespace std;
 
@@ -18,8 +23,11 @@ MainWindow::MainWindow( QWidget *parent)
                        : QMainWindow(parent),
                          ui(new Ui::MainWindow)
 {
-
+    admin_btn=nullptr;
+    GestionEmp_btn=nullptr;
+    GestionRes_btn=nullptr;
     curr_user.set_cin("123456");
+    last_index=0;
     //ARDUINO-----------------------------------------------------------------
     ret=A.connect_arduino(); // lancer la connexion à arduino
         switch(ret){
@@ -67,48 +75,12 @@ MainWindow::MainWindow( QWidget *parent)
 
 
 
-    // Create a pushbutton For Admin
-        QPushButton *admin_btn = new QPushButton("", this);
-
-        // Set the button's size (optional)
-        admin_btn->setFixedSize(300, 200);
-
-        // Set an icon for the button (optional)
-        QIcon icon(":/img/image/admin.jpg");  // Replace with the actual path to your icon
-
-        admin_btn->setIcon(icon);
-        admin_btn->setIconSize(admin_btn->size());
-
-        // Add the button to the horizontal layout
-        ui->horizontalLayout->addWidget(admin_btn);
-
-     // Create a pushbutton For Gestion
-        QPushButton *GestionEmp_btn = new QPushButton("", this);
-
-        // Set the button's size (optional)
-        GestionEmp_btn->setFixedSize(300, 200);
-
-        // Set an icon for the button (optional)
-        QIcon icon1(":/img/image/Gestion_emp.jpg");  // Replace with the actual path to your icon
-
-        GestionEmp_btn->setIcon(icon1);
-        GestionEmp_btn->setIconSize(GestionEmp_btn->size());
-
-        // Add the button to the horizontal layout
-        ui->horizontalLayout->addWidget(GestionEmp_btn);
-
-
-
-        connect(admin_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
-        //connect(GestionEmp_btn,SIGNAL(clicked()),this,SLOT(on_pushButton_admin_clicked()));
-
-
-
 
 
         if(ret==0)
         {
-            // Create a pushbutton For Admin
+
+            // Create a pushbutton For Finger Login
                 QPushButton *finger_btn = new QPushButton("", this);
 
                 // Set the button's size (optional)
@@ -229,18 +201,602 @@ void MainWindow::hide_show_pass()
 void MainWindow::on_pushButton_login_clicked()
 {
     
-   checkPassword();
+   if(checkPassword())
+   {
+       /*QHBoxLayout *horizontalLayout = new QHBoxLayout;
+        QHBoxLayout *currentHLayout = horizontalLayout;
+        ui->verticalLayout_4->addLayout(horizontalLayout);
+    if(curr_user.get_role()=="Admin"){// Create a pushbutton For Admin
+
+       admin_btn = new QPushButton("", this);
+
+       // Set the button's size (optional)
+       admin_btn->setFixedSize(250,150 );
+
+
+       // Set an icon for the button (optional)
+       QIcon icon(":/img/image/admin.jpg");  // Replace with the actual path to your icon
+
+       admin_btn->setIcon(icon);
+       QSize size(200,130);
+       admin_btn->setIconSize(size);
+       currentHLayout->addWidget(admin_btn);
+
+       // Add the button to the horizontal layout
+       if(currentHLayout->count()%3==0)
+       {
+            QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+            currentHLayout = newhorizontalLayout;
+            ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+       }
+
+       admin_btn->setStyleSheet("QPushButton:hover{background-color: rgb(255, 255, 255);"
+                                "border: 5px solid black;"
+                                "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                                "border-radius:15px;}"
+                                 "QPushButton{background-color: rgb(255, 255, 255);"
+                                   "border: 5px solid black;"
+                                   "border-radius:15px;}"
+
+
+                                );
+       // Create a drop shadow effect
+           QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+           drop_shadow->setBlurRadius(20);
+           drop_shadow->setColor(QColor(255, 215, 0, 255));
+           drop_shadow->setOffset(10, 20);
+
+           admin_btn->setMouseTracking(true);
+
+              // Install an event filter to handle enterEvent and leaveEvent
+              admin_btn->installEventFilter(this);
+
+
+
+
+
+       // Connect the hovered signal to a lambda function that sets the graphics effect
+
+       connect(admin_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
+        //add text under btn
+        admin_Lab = new QLabel;
+        admin_Lab->setText("Gestion Admin");
+        admin_Lab->setGeometry(admin_btn->x() , admin_btn->x()+admin_btn->height(),250,25);
+        //admin_Lab->set
+
+
+       }
+    if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_emp
+        GestionEmp_btn = new QPushButton("", this);
+
+        // Set the button's size (optional)
+        GestionEmp_btn->setFixedSize(250,150 );
+
+        // Set an icon for the button (optional)
+        QIcon icon(":/img/image/Gestion_emp.jpg");  // Replace with the actual path to your icon
+
+        GestionEmp_btn->setIcon(icon);
+        QSize size(250,130 );
+        GestionEmp_btn->setIconSize(size);
+        currentHLayout->addWidget(GestionEmp_btn);
+
+        // Add the button to the horizontal layout
+        if(currentHLayout->count()%3==0)
+        {
+             QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+             currentHLayout = newhorizontalLayout;
+             ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+        }
+
+        GestionEmp_btn->setStyleSheet("QPushButton:hover{background-color: rgb(71,186, 205);"
+                                 "border: 5px solid black;"
+                                 "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                                 "border-radius:15px;}"
+                                  "QPushButton{background-color: rgb(71,186, 205);;"
+                                    "border: 5px solid black;"
+                                    "border-radius:15px;}"
+
+
+                                 );
+        // Create a drop shadow effect
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(20);
+            drop_shadow->setColor(QColor(255, 215, 0, 255));
+            drop_shadow->setOffset(10, 20);
+
+            GestionEmp_btn->setMouseTracking(true);
+
+               // Install an event filter to handle enterEvent and leaveEvent
+               GestionEmp_btn->installEventFilter(this);
+
+
+
+
+        // Connect the hovered signal to a lambda function that sets the graphics effect
+
+        connect(GestionEmp_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
+
+       }
+
+    if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+        GestionRes_btn = new QPushButton("", this);
+
+        // Set the button's size (optional)
+        GestionRes_btn->setFixedSize(250,150 );
+
+        // Set an icon for the button (optional)
+        QIcon icon(":/img/image/Gestion_reservation.jpg");  // Replace with the actual path to your icon
+
+        GestionRes_btn->setIcon(icon);
+        QSize size(250,130);
+        GestionRes_btn->setIconSize(size);
+        currentHLayout->addWidget(GestionRes_btn);
+
+        // Add the button to the horizontal layout
+        if(currentHLayout->count()%3==0)
+        {
+             QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+             currentHLayout = newhorizontalLayout;
+             ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+        }
+
+        GestionRes_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
+                                 "border: 5px solid black;"
+                                 "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                                 "border-radius:15px;}"
+                                  "QPushButton{background-color: rgb(27, 40, 72);"
+                                    "border: 5px solid black;"
+                                    "border-radius:15px;}"
+
+
+                                 );
+        // Create a drop shadow effect
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(20);
+            drop_shadow->setColor(QColor(255, 215, 0, 255));
+            drop_shadow->setOffset(10, 20);
+
+            GestionRes_btn->setMouseTracking(true);
+
+               // Install an event filter to handle enterEvent and leaveEvent
+               GestionRes_btn->installEventFilter(this);
+
+
+
+
+        // Connect the hovered signal to a lambda function that sets the graphics effect
+
+        connect(GestionRes_btn,SIGNAL(clicked()),this,SLOT(onReserButtonClicked()));
+       }
+    if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+        GestionFourn_btn = new QPushButton("", this);
+
+        // Set the button's size (optional)
+        GestionFourn_btn->setFixedSize(250,150 );
+
+        // Set an icon for the button (optional)
+        QIcon icon(":/img/image/Gestion_fournisseur.png");  // Replace with the actual path to your icon
+
+        GestionFourn_btn->setIcon(icon);
+        QSize size(250,130);
+        GestionFourn_btn->setIconSize(size);
+        currentHLayout->addWidget(GestionFourn_btn);
+
+        // Add the button to the horizontal layout
+        if(currentHLayout->count()%3==0)
+        {
+             QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+             currentHLayout = newhorizontalLayout;
+             ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+        }
+
+        GestionFourn_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
+                                 "border: 5px solid black;"
+                                 "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                                 "border-radius:15px;}"
+                                  "QPushButton{background-color: rgb(27, 40, 72);"
+                                    "border: 5px solid black;"
+                                    "border-radius:15px;}"
+
+
+                                 );
+        // Create a drop shadow effect
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(20);
+            drop_shadow->setColor(QColor(255, 215, 0, 255));
+            drop_shadow->setOffset(10, 20);
+
+            GestionFourn_btn->setMouseTracking(true);
+
+               // Install an event filter to handle enterEvent and leaveEvent
+               GestionFourn_btn->installEventFilter(this);
+
+
+
+
+        // Connect the hovered signal to a lambda function that sets the graphics effect
+
+        connect(GestionFourn_btn,SIGNAL(clicked()),this,SLOT(onFournButtonClicked()));
+       }
+        */
+
+        add_Gestionbtn();
+   }
 
 }
 
-void MainWindow::checkPassword()
+void MainWindow::add_Gestionbtn()
 {
+    ui->label_nameprofil->setText(curr_user.get_nom()+" "+curr_user.get_prenom()+"#"+curr_user.get_role());
+
+    QHBoxLayout *horizontalLayout = new QHBoxLayout;
+     QHBoxLayout *currentHLayout = horizontalLayout;
+     ui->verticalLayout_4->addLayout(horizontalLayout);
+ if(curr_user.get_role()=="Admin"){// Create a pushbutton For Admin
+
+    admin_btn = new QPushButton("", this);
+
+    // Set the button's size (optional)
+    admin_btn->setFixedSize(250,150 );
+
+
+    // Set an icon for the button (optional)
+    QIcon icon(":/img/image/admin.jpg");  // Replace with the actual path to your icon
+
+    admin_btn->setIcon(icon);
+    QSize size(200,130);
+    admin_btn->setIconSize(size);
+    currentHLayout->addWidget(admin_btn);
+
+    // Add the button to the horizontal layout
+    if(currentHLayout->count()%3==0)
+    {
+         QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+         currentHLayout = newhorizontalLayout;
+         ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+    }
+
+    admin_btn->setStyleSheet("QPushButton:hover{background-color: rgb(255, 255, 255);"
+                             "border: 5px solid black;"
+                             "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                             "border-radius:15px;}"
+                              "QPushButton{background-color: rgb(255, 255, 255);"
+                                "border: 5px solid black;"
+                                "border-radius:15px;}"
+
+
+                             );
+    // Create a drop shadow effect
+        QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+        drop_shadow->setBlurRadius(20);
+        drop_shadow->setColor(QColor(255, 215, 0, 255));
+        drop_shadow->setOffset(10, 20);
+
+        admin_btn->setMouseTracking(true);
+
+           // Install an event filter to handle enterEvent and leaveEvent
+           admin_btn->installEventFilter(this);
+
+
+
+
+
+    // Connect the hovered signal to a lambda function that sets the graphics effect
+
+    connect(admin_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
+     //add text under btn
+     admin_Lab = new QLabel;
+     admin_Lab->setText("Gestion Admin");
+     admin_Lab->setGeometry(admin_btn->x() , admin_btn->x()+admin_btn->height(),250,25);
+     //admin_Lab->set
+
+
+    }
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_emp
+     GestionEmp_btn = new QPushButton("", this);
+
+     // Set the button's size (optional)
+     GestionEmp_btn->setFixedSize(250,150 );
+
+     // Set an icon for the button (optional)
+     QIcon icon(":/img/image/Gestion_emp.jpg");  // Replace with the actual path to your icon
+
+     GestionEmp_btn->setIcon(icon);
+     QSize size(250,130 );
+     GestionEmp_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionEmp_btn);
+
+     // Add the button to the horizontal layout
+     if(currentHLayout->count()%3==0)
+     {
+          QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+          currentHLayout = newhorizontalLayout;
+          ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+     }
+
+     GestionEmp_btn->setStyleSheet("QPushButton:hover{background-color: rgb(71,186, 205);"
+                              "border: 5px solid black;"
+                              "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                              "border-radius:15px;}"
+                               "QPushButton{background-color: rgb(71,186, 205);;"
+                                 "border: 5px solid black;"
+                                 "border-radius:15px;}"
+
+
+                              );
+     // Create a drop shadow effect
+         QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+         drop_shadow->setBlurRadius(20);
+         drop_shadow->setColor(QColor(255, 215, 0, 255));
+         drop_shadow->setOffset(10, 20);
+
+         GestionEmp_btn->setMouseTracking(true);
+
+            // Install an event filter to handle enterEvent and leaveEvent
+            GestionEmp_btn->installEventFilter(this);
+
+
+
+
+     // Connect the hovered signal to a lambda function that sets the graphics effect
+
+     connect(GestionEmp_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
+
+    }
+
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+     GestionRes_btn = new QPushButton("", this);
+
+     // Set the button's size (optional)
+     GestionRes_btn->setFixedSize(250,150 );
+
+     // Set an icon for the button (optional)
+     QIcon icon(":/img/image/Gestion_reservation.jpg");  // Replace with the actual path to your icon
+
+     GestionRes_btn->setIcon(icon);
+     QSize size(250,130);
+     GestionRes_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionRes_btn);
+
+     // Add the button to the horizontal layout
+     if(currentHLayout->count()%3==0)
+     {
+          QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+          currentHLayout = newhorizontalLayout;
+          ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+     }
+
+     GestionRes_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
+                              "border: 5px solid black;"
+                              "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                              "border-radius:15px;}"
+                               "QPushButton{background-color: rgb(27, 40, 72);"
+                                 "border: 5px solid black;"
+                                 "border-radius:15px;}"
+
+
+                              );
+     // Create a drop shadow effect
+         QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+         drop_shadow->setBlurRadius(20);
+         drop_shadow->setColor(QColor(255, 215, 0, 255));
+         drop_shadow->setOffset(10, 20);
+
+         GestionRes_btn->setMouseTracking(true);
+
+            // Install an event filter to handle enterEvent and leaveEvent
+            GestionRes_btn->installEventFilter(this);
+
+
+
+
+     // Connect the hovered signal to a lambda function that sets the graphics effect
+
+     connect(GestionRes_btn,SIGNAL(clicked()),this,SLOT(onReserButtonClicked()));
+    }
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+     GestionFourn_btn = new QPushButton("", this);
+
+     // Set the button's size (optional)
+     GestionFourn_btn->setFixedSize(250,150 );
+
+     // Set an icon for the button (optional)
+     QIcon icon(":/img/image/Gestion_fournisseur.png");  // Replace with the actual path to your icon
+
+     GestionFourn_btn->setIcon(icon);
+     QSize size(250,130);
+     GestionFourn_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionFourn_btn);
+
+     // Add the button to the horizontal layout
+     if(currentHLayout->count()%3==0)
+     {
+          QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+          currentHLayout = newhorizontalLayout;
+          ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+     }
+
+     GestionFourn_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
+                              "border: 5px solid black;"
+                              "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                              "border-radius:15px;}"
+                               "QPushButton{background-color: rgb(27, 40, 72);"
+                                 "border: 5px solid black;"
+                                 "border-radius:15px;}"
+
+
+                              );
+     // Create a drop shadow effect
+         QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+         drop_shadow->setBlurRadius(20);
+         drop_shadow->setColor(QColor(255, 215, 0, 255));
+         drop_shadow->setOffset(10, 20);
+
+         GestionFourn_btn->setMouseTracking(true);
+
+            // Install an event filter to handle enterEvent and leaveEvent
+            GestionFourn_btn->installEventFilter(this);
+
+
+
+
+     // Connect the hovered signal to a lambda function that sets the graphics effect
+
+     connect(GestionFourn_btn,SIGNAL(clicked()),this,SLOT(onFournButtonClicked()));
+    }
+
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+     GestionFourn_btn = new QPushButton("", this);
+
+     // Set the button's size (optional)
+     GestionFourn_btn->setFixedSize(250,150 );
+
+     // Set an icon for the button (optional)
+     QIcon icon(":/img/image/Gestion_inventaire.jpg");  // Replace with the actual path to your icon
+
+     GestionFourn_btn->setIcon(icon);
+     QSize size(250,130);
+     GestionFourn_btn->setIconSize(size);
+     currentHLayout->addWidget(GestionFourn_btn);
+
+     // Add the button to the horizontal layout
+     if(currentHLayout->count()%3==0)
+     {
+          QHBoxLayout *newhorizontalLayout = new QHBoxLayout;
+          currentHLayout = newhorizontalLayout;
+          ui->verticalLayout_4->addLayout(newhorizontalLayout);
+
+     }
+
+     GestionFourn_btn->setStyleSheet("QPushButton:hover{background-color: rgb(27, 40, 72);"
+                              "border: 5px solid black;"
+                              "  box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;"
+                              "border-radius:15px;}"
+                               "QPushButton{background-color: rgb(27, 40, 72);"
+                                 "border: 5px solid black;"
+                                 "border-radius:15px;}"
+
+
+                              );
+     // Create a drop shadow effect
+         QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+         drop_shadow->setBlurRadius(20);
+         drop_shadow->setColor(QColor(255, 215, 0, 255));
+         drop_shadow->setOffset(10, 20);
+
+         GestionFourn_btn->setMouseTracking(true);
+
+            // Install an event filter to handle enterEvent and leaveEvent
+            GestionFourn_btn->installEventFilter(this);
+
+
+
+
+     // Connect the hovered signal to a lambda function that sets the graphics effect
+
+     connect(GestionFourn_btn,SIGNAL(clicked()),this,SLOT(onFournButtonClicked()));
+    }
+
+}
+
+void MainWindow::onReserButtonClicked()
+{
+    this->hide();
+
+    // Create the rh window if it doesn't exist
+    Reserv  *r = new Reserv;
+
+    // Connect the destroyed signal to the onRhWindowClosed slot
+    connect(r, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
+
+    r->show();
+    r->activateWindow();
+
+}
+
+void MainWindow::onFournButtonClicked()
+{
+    this->hide();
+
+    // Create the rh window if it doesn't exist
+    fourn  *f = new fourn;
+
+    // Connect the destroyed signal to the onRhWindowClosed slot
+    connect(f, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
+
+    f->show();
+    f->activateWindow();
+}
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
+    if (obj == admin_btn) {
+        if (event->type() == QEvent::Enter) {
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(30);
+            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setOffset(0,0);
+            admin_btn->setGraphicsEffect(drop_shadow);
+        } else if (event->type() == QEvent::Leave) {
+            // Mouse left the button
+            admin_btn->setGraphicsEffect(nullptr);
+        }
+    }
+    if (obj == GestionEmp_btn) {
+        if (event->type() == QEvent::Enter) {
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(30);
+            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setOffset(0,0);
+            GestionEmp_btn->setGraphicsEffect(drop_shadow);
+        } else if (event->type() == QEvent::Leave) {
+            // Mouse left the button
+            GestionEmp_btn->setGraphicsEffect(nullptr);
+        }
+    }
+    if (obj == GestionRes_btn) {
+        if (event->type() == QEvent::Enter) {
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(30);
+            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setOffset(0,0);
+            GestionRes_btn->setGraphicsEffect(drop_shadow);
+        } else if (event->type() == QEvent::Leave) {
+            // Mouse left the button
+            GestionRes_btn->setGraphicsEffect(nullptr);
+        }
+    }
+    if (obj == GestionFourn_btn) {
+        if (event->type() == QEvent::Enter) {
+            QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
+            drop_shadow->setBlurRadius(30);
+            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setOffset(0,0);
+            GestionFourn_btn->setGraphicsEffect(drop_shadow);
+        } else if (event->type() == QEvent::Leave) {
+            // Mouse left the button
+            GestionFourn_btn->setGraphicsEffect(nullptr);
+        }
+    }
+    return QMainWindow::eventFilter(obj, event);
+}
+
+bool MainWindow::checkPassword()
+{
+
     QString email = ui->lineEdit_username->text();
     QString password  = ui->lineEdit_password->text();
 
     QSqlQuery query;
 
-    query.prepare("SELECT id_user FROM users WHERE (email= :email OR username = :email) AND password = :password");
+    query.prepare("SELECT * FROM users WHERE (email= :email OR username = :email) AND password = :password");
     query.bindValue(":email",email);
     query.bindValue(":password",password);
 
@@ -258,7 +814,7 @@ void MainWindow::checkPassword()
         {
             QSqlQuery query2;
             query2.prepare("INSERT INTO logs (LAST_LOGIN_ID) VALUES (:last_login)");
-            query2.bindValue(":last_login",query.value(0).toString());
+            query2.bindValue(":last_login",query.value(2).toString());
             if(query2.exec())
             cout<<"checked ::: !!!!!!!!!!!!!!!!!"<<endl;
 
@@ -271,12 +827,80 @@ void MainWindow::checkPassword()
         ui->groupBox_4->setVisible(false);
         profil_shown=false;
 
+        curr_user.set_email(query.value(0).toString());
+        curr_user.set_password(query.value(1).toString());
+        curr_user.set_cin(query.value(2).toString());
+        curr_user.set_id_user(query.value(2).toString());
+        curr_user.set_username(query.value(3).toString());
+        curr_user.set_role(query.value(4).toString());
+        curr_user.set_nom(query.value(5).toString());
+        curr_user.set_prenom(query.value(6).toString());
+        curr_user.set_sexe(query.value(7).toString());
+        curr_user.set_date_naiss(query.value(9).toDate());
+        ui->label_nameprofil->setText(curr_user.get_nom()+" "+curr_user.get_prenom()+"#"+curr_user.get_role());
+        //()<<curr_user.get_username();
+        return true;
+
     }
     else
     {
         login_status=false;
         emit login_status_changed();
         ui->label_wrong->setVisible(true);
+        return false;
+    }
+
+}
+
+
+bool MainWindow::checkPassword(int x)
+{
+    QSqlQuery query;
+
+        // Assuming x is the user ID from the logs table
+        query.prepare("SELECT * FROM users WHERE id_user = :id_user");
+        query.bindValue(":id_user", x);
+        if (query.exec() && query.next())
+           {
+               login_status = true;
+               emit login_status_changed();
+               cout << "we are here1 " << endl;
+
+               if (ui->checkBox_stayLogin->isChecked())
+               {
+                   QSqlQuery query2;
+                   query2.prepare("INSERT INTO logs (LAST_LOGIN_ID) VALUES (:last_login)");
+                   query2.bindValue(":last_login", x); // Assuming x is the user ID
+                   if (query2.exec())
+                       cout << "checked ::: !!!!!!!!!!!!!!!!!" << endl;
+                   else
+                       cout << "we are hereee " << endl;
+               }
+
+               ui->stackedWidget->setCurrentIndex(1);
+               ui->groupBox_4->setVisible(false);
+               profil_shown=false;
+
+               curr_user.set_email(query.value(0).toString());
+               curr_user.set_password(query.value(1).toString());
+               curr_user.set_cin(query.value(2).toString());
+               curr_user.set_id_user(query.value(2).toString());
+               curr_user.set_username(query.value(3).toString());
+               curr_user.set_role(query.value(4).toString());
+               curr_user.set_nom(query.value(5).toString());
+               curr_user.set_prenom(query.value(6).toString());
+               curr_user.set_sexe(query.value(7).toString());
+               curr_user.set_date_naiss(query.value(9).toDate());
+               ui->label_nameprofil->setText(curr_user.get_nom()+" "+curr_user.get_prenom()+"#"+curr_user.get_role());
+               add_Gestionbtn();
+               return true;
+           }
+    else
+    {
+        login_status=false;
+        emit login_status_changed();
+        ui->label_wrong->setVisible(true);
+        return false;
     }
 
 }
@@ -296,6 +920,10 @@ void MainWindow::click_signup()
 {
     if (!isSignupOpen){
         isSignupOpen = true;
+        A.close_arduino();
+        ret=-1;
+        qDebug()<<"ret = "<<ret<<endl;
+
     Signup w;
     w.show();
     w.exec();
@@ -303,14 +931,13 @@ void MainWindow::click_signup()
     }
 }
 
-
-
-
-
-
 void MainWindow::on_pushButton_exit2_clicked()
 {
     this->close();
+    delete admin_btn;
+    delete GestionEmp_btn;
+    delete GestionRes_btn;
+    delete GestionFourn_btn;
 }
 
 void MainWindow::on_pushButton_signout2_clicked()
@@ -324,6 +951,25 @@ void MainWindow::on_pushButton_signout2_clicked()
     QSqlQuery query;
     query.prepare("DELETE FROM LOGS");
     query.exec();
+    if (admin_btn != nullptr) {
+            delete admin_btn;
+            admin_btn = nullptr;  // Set to nullptr after deletion
+        }
+
+        if (GestionEmp_btn != nullptr) {
+            delete GestionEmp_btn;
+            GestionEmp_btn = nullptr;
+        }
+
+        if (GestionRes_btn != nullptr) {
+            delete GestionRes_btn;
+            GestionRes_btn = nullptr;
+        }
+        if (GestionFourn_btn != nullptr) {
+            delete GestionFourn_btn;
+            GestionFourn_btn = nullptr;
+        }
+
 
 }
 
@@ -331,9 +977,6 @@ void MainWindow::on_pushButton_exit1_clicked()
 {
     this->close();
 }
-
-
-
 
 void MainWindow::onAdminButtonClicked()
 {
@@ -356,7 +999,7 @@ void MainWindow::onRhWindowClosed()
     qDebug() << "Rh window is closed";
     // Perform any additional actions after rh is closed
 
-    // Make sure to manage the memory of dynamically allocated objects
+    // Make sure to manage the memory of     dynamically allocated objects
 
 }
 
@@ -370,6 +1013,11 @@ void MainWindow::fingerprint_clicked()
 
 void MainWindow::Log_viafinger()
 {
+    A.close_arduino();
+
+    ret=A.connect_arduino();
+    if(ret==0)
+    {
     A.write_to_arduino("SEARCH");
     data=A.read_from_arduino();
     //cout<<"1"<<endl;
@@ -415,7 +1063,7 @@ void MainWindow::Log_viafinger()
            {
                QSqlQuery query2;
                query2.prepare("INSERT INTO logs (LAST_LOGIN_ID) VALUES (:last_login)");
-               query2.bindValue(":last_login",query.value(0).toString());
+               query2.bindValue(":last_login",query.value(2).toString());
                if(query2.exec())
                cout<<"checked ::: !!!!!!!!!!!!!!!!!"<<endl;
 
@@ -435,6 +1083,8 @@ void MainWindow::Log_viafinger()
             curr_user.set_date_naiss(query.value(9).toDate());
             //curr_user.set_role(query.value(4).toString());
             QString nom_prenom="SUCCESS:"+curr_user.get_nom()+" "+curr_user.get_prenom();
+            ui->label_nameprofil->setText(curr_user.get_nom()+" "+curr_user.get_prenom()+"#"+curr_user.get_role());
+
             QByteArray nom_prenom2 = nom_prenom.toUtf8();
 
             A.write_to_arduino(nom_prenom2);
@@ -463,7 +1113,13 @@ void MainWindow::Log_viafinger()
        }
 
 
-
+    }
+    else
+    {
+        QMessageBox::critical(nullptr, QObject::tr("Arduino is not open"),
+                    QObject::tr("connection failed.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+    }
 }
 
 
@@ -471,23 +1127,20 @@ void MainWindow::Log_viafinger()
 
 
 
+void MainWindow::on_pushButton_setting2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+    last_index=1;
+}
 
+void MainWindow::on_pushButton_setting1_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+    last_index=0;
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(last_index);
+}
