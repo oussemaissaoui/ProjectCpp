@@ -6,6 +6,7 @@ Connection::Connection()
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(checkDatabase()));
     timer->start(5000);
+    //test
 }
 
 bool Connection::createconnect()
