@@ -7,7 +7,7 @@
 
 class Arduino
 {
-public:     //méthodes de la classe Arduino
+public:     
     Arduino();
     int connect_arduino(); // permet de connecter le PC à Arduino
     int connect_arduino(const QString &portName);

@@ -6,6 +6,7 @@ Arduino::Arduino()
     arduino_port_name="";
     arduino_is_available=false;
     serial=new QSerialPort;
+    
 }
 
 QString Arduino::getarduino_port_name()

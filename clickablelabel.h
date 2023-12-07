@@ -18,4 +18,4 @@ signals:
 
 };
 
-#endif // CLICKABLELABEL_H
+#endif // CLICKABLELA

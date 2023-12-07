@@ -10,7 +10,7 @@
 #include <QDateTime>
 #include <iostream>
 #include <QString>
-//statistique
+
 #include <QtWidgets/QMainWindow>
 #include <QtCharts/QChartView>
 #include <QtCharts/QBarSeries>

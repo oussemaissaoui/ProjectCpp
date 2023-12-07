@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Project2A",
-      "program": "c:/Project2A/build/Debug/outDebug",
+      "cwd": "c:/Users/Mega pc/Desktop/Nouveau dossier (7)/Smart_ecological_transport2A30",
+      "program": "c:/Users/Mega pc/Desktop/Nouveau dossier (7)/Smart_ecological_transport2A30/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
