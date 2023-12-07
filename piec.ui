@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>piec</class>
+ <widget class="QDialog" name="piec">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1206</width>
+    <height>598</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestion des Clients</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1191</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+  border: 0px solid #2CBB63; /* Green contour */
+  border-radius: 8px;
+  background-color: white;
+}
+
+QTabWidget::tab-bar {
+  alignment: center;
+}
+
+QTabBar::tab {
+  background-color: white;
+  color: black; /* Black text color */
+  border: none; /* Remove the border */
+  padding: 16px 26px;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+}
+
+QTabBar::tab:selected {
+  background-color: white; /* Green color */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #2CBB63; /* Green underline */
+}
+
+QTabBar::tab:hover {
+  background-color: white; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 4px solid #2CBB63; /* Green underline */
+}
+
+QTabBar::tab:selected:hover {
+  background-color: white; /* Green color */
+  color: black; /* Black text color */
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Ajouter une Pièce</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>10</y>
+        <width>501</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
+      </property>
+      <property name="title">
+       <string>Ajouter une pièce de rechange</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_Valider_2">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>390</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Ajouter</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Reference_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Référence</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_categorie_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>110</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+ font-style:poppins;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Catégorie</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_fournisseur_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>160</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Fournisseur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Marque_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>210</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Marque</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_nb_pieces_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>260</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Nombre de Pièces </string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Reference_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>60</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Categorie_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>110</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Fournisseur_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>160</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Marque_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>210</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_nb_pieces_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>260</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_prix_unit_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>310</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Prix unitaire</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_prix_unit_2">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>310</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>10</y>
+        <width>511</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
+      </property>
+      <property name="title">
+       <string>Modifier une pièce de rechange</string>
+      </property>
+      <widget class="QLabel" name="label_categorie_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>120</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Catégorie</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_fournisseur_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>170</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Fournisseur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Marque_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>220</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Marque</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_nb_pieces_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>270</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Nombre de pieces </string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Categorie_3">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>120</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Fournisseur_3">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>170</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Marque_3">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>220</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_nb_pieces_3">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>270</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_prix_unit_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>320</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Prix unitaire</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_prix_unit_3">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>320</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Modification">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>70</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+}
+
+QLineEdit:hover {
+  border-color: #2CBB63; /* Green border color on hover */
+}
+
+QLineEdit:focus {
+  border-color: #2CBB63; /* Green border color on focus */
+  outline: none; /* Remove focus outline */
+}</string>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Reference de la piéce a modifier</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Modifier">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>390</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Supprimer">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>390</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Liste des piéces</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1181</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
+      </property>
+      <property name="title">
+       <string>Chercher une pièce de rechange</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_Chercher_3">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>50</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Chercher</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Reference_3">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>50</y>
+         <width>421</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+}
+
+QLineEdit:hover {
+  border-color: #2CBB63; /* Green border color on hover */
+}
+
+QLineEdit:focus {
+  border-color: #2CBB63; /* Green border color on focus */
+  outline: none; /* Remove focus outline */
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Réference de la piéce</string>
+       </property>
+      </widget>
+      <widget class="QTableView" name="TableViewPieceRecherche">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>120</y>
+         <width>1141</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableView {
+  padding: 5px;
+  border: 2px solid #808080; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: white; /* Arrière-plan blanc */
+  color: black; /* Couleur du texte noire */
+}
+
+QTableView:hover {
+  border-color: #2CBB63; /* Couleur de la bordure verte au survol */
+}
+
+QTableView:focus {
+  border-color: #2CBB63; /* Couleur de la bordure verte au focus */
+  outline: none; /* Supprimer la mise en évidence lors du focus */
+}</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_Trier">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>50</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Trier</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_PDF">
+       <property name="geometry">
+        <rect>
+         <x>780</x>
+         <y>50</y>
+         <width>111</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>PDF</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_statistiques">
+       <property name="geometry">
+        <rect>
+         <x>900</x>
+         <y>50</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Statistique</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Mailing</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_6">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>0</y>
+        <width>1101</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+  border: none;
+  margin-top: 10px;
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+background-color:white;
+}
+
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top left;
+  padding: 8px;
+  color: white;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  min-width: 120px;
+  qproperty-drawBase: 0;
+  background-color: #2CBB63;
+  border-bottom: 2px solid #2CBB63; /* Green bottom border */
+  border-top: 2px solid #2CBB63; /* Green top border */
+  border-left: 2px solid #2CBB63; /* Green left border */
+  border-right: 2px solid #2CBB63; /* Green right border */
+  border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+}</string>
+      </property>
+      <property name="title">
+       <string>Mailing des Fournisseurs</string>
+      </property>
+      <widget class="QPushButton" name="sendBtn">
+       <property name="geometry">
+        <rect>
+         <x>970</x>
+         <y>410</y>
+         <width>121</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #2CBB63; /* Green color */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+  background-color: #7AE59A; /* Lighter green color on hover */
+}
+
+QPushButton:pressed {
+  background-color: #A2EFB6; /* Lighter green color when pressed */
+  border: 5px solid #2CBB63; /* Green contour */
+}
+
+QPushButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.4);
+}</string>
+       </property>
+       <property name="text">
+        <string>Envoyer</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Reference_6">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>50</y>
+         <width>181</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Serveur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Reference_8">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>100</y>
+         <width>181</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Serveur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Reference_9">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>50</y>
+         <width>181</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Mail de l'Employé</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_Reference_10">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>100</y>
+         <width>181</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+  padding: 5px;
+  border-bottom: 2px solid #2CBB63; /* Grey underline */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+  font-weight: bold; /* Bolder text */
+  font-size:14px;
+}
+
+QLabel:hover {
+  border-bottom-color: #2CBB63; /* Green underline color on hover */
+  color: black; /* Dark green text color on hover */
+}</string>
+       </property>
+       <property name="text">
+        <string>Mot de Passe</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Serveur">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>50</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+       <property name="text">
+        <string>smtp.gmail.com</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_port_serveur">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>100</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+       <property name="text">
+        <string>465</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Employe">
+       <property name="geometry">
+        <rect>
+         <x>720</x>
+         <y>50</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_MDP">
+       <property name="geometry">
+        <rect>
+         <x>730</x>
+         <y>100</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 0;
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text color */
+  border-bottom: 2px solid #808080; /* Grey underline */
+}
+
+QLineEdit:hover {
+  border-bottom: 3px solid #2CBB63; /* Green underline on hover */
+  font-weight: bold; /* Bolder text */
+  padding-bottom: 2px; /* Increase bottom padding */
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_Fournisseur">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>150</y>
+         <width>1061</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+}
+
+QLineEdit:hover {
+  border-color: #2CBB63; /* Green border color on hover */
+}
+
+QLineEdit:focus {
+  border-color: #2CBB63; /* Green border color on focus */
+  outline: none; /* Remove focus outline */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Mail du Fournisseur</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_ObjetMail">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>190</y>
+         <width>1061</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* White background */
+  color: black; /* Black text color */
+}
+
+QLineEdit:hover {
+  border-color: #2CBB63; /* Green border color on hover */
+}
+
+QLineEdit:focus {
+  border-color: #2CBB63; /* Green border color on focus */
+  outline: none; /* Remove focus outline */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Objet</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>230</y>
+         <width>1061</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPlainTextEdit {
+  padding: 5px;
+  border: 2px solid #808080; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: white; /* Arrière-plan blanc */
+  color: black; /* Couleur du texte noire */
+}
+
+QPlainTextEdit:hover {
+  border-color: #2CBB63; /* Couleur de la bordure verte au survol */
+}
+
+QPlainTextEdit:focus {
+  border-color: #2CBB63; /* Couleur de la bordure verte au focus */
+  outline: none; /* Supprimer la mise en évidence lors du focus */
+}</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1206</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
