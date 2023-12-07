@@ -526,7 +526,7 @@ public:
 
         retranslateUi(Signup);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Signup);

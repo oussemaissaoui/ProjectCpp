@@ -18,6 +18,7 @@
 #include <string>
 #include "reserv.h"
 #include <QLabel>
+#include "connection.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

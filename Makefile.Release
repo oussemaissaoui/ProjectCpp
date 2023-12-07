@@ -1244,6 +1244,17 @@ release/moc_gest_vehi.cpp: ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QDia
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qfiledevice.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qvector2d.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtouchdevice.h \
+		connection.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQuery \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquery.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QTimer \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qtimer.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qbasictimer.h \
 		gest_vehi.h \
 		release/moc_predefs.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/bin/moc.exe
@@ -3971,7 +3982,17 @@ release/crud.o: crud.cpp ../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAppli
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qtextedit.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtextdocument.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QWidget \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QIntValidator
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/QIntValidator \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QProcess \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qprocess.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QThread \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qthread.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QFile \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QTextStream \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QTimer \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qtimer.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qbasictimer.h \
+		aidialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\crud.o crud.cpp
 
 release/dialog.o: dialog.cpp dialog.h \
@@ -5408,6 +5429,17 @@ release/gest_vehi.o: gest_vehi.cpp gest_vehi.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qfiledevice.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qvector2d.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtGui/qtouchdevice.h \
+		connection.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQuery \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquery.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QTimer \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qtimer.h \
+		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qbasictimer.h \
 		ui_gest_vehi.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QVariant \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QAction \
@@ -5467,17 +5499,6 @@ release/gest_vehi.o: gest_vehi.cpp gest_vehi.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QDebug \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/QMessageBox \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtWidgets/qmessagebox.h \
-		connection.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlDatabase \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqldatabase.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlglobal.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlError \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlerror.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQuery \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlquery.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QTimer \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qtimer.h \
-		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/qbasictimer.h \
 		voiture.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtCore/QString \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/QSqlQueryModel \
@@ -6500,7 +6521,8 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqltablemodel.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qsqlresult.h \
 		../Qt/Qt5.9.9/5.9.9/mingw53_32/include/QtSql/qtsqlversion.h \
-		gest_vehi.h
+		gest_vehi.h \
+		crud.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
 
 release/notification.o: notification.cpp notification.h \

@@ -2,6 +2,7 @@
 #define GEST_VEHI_H
 
 #include <QDialog>
+#include "connection.h"
 
 namespace Ui {
 class gest_vehi;
@@ -35,6 +36,7 @@ private slots:
     void on_pdf_voiture_clicked();
 private:
     Ui::gest_vehi *ui;
+
 
 };
 

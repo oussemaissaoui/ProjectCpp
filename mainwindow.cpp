@@ -17,6 +17,9 @@
 #include "piec.h"
 #include "dialog.h"
 #include "gest_vehi.h"
+#include <QDateTime>
+#include <QVariant>
+#include "crud.h"
 
 using namespace std;
 
@@ -26,6 +29,8 @@ MainWindow::MainWindow( QWidget *parent)
                        : QMainWindow(parent),
                          ui(new Ui::MainWindow)
 {
+
+
     admin_btn=nullptr;
     GestionPiece_btn=nullptr;
     GestionRes_btn=nullptr;
@@ -73,7 +78,7 @@ MainWindow::MainWindow( QWidget *parent)
     ui->groupBox_4->setVisible(false);
     ui->stackedWidget->setCurrentIndex(0);
     ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);    
+    ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     connect(ui->label_profil_2, &ClickableLabel::clicked, this, &MainWindow::set_profilshown_status);
     connect(ui->label_profil_2, &ClickableLabel::clicked, this, &MainWindow::show_profil);
     ui->groupBox_4->setVisible(false);
@@ -206,7 +211,7 @@ void MainWindow::hide_show_pass()
 
 void MainWindow::on_pushButton_login_clicked()
 {
-    
+
    if(checkPassword())
    {
 
@@ -222,7 +227,7 @@ void MainWindow::add_Gestionbtn()
     QHBoxLayout *horizontalLayout = new QHBoxLayout;
      QHBoxLayout *currentHLayout = horizontalLayout;
      ui->verticalLayout_4->addLayout(horizontalLayout);
- if(curr_user.get_role()=="Admin"){// Create a pushbutton For Admin
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="Employe"){// Create a pushbutton For Admin
 
     admin_btn = new QPushButton("", this);
 
@@ -276,15 +281,12 @@ void MainWindow::add_Gestionbtn()
 
     connect(admin_btn,SIGNAL(clicked()),this,SLOT(onAdminButtonClicked()));
 
-     //add text under btn
-     admin_Lab = new QLabel;
-     admin_Lab->setText("Gestion Admin");
-     admin_Lab->setGeometry(admin_btn->x() , admin_btn->x()+admin_btn->height(),250,25);
-     //admin_Lab->set
+
 
 
     }
- if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_emp
+ 
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="Employe"){// Create a pushbutton For Gestion_emp
      GestionPiece_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
@@ -337,7 +339,7 @@ void MainWindow::add_Gestionbtn()
 
     }
 
- if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="User"){// Create a pushbutton For Gestion_reservation
      GestionRes_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
@@ -388,7 +390,7 @@ void MainWindow::add_Gestionbtn()
 
      connect(GestionRes_btn,SIGNAL(clicked()),this,SLOT(onReserButtonClicked()));
     }
- if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="Fourni"){// Create a pushbutton For Gestion_reservation
      GestionFourn_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
@@ -440,7 +442,7 @@ void MainWindow::add_Gestionbtn()
      connect(GestionFourn_btn,SIGNAL(clicked()),this,SLOT(onFournButtonClicked()));
     }
 
- if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="Finance"){// Create a pushbutton For Gestion_reservation
      GestionFinance_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
@@ -492,7 +494,7 @@ void MainWindow::add_Gestionbtn()
      connect(GestionFinance_btn,SIGNAL(clicked()),this,SLOT(onFinanceButtonClicked()));
     }
 
- if(curr_user.get_role()=="Admin" || curr_user.get_role()=="employe"){// Create a pushbutton For Gestion_reservation
+ if(curr_user.get_role()=="Admin" || curr_user.get_role()=="Employe"){// Create a pushbutton For Gestion_reservation
      GestionVehi_btn = new QPushButton("", this);
 
      // Set the button's size (optional)
@@ -547,6 +549,8 @@ void MainWindow::add_Gestionbtn()
 
 void MainWindow::onReserButtonClicked()
 {
+    if(ret==0)
+    ret=A.close_arduino();
     this->hide();
 
     // Create the rh window if it doesn't exist
@@ -557,6 +561,8 @@ void MainWindow::onReserButtonClicked()
 
     r->show();
     r->activateWindow();
+
+
 
 }
 
@@ -609,7 +615,7 @@ void MainWindow::onVehiculeButtonClicked()
     this->hide();
 
     // Create the rh window if it doesn't exist
-    gest_vehi  *v = new gest_vehi;
+    gest_vehi  *v=new gest_vehi;
 
     // Connect the destroyed signal to the onRhWindowClosed slot
     connect(v, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
@@ -626,7 +632,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(255,30,30,255));
             drop_shadow->setOffset(0,0);
             admin_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -638,7 +644,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(141,35,255,255));
             drop_shadow->setOffset(0,0);
             GestionPiece_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -650,7 +656,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(105,255,89,255));
             drop_shadow->setOffset(0,0);
             GestionRes_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -662,7 +668,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(38,244,255,255));
             drop_shadow->setOffset(0,0);
             GestionFourn_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -674,7 +680,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(212,255,153,255));
             drop_shadow->setOffset(0,0);
             GestionFinance_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -686,7 +692,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event) {
         if (event->type() == QEvent::Enter) {
             QGraphicsDropShadowEffect *drop_shadow = new QGraphicsDropShadowEffect();
             drop_shadow->setBlurRadius(30);
-            drop_shadow->setColor(QColor(255,215,0,255));
+            drop_shadow->setColor(QColor(38,255,146,255));
             drop_shadow->setOffset(0,0);
             GestionVehi_btn->setGraphicsEffect(drop_shadow);
         } else if (event->type() == QEvent::Leave) {
@@ -714,6 +720,27 @@ bool MainWindow::checkPassword()
         ui->lineEdit_password->clear();
         ui->lineEdit_username->clear();
 
+
+        QDateTime currentDateTime = QDateTime::currentDateTime();
+        QSqlQuery query0;
+        query0.prepare("UPDATE users SET LAST_LOGIN = :lastlogin WHERE (email = :email OR username = :email) AND password = :password");
+        query0.bindValue(":email", email);
+        query0.bindValue(":password", password);
+        query0.bindValue(":lastlogin", currentDateTime);
+
+        if(query0.exec())
+        {
+            qDebug()<<"insertion success"<<endl;
+        }
+        else
+        {
+            qDebug()<<"insertion Failed : "<< query0.lastError().text();
+        }
+
+
+
+
+
         ui->label_wrong->setVisible(false);
         //ui->checkBox_stayLogin->setChecked(false);
         login_status=true;
@@ -728,10 +755,10 @@ bool MainWindow::checkPassword()
             cout<<"checked ::: !!!!!!!!!!!!!!!!!"<<endl;
 
             else cout<<"we are hereee "<<endl;
-            
+
 
         }
-        
+
         ui->stackedWidget->setCurrentIndex(1);
         ui->groupBox_4->setVisible(false);
         profil_shown=false;
@@ -902,10 +929,10 @@ void MainWindow::onAdminButtonClicked()
     this->hide();
 
     // Create the rh window if it doesn't exist
-    rh *w_rh = new rh(MainWindow::curr_user);
+    CRUD *w_rh = new CRUD;
 
     // Connect the destroyed signal to the onRhWindowClosed slot
-    connect(w_rh, &QObject::destroyed, this, &MainWindow::onRhWindowClosed);
+    connect(w_rh, &QDialog::finished, this, &MainWindow::onRhWindowClosed);
 
     w_rh->show();
     w_rh->activateWindow();
@@ -1007,6 +1034,7 @@ void MainWindow::Log_viafinger()
             QByteArray nom_prenom2 = nom_prenom.toUtf8();
 
             A.write_to_arduino(nom_prenom2);
+            add_Gestionbtn();
 
             qDebug()<<curr_user.get_cin()<<endl;
 

@@ -577,7 +577,7 @@ border:none;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-614</y>
+         <y>-341</y>
          <width>1200</width>
          <height>1200</height>
         </rect>
@@ -670,6 +670,9 @@ font: 87 28pt &quot;Arial Black&quot;;</string>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QFrame" name="frame_2">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(30, 30, 30);</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>

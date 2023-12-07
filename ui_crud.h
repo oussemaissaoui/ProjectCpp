@@ -1833,7 +1833,7 @@ public:
 
         retranslateUi(CRUD);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(CRUD);
@@ -1850,7 +1850,10 @@ public:
         label_email->setText(QApplication::translate("CRUD", "Email", Q_NULLPTR));
         comboBox_role->clear();
         comboBox_role->insertItems(0, QStringList()
-         << QApplication::translate("CRUD", "Employer", Q_NULLPTR)
+         << QApplication::translate("CRUD", "Employe", Q_NULLPTR)
+         << QApplication::translate("CRUD", "User", Q_NULLPTR)
+         << QApplication::translate("CRUD", "Fourni", Q_NULLPTR)
+         << QApplication::translate("CRUD", "Finance", Q_NULLPTR)
         );
         lineEdit_pass->setPlaceholderText(QApplication::translate("CRUD", "*********", Q_NULLPTR));
         lineEdit_email->setPlaceholderText(QApplication::translate("CRUD", "user@gmailcom", Q_NULLPTR));
@@ -1954,7 +1957,9 @@ public:
         comboBox_role_2->clear();
         comboBox_role_2->insertItems(0, QStringList()
          << QApplication::translate("CRUD", "User", Q_NULLPTR)
-         << QApplication::translate("CRUD", "Employer", Q_NULLPTR)
+         << QApplication::translate("CRUD", "Employe", Q_NULLPTR)
+         << QApplication::translate("CRUD", "Fourni", Q_NULLPTR)
+         << QApplication::translate("CRUD", "Finance", Q_NULLPTR)
         );
         label_nom_13->setText(QApplication::translate("CRUD", "Date de naissance ", Q_NULLPTR));
         lineEdit_cin_2->setPlaceholderText(QApplication::translate("CRUD", "identifiant ou CIN de l'employ\303\251 ", Q_NULLPTR));

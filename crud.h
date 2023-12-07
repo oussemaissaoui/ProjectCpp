@@ -24,7 +24,7 @@
 #include <QtCharts/QPieSlice>
 QT_CHARTS_USE_NAMESPACE
 
-
+using namespace QtCharts;
 
 
 using namespace std;
@@ -43,6 +43,9 @@ public:
     void SetLineEdit_value();
     QMainWindow chart_window;
     int tab_widget_index;
+    void typeText(const QString& text, int delay);
+    void simulateChat(const QString& cleanedText);
+    QString readTextFromFile(const QString& filePath);
 private slots:
 
 
@@ -57,6 +60,12 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_ask_ai_clicked();
+
+    void on_stat_clicked();
+
+    void on_pushButton_genpdf_clicked();
 
 private:
     Ui::CRUD *ui;

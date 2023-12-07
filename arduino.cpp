@@ -90,7 +90,7 @@ QByteArray Arduino::read_from_arduino()
     QByteArray data="";
     int i=0;
     while (true) {
-        if (serial->waitForReadyRead(250)) {
+        if (serial->waitForReadyRead(1000)) {
             data +=serial->readAll(); // Retrieve the received data
              // Exit the loop once data is received
         }

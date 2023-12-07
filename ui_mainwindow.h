@@ -362,7 +362,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -614, 1200, 1200));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -341, 1200, 1200));
         scrollAreaWidgetContents->setMinimumSize(QSize(1200, 1200));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -397,6 +397,7 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         frame_2 = new QFrame(scrollAreaWidgetContents);
         frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setStyleSheet(QStringLiteral("background-color: rgb(30, 30, 30);"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         label_6 = new QLabel(frame_2);
@@ -409,7 +410,7 @@ public:
         textEdit->setGeometry(QRect(100, 490, 521, 81));
         pushButton_3 = new QPushButton(frame_2);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setEnabled(false);
+        pushButton_3->setEnabled(true);
         pushButton_3->setGeometry(QRect(650, 501, 231, 41));
         pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(42, 42, 42);\n"
 "color: rgb(255, 255, 255);\n"
@@ -420,7 +421,7 @@ public:
         pushButton_3->setIcon(icon1);
         pushButton_4 = new QPushButton(frame_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setEnabled(false);
+        pushButton_4->setEnabled(true);
         pushButton_4->setGeometry(QRect(900, 500, 231, 41));
         pushButton_4->setStyleSheet(QLatin1String("background-color: rgb(42, 42, 42);\n"
 "color: rgb(255, 255, 255);\n"

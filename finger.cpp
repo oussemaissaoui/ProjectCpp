@@ -285,3 +285,8 @@ void Finger::waiting_for_result_add()
     update_label();
 
 }
+
+void Finger::on_pushButton_2_clicked()
+{
+    this->close();
+}

@@ -202,7 +202,7 @@ employe employe::getLast_employeValue(QString id)
 
     QString status_tmp; 
     QString poste_tmp;
-    int salaire_tmp; 
+    int salaire_tmp=0;
     QString email_tmp; 
     QString password_tmp; 
     QString id_tmp; 

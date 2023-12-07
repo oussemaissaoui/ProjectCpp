@@ -60,7 +60,7 @@ QTabBar::tab:selected:hover {
 }</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="ajouter">
       <attribute name="title">
@@ -255,7 +255,22 @@ QComboBox:hover {
          </property>
          <item>
           <property name="text">
-           <string>Employer</string>
+           <string>Employe</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>User</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Fourni</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Finance</string>
           </property>
          </item>
         </widget>
@@ -2020,7 +2035,17 @@ QComboBox:hover {
         </item>
         <item>
          <property name="text">
-          <string>Employer</string>
+          <string>Employe</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fourni</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Finance</string>
          </property>
         </item>
        </widget>

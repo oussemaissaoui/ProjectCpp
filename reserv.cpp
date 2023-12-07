@@ -33,6 +33,7 @@
 #include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QValueAxis>
 
+using namespace QtCharts;
 
 Reserv::Reserv(QWidget *parent) :
     QDialog(parent),
@@ -403,7 +404,7 @@ void Reserv::on_pushButton_2_clicked()
 
 void Reserv::on_pushButton_4_clicked()
 {
-    /*Reservation r;
+    Reservation r;
         QSqlQueryModel *model = r.afficher();
         int totalRES = model->rowCount();
         int semaine1 = 0;
@@ -432,7 +433,7 @@ void Reserv::on_pushButton_4_clicked()
         double pourcentageSem4 = (static_cast<double>(semaine4) / totalRES) * 100;
 
         // Créer un objet QBarSet pour les données des pourcentages
-        QBarset *barSet = new QBarSet("Pourcentages");
+        QBarSet *barSet = new QBarSet("Pourcentages");
         *barSet << pourcentageSem1 << pourcentageSem2 << pourcentageSem3 << pourcentageSem4;
 
         // Créer un objet QBarSeries pour stocker les données du graphique à barres
@@ -474,7 +475,7 @@ void Reserv::on_pushButton_4_clicked()
         frame->setLayout(frameLayout);
     chartView->setMinimumSize(600,400);
         // Redimensionner le QFrame pour ajuster le graphique
-        frame->adjustSize();*/
+        frame->adjustSize();
 }
 
 void Reserv::on_pushButton_5_clicked()
@@ -509,6 +510,7 @@ void Reserv::on_pushButton_check_clicked()
 {
     QByteArray data;
 
+
        Reservation r;
         A.write_to_arduino("check");
        data= A.read_from_arduino();
@@ -528,4 +530,5 @@ void Reserv::on_pushButton_check_clicked()
         {
             A.write_to_arduino("false");
         }
+
 }
