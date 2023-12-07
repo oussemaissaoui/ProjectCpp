@@ -69,9 +69,12 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label_5;
     QHBoxLayout *horizontalLayout_3;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_10;
+    QFrame *frame_2;
+    QLabel *label_6;
+    QTextEdit *textEdit;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QLabel *label_7;
     ClickableLabel *label_profil_2;
     QLabel *label_Menuapp;
     QGroupBox *groupBox_4;
@@ -359,7 +362,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -52, 1200, 1200));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -614, 1200, 1200));
         scrollAreaWidgetContents->setMinimumSize(QSize(1200, 1200));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -392,20 +395,47 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        pushButton_12 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
+        frame_2 = new QFrame(scrollAreaWidgetContents);
+        frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        label_6 = new QLabel(frame_2);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(50, 63, 991, 391));
+        label_6->setPixmap(QPixmap(QString::fromUtf8(":/img/image/annonce.png")));
+        label_6->setScaledContents(true);
+        textEdit = new QTextEdit(frame_2);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(100, 490, 521, 81));
+        pushButton_3 = new QPushButton(frame_2);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setEnabled(false);
+        pushButton_3->setGeometry(QRect(650, 501, 231, 41));
+        pushButton_3->setStyleSheet(QLatin1String("background-color: rgb(42, 42, 42);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 9pt \"MS Shell Dlg 2\";\n"
+"border-radius:15px;"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/img/image/apple-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon1);
+        pushButton_4 = new QPushButton(frame_2);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setEnabled(false);
+        pushButton_4->setGeometry(QRect(900, 500, 231, 41));
+        pushButton_4->setStyleSheet(QLatin1String("background-color: rgb(42, 42, 42);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 9pt \"MS Shell Dlg 2\";\n"
+"border-radius:15px;"));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/img/image/play-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_4->setIcon(icon2);
+        label_7 = new QLabel(frame_2);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(50, 10, 240, 46));
+        label_7->setStyleSheet(QLatin1String("color: rgb(255, 255, 255);\n"
+"font: 87 24pt \"Arial Black\";"));
 
-        horizontalLayout_3->addWidget(pushButton_12);
-
-        pushButton_11 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-
-        horizontalLayout_3->addWidget(pushButton_11);
-
-        pushButton_10 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-
-        horizontalLayout_3->addWidget(pushButton_10);
+        horizontalLayout_3->addWidget(frame_2);
 
 
         gridLayout->addLayout(horizontalLayout_3, 3, 0, 1, 1);
@@ -523,9 +553,9 @@ public:
         pushButton->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton->setStyleSheet(QLatin1String("background-color: rgb(31, 31, 31);\n"
 "border-radius:15px;"));
-        QIcon icon1;
-        icon1.addFile(QStringLiteral(":/img/image/logo_blanc.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon1);
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/img/image/logo_blanc.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon3);
         groupBox_5 = new QGroupBox(page_3);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
         groupBox_5->setGeometry(QRect(359, -11, 851, 621));
@@ -604,9 +634,18 @@ public:
         label_eye->setText(QString());
         label_wrong->setText(QApplication::translate("MainWindow", "wrong password or username!", Q_NULLPTR));
         label_5->setText(QApplication::translate("MainWindow", "My Accesses", Q_NULLPTR));
-        pushButton_12->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_11->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
-        pushButton_10->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
+        label_6->setText(QString());
+        textEdit->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:20pt; font-weight:600; color:#82ff66;\">Download AllEco App Coming Soon</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2'; font-size:10pt; color:#82ff66;\">Join the revolution of smart, sustainable transportation with</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-f"
+                        "amily:'MS Shell Dlg 2'; font-size:10pt; color:#82ff66;\">AllEco app.</span></p></body></html>", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "iOS Apple Store", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Play Store", Q_NULLPTR));
+        label_7->setText(QApplication::translate("MainWindow", "Special Event", Q_NULLPTR));
         label_profil_2->setText(QString());
         label_Menuapp->setText(QString());
         groupBox_4->setTitle(QString());

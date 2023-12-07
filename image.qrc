@@ -25,10 +25,14 @@
         <file>image/eyes_open.png</file>
         <file>image/admin.jpg</file>
         <file>image/Gestion_emp.jpg</file>
-        <file>image/Gestion_Finance.png</file>
         <file>image/Gestion_fournisseur.png</file>
         <file>image/Gestion_inventaire.jpg</file>
         <file>image/Gestion_reservation.jpg</file>
         <file>image/Settings.png</file>
+        <file>image/Gestion_finance.png</file>
+        <file>image/Gestion_vehicule.jpg</file>
+        <file>image/annonce.png</file>
+        <file>image/apple-logo.png</file>
+        <file>image/play-logo.png</file>
     </qresource>
 </RCC>

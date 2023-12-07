@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Ai</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="image.qrc">
+    <normaloff>:/img/image/Ai.jpg</normaloff>:/img/image/Ai.jpg</iconset>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">

@@ -132,6 +132,9 @@ public:
         if (CRUD->objectName().isEmpty())
             CRUD->setObjectName(QStringLiteral("CRUD"));
         CRUD->resize(1202, 597);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/img/crud.png"), QSize(), QIcon::Normal, QIcon::Off);
+        CRUD->setWindowIcon(icon);
         gridLayout = new QGridLayout(CRUD);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         tabWidget = new QTabWidget(CRUD);
@@ -1838,7 +1841,7 @@ public:
 
     void retranslateUi(QDialog *CRUD)
     {
-        CRUD->setWindowTitle(QApplication::translate("CRUD", "Dialog", Q_NULLPTR));
+        CRUD->setWindowTitle(QApplication::translate("CRUD", "Gestion_Employe", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("CRUD", "Add Employer", Q_NULLPTR));
         Userside->setTitle(QApplication::translate("CRUD", "User", Q_NULLPTR));
         label_nom_5->setText(QApplication::translate("CRUD", "Role", Q_NULLPTR));

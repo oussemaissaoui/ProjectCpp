@@ -50,6 +50,9 @@ public:
         if (AIDIALOG->objectName().isEmpty())
             AIDIALOG->setObjectName(QStringLiteral("AIDIALOG"));
         AIDIALOG->resize(1000, 650);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/img/image/Ai.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        AIDIALOG->setWindowIcon(icon);
         groupBox = new QGroupBox(AIDIALOG);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(610, 0, 391, 661));
@@ -130,7 +133,7 @@ public:
 
     void retranslateUi(QDialog *AIDIALOG)
     {
-        AIDIALOG->setWindowTitle(QApplication::translate("AIDIALOG", "Dialog", Q_NULLPTR));
+        AIDIALOG->setWindowTitle(QApplication::translate("AIDIALOG", "Ai", Q_NULLPTR));
         groupBox->setTitle(QString());
         textEdit->setHtml(QApplication::translate("AIDIALOG", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
